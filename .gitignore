@@ -1,3 +1,19 @@
+# Documents
+.docx
+.doc
+.pptx
+.ppt
+.xlsx
+.xls
+.pdf
+.csv
+
+# Images
+.jpg
+.jpeg
+.tiff
+.bmp
+
 # History files
 .Rhistory
 .Rapp.history
