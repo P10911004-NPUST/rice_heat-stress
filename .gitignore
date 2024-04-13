@@ -14,6 +14,19 @@
 .tiff
 .bmp
 
+# Sequence related
+.fasta
+.fa
+.fas
+.fq
+.fastq
+.bam
+.bai
+.vcf
+.gtf
+.gff*
+.bed
+
 # History files
 .Rhistory
 .Rapp.history
