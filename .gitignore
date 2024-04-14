@@ -1,31 +1,40 @@
 # Documents
-.docx
-.doc
-.pptx
-.ppt
-.xlsx
-.xls
-.pdf
-.csv
+*.docx
+*.doc
+*.pptx
+*.ppt
+*.xlsx
+*.xls
+*.pdf
+*.csv
 
 # Images
-.jpg
-.jpeg
-.tiff
-.bmp
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+*.bmp
+
+# Files
+*.xsl
+*.xml
 
 # Sequence related
-.fasta
-.fa
-.fas
-.fq
-.fastq
-.bam
-.bai
-.vcf
-.gtf
-.gff*
-.bed
+*.fasta
+*.fa
+*.fas
+*.fq
+*.fastq
+*.bam
+*.bai
+*.vcf
+*.gtf
+*.gff*
+*.bed
+
+# Environment
+./pyenv
+./renv
 
 # History files
 .Rhistory
