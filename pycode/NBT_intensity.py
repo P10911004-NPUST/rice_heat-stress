@@ -106,14 +106,17 @@ def nbt_intensity(img_path):
    df0.to_csv(os.path.join(output_dir, f"OUT_{os.path.basename(img_folder)}.csv"), index=False)
 
 
-# DAT 2
-nbt_intensity("./img/NBT/DAT2_28-vs-38_20240415")
+# # DAT 2
+# nbt_intensity("./img/NBT/DAT2_28-vs-38_20240415")
 
-# DAT 3
-nbt_intensity("./img/NBT/DAT3_28-vs-38_20240416")
+# # DAT 3
+# nbt_intensity("./img/NBT/DAT3_28-vs-38_20240416")
 
-# DAT 4
-nbt_intensity("./img/NBT/DAT4_28-vs-38_20240417")
+# # DAT 4
+# nbt_intensity("./img/NBT/DAT4_28-vs-38_20240417")
 
-# DAT 5
-nbt_intensity("./img/NBT/DAT5_28-vs-38_20240418")
+# # DAT 5
+# nbt_intensity("./img/NBT/DAT5_28-vs-38_20240418")
+
+# DAT 3 over 3 leaf
+nbt_intensity("./img/NBT/DAT3_28-vs-38_over3leaf_20240425")

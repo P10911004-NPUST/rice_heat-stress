@@ -1,10 +1,9 @@
 ---
 title: "Rice heat-stress"
-page-layout: full
 format: 
   html:
       grid: 
-        body-width: 800px
+        body-width: 1000px
         sidebar-width: 0px
         margin-width: 200px
       toc: true
@@ -15,7 +14,7 @@ execute:
   include: false
   warning: false
 fig-dpi: 660
-fig-format: jpeg
+fig-format: png
 editor_options: 
   chunk_output_type: console
 ---
@@ -24,6 +23,7 @@ editor_options:
 suppressMessages({
     rm(list = ls())
     gc()
+    set.seed(123)
     if (!is.null(dev.list())) dev.off()
     
     source("https://github.com/P10911004-NPUST/statools/blob/main/R/oneway_test.R?raw=TRUE")
@@ -34,9 +34,21 @@ suppressMessages({
 })
 ```
 
+# Heat treatment after 2-days after germination
+
+| Microscope parameter | Value  |
+|:--------------------:|:------:|
+|    Exposure time     | 500 ms |
+|         Cost         |  2.0   |
+|   Light intensity    |  30%   |
+|    Visual Magnif.    |  50X   |
+
+<br>
+
 ```{r}
 csv_list <- list.files("../img/NBT/", pattern = "\\.csv$", full.names = TRUE, recursive = TRUE)
 csv_list <- csv_list[grep("OUT_DAT", csv_list)]
+csv_list <- csv_list[-grep("over3leaf", csv_list)]
 
 rawdata <- map(csv_list, read.csv) %>% list_rbind()
 rawdata <- rawdata %>% 
@@ -45,6 +57,7 @@ rawdata <- rawdata %>%
         TEMP = as.factor(str_replace(img_name, ".*T(\\d(\\d)?).*", "\\1")),
         REP = as.numeric(str_replace(img_name, ".*R(\\d(\\d)?).*", "\\1")),
         ROOT_TYPE = factor(str_extract(img_name, "Se|Cr|postCr")),
+        nbt_mean = nbt_intensity / nbt_area,
         nbt_intensity = nbt_intensity / 1e6,
         nbt_area = nbt_area / 1000,
         is_good_data = !(str_detect(img_name, "cancel") | is.na(nbt_area) | is.na(nbt_intensity))
@@ -72,6 +85,7 @@ desc_df <- rawdata %>%
 ```
 
 # Root type emergence
+
 ```{r, include=TRUE}
 #| label: fig-root-emergence
 #| fig-cap: "Emergence of different root types after 2-5 days of 28&deg;C (blue) and 38&deg;C (red) heat treatment. Se: Seminal root, Cr: embryonic crown root, postCr: post-embryonic crown root."
@@ -85,7 +99,7 @@ p0 <- root_n %>%
     labs(
         x = "Days after treatment", 
         y = "Number of roots", 
-        color = "Temparature", 
+        color = "Temperature (\u00B0C)", 
         linetype = element_blank()
     ) +
     geom_point(size = 2) +
@@ -106,8 +120,10 @@ p0
 
 # NBT staining intensity
 
+<!-- # Statistics -->
+
 ```{r}
-stat_res <- data.frame()
+stat_res_0 <- data.frame()
 for (dat in unique(rawdata$DAT)){
     df0 <- rawdata %>% filter(DAT == dat)
     for (root in unique(df0$ROOT_TYPE)){
@@ -117,72 +133,363 @@ for (dat in unique(rawdata$DAT)){
             drop_na()
         
         sample_size <- df1 %>% 
-            count(TEMP) %>% 
-            summarise(n = min(n))
+            count(TEMP)
         
-        if (sample_size$n < 3) next
+        if (any(sample_size$n < 3)) next
         
         res <- oneway_test(df1, nbt_intensity ~ TEMP)$results
         res$ROOT_TYPE <- root
         res$DAT <- dat
         
-        stat_res <- rbind(stat_res, res)
+        stat_res_0 <- rbind(stat_res_0, res)
     }
 }
 ```
 
-<br>
+<!-- # Plotting -->
+
+```{r}
+p0 <- list()
+for (dat in unique(rawdata$DAT)){
+    stat_res_1 <- stat_res_0 %>% 
+        filter(DAT == dat)
+    
+    df0 <- rawdata %>% 
+        filter(DAT == dat, is_good_data) %>% 
+        filter(ROOT_TYPE %in% unique(stat_res_1$ROOT_TYPE)) %>% 
+        drop_na()
+    
+    y_range <- c(floor(min(stat_res_1$MIN) * 0.85), ceiling(max(stat_res_1$MAX) * 1.25))
+    letter_nudge_y <- (y_range[2] - max(stat_res_1$MAX)) * 0.43
+    
+    p1 <- ggplot(df0, aes(TEMP, nbt_intensity, color = TEMP, text = img_name)) +
+        facet_wrap( ~ factor(ROOT_TYPE, levels = c("Se", "Cr", "postCr")), ncol = 3) +
+        theme_bw() +
+        labs(
+            subtitle = paste0("DAT", dat),
+            x = "Temperature (\u00B0C)", 
+            y = "NBT intensity"
+        ) +
+        geom_point(position = position_jitter(width = 0.1)) +
+        geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
+        geom_text(
+            data = stat_res_1,
+            mapping = aes(indep_var, MAX + letter_nudge_y, label = letter),
+            size = 7,
+            inherit.aes = FALSE
+        ) +
+        scale_y_continuous(limits = y_range) +
+        scale_color_brewer(palette = "Set1", direction = -1) +
+        theme(
+            text = element_text(family = "sans", face = "bold", size = 20),
+            axis.title.x.bottom = element_text(margin = margin(t = 10)),
+            axis.title.y.left = element_text(margin = margin(r = 10)),
+            legend.position = "none"
+        )
+    
+    p1 <- list(p1)
+    names(p1) <- paste("DAT", dat, sep = "_")
+    p0 <- append(p0, p1)
+}
+```
 
 ## DAT 2
 
 ```{r, include=TRUE}
-p0 <- rawdata %>% 
-    filter(is_good_data) %>% 
-    filter(DAT == 2) %>% 
-    drop_na()
+ggplotly(p0$DAT_2)
+```
 
-.stat_res <- filter(stat_res, DAT == 2)
+<br>
 
-y_range <- c(floor(min(.stat_res$MIN) * 0.9), ceiling(max(.stat_res$MAX) * 1.2))
-letter_nudge_y <- (y_range[2] - max(.stat_res$MAX)) * 0.43
-.stat_res$letter_pos <- .stat_res$MAX + letter_nudge_y
+::: {layout-ncol=3}
+![](images/DAT2/DAT2_T28_R1_Se_RAW_ch00.png)
 
-ggplot(p0, aes(TEMP, nbt_intensity)) +
-    facet_wrap( ~ ROOT_TYPE, nrow = 1) +
+![](images/DAT2/DAT2_T28_R3_Se_RAW_ch00.png)
+
+![](images/DAT2/DAT2_T28_R4_Se_RAW_ch00.png)
+
+Seminal root
+:::
+
+::: {layout-ncol=3}
+![](images/DAT2/DAT2_T28_R1_Cr1_RAW_ch00.png)
+
+![](images/DAT2/DAT2_T28_R3_Cr1_RAW_ch00.png)
+
+![](images/DAT2/DAT2_T28_R4_Cr1_RAW_ch00.png)
+
+Crown root
+:::
+
+<br>
+
+## DAT 3
+
+```{r, include=TRUE}
+ggplotly(p0$DAT_3)
+```
+
+<br>
+
+::: {layout-ncol=3}
+![](images/DAT3/DAT3_T28_R1_Se_RAW_ch00.png)
+
+![](images/DAT3/DAT3_T28_R1_Se_RAW_ch00.png)
+
+![](images/DAT3/DAT3_T28_R1_Se_RAW_ch00.png)
+
+Seminal root
+:::
+
+::: {layout-ncol=3}
+![](images/DAT2_T28_R1_Cr1_RAW_ch00.png)
+
+![](images/DAT2_T28_R3_Cr1_RAW_ch00.png)
+
+![](images/DAT2_T28_R4_Cr1_RAW_ch00.png)
+
+Crown root
+:::
+
+<br>
+
+## DAT 4
+
+```{r, include=TRUE}
+ggplotly(p0$DAT_4)
+```
+
+<br>
+
+## DAT 5
+
+```{r, include=TRUE}
+ggplotly(p0$DAT_5)
+```
+
+## DAT3 (Over-3-leaf)
+
+Check for post-embryonic crown root.
+
+| Microscope parameter | Value  |
+|:--------------------:|:------:|
+|    Exposure time     | 500 ms |
+|         Cost         |  2.0   |
+|   Light intensity    |  30%   |
+|    Visual Magnif.    |  30X   |
+
+<br>
+
+```{r, include=TRUE}
+over3leaf <- list.files("../img/NBT/", pattern = "over3leaf", full.names = TRUE, recursive = TRUE)
+over3leaf <- read.csv(over3leaf) %>% 
+    filter(str_detect(img_name, "30X")) %>% 
+    mutate(
+        DAT = as.factor(str_replace(img_name, ".*DAT(\\d(\\d)?).*", "\\1")),
+        TEMP = as.factor(str_replace(img_name, ".*T(\\d(\\d)?).*", "\\1")),
+        REP = as.numeric(str_replace(img_name, ".*R(\\d(\\d)?).*", "\\1")),
+        ROOT_TYPE = factor(str_extract(img_name, "Se|Cr|postCr")),
+        nbt_intensity = nbt_intensity / 1e6,
+        nbt_area = nbt_area / 1000,
+        is_good_data = !(str_detect(img_name, "cancel") | is.na(nbt_area) | is.na(nbt_intensity))
+    )
+
+stat_res <- oneway_test(over3leaf, nbt_intensity ~ TEMP)$results
+
+y_range <- c(floor(min(stat_res$MIN) * 0.85), ceiling(max(stat_res$MAX) * 1.25))
+letter_nudge_y <- (y_range[2] - max(stat_res$MAX)) * 0.43
+
+p1 <- ggplot(over3leaf, aes(TEMP, nbt_intensity, color = TEMP, text = img_name)) +
+    facet_wrap( ~ factor(ROOT_TYPE, levels = c("Se", "Cr", "postCr")), ncol = 3) +
     theme_bw() +
     labs(
-        x = bquote(bold("Temperature ("*degree*"C)")), 
+        subtitle = paste0("DAT", unique(over3leaf$DAT)),
+        x = "Temperature (\u00B0C)", 
         y = "NBT intensity"
     ) +
     geom_point(position = position_jitter(width = 0.1)) +
-    geom_boxplot(alpha = 0.3, outlier.shape = NA) +
+    geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
     geom_text(
-        data = .stat_res,
+        data = stat_res,
         mapping = aes(indep_var, MAX + letter_nudge_y, label = letter),
-        size = 5
+        size = 7,
+        inherit.aes = FALSE
     ) +
     scale_y_continuous(limits = y_range) +
+    scale_color_brewer(palette = "Set1", direction = -1) +
     theme(
         text = element_text(family = "sans", face = "bold", size = 20),
         axis.title.x.bottom = element_text(margin = margin(t = 10)),
-        axis.title.y.left = element_text(margin = margin(r = 10))
+        axis.title.y.left = element_text(margin = margin(r = 10)),
+        legend.position = "none"
     )
+ggplotly(p1)
 ```
 
+<br>
 
+# NBT staining intensity average
 
+Averaging the NBT intensity by the staining area seems minimizing the variations. \$ NBT intensity average = \frac{NBT staining intensity}{NBT staining area} \$
 
+<!-- # Statistics -->
 
+```{r}
+stat_res_0 <- data.frame()
+for (dat in unique(rawdata$DAT)){
+    df0 <- rawdata %>% filter(DAT == dat)
+    for (root in unique(df0$ROOT_TYPE)){
+        df1 <- df0 %>% 
+            filter(ROOT_TYPE == root) %>% 
+            filter(is_good_data) %>% 
+            drop_na()
+        
+        sample_size <- df1 %>% 
+            count(TEMP)
+        
+        if (any(sample_size$n < 3)) next
+        
+        res <- oneway_test(df1, nbt_mean ~ TEMP)$results
+        res$ROOT_TYPE <- root
+        res$DAT <- dat
+        
+        stat_res_0 <- rbind(stat_res_0, res)
+    }
+}
+```
 
+<!-- # Plotting -->
 
+```{r}
+p0 <- list()
+for (dat in unique(rawdata$DAT)){
+    stat_res_1 <- stat_res_0 %>% 
+        filter(DAT == dat)
+    
+    df0 <- rawdata %>% 
+        filter(DAT == dat, is_good_data) %>% 
+        filter(ROOT_TYPE %in% unique(stat_res_1$ROOT_TYPE)) %>% 
+        drop_na()
+    
+    y_range <- c(floor(min(stat_res_1$MIN) * 0.85), ceiling(max(stat_res_1$MAX) * 1.25))
+    letter_nudge_y <- (y_range[2] - max(stat_res_1$MAX)) * 0.43
+    
+    p1 <- ggplot(df0, aes(TEMP, nbt_mean, color = TEMP, text = img_name)) +
+        facet_wrap( ~ factor(ROOT_TYPE, levels = c("Se", "Cr", "postCr")), ncol = 3) +
+        theme_bw() +
+        labs(
+            subtitle = paste0("DAT", dat),
+            x = "Temperature (\u00B0C)", 
+            y = "NBT intensity average"
+        ) +
+        geom_point(position = position_jitter(width = 0.1)) +
+        geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
+        geom_text(
+            data = stat_res_1,
+            mapping = aes(indep_var, MAX + letter_nudge_y, label = letter),
+            size = 7,
+            inherit.aes = FALSE
+        ) +
+        scale_y_continuous(limits = y_range) +
+        scale_color_brewer(palette = "Set1", direction = -1) +
+        theme(
+            text = element_text(family = "sans", face = "bold", size = 20),
+            axis.title.x.bottom = element_text(margin = margin(t = 10)),
+            axis.title.y.left = element_text(margin = margin(r = 10)),
+            legend.position = "none"
+        )
+    
+    p1 <- list(p1)
+    names(p1) <- paste("DAT", dat, sep = "_")
+    p0 <- append(p0, p1)
+}
+```
 
+## DAT 2
 
+```{r, include=TRUE}
+ggplotly(p0$DAT_2)
+```
 
+<br>
 
+## DAT 3
 
+```{r, include=TRUE}
+ggplotly(p0$DAT_3)
+```
 
+<br>
 
+## DAT 4
 
+```{r, include=TRUE}
+ggplotly(p0$DAT_4)
+```
 
+<br>
 
+## DAT 5
 
+```{r, include=TRUE}
+ggplotly(p0$DAT_5)
+```
+
+## DAT3 (Over-3-leaf)
+
+Check for post-embryonic crown root.
+
+| Microscope parameter | Value  |
+|:--------------------:|:------:|
+|    Exposure time     | 500 ms |
+|         Cost         |  2.0   |
+|   Light intensity    |  30%   |
+|    Visual Magnif.    |  30X   |
+
+```{r, include=TRUE}
+over3leaf <- list.files("../img/NBT/", pattern = "over3leaf", full.names = TRUE, recursive = TRUE)
+over3leaf <- read.csv(over3leaf) %>% 
+    filter(str_detect(img_name, "30X")) %>% 
+    mutate(
+        DAT = as.factor(str_replace(img_name, ".*DAT(\\d(\\d)?).*", "\\1")),
+        TEMP = as.factor(str_replace(img_name, ".*T(\\d(\\d)?).*", "\\1")),
+        REP = as.numeric(str_replace(img_name, ".*R(\\d(\\d)?).*", "\\1")),
+        ROOT_TYPE = factor(str_extract(img_name, "Se|Cr|postCr")),
+        nbt_mean = nbt_intensity / nbt_area,
+        nbt_intensity = nbt_intensity / 1e6,
+        nbt_area = nbt_area / 1000,
+        is_good_data = !(str_detect(img_name, "cancel") | is.na(nbt_area) | is.na(nbt_intensity))
+    )
+
+stat_res <- oneway_test(over3leaf, nbt_mean ~ TEMP)$results
+
+y_range <- c(floor(min(stat_res$MIN) * 0.99), ceiling(max(stat_res$MAX) * 1.05))
+letter_nudge_y <- (y_range[2] - max(stat_res$MAX)) * 0.43
+
+p1 <- ggplot(over3leaf, aes(TEMP, nbt_mean, color = TEMP, text = img_name)) +
+    facet_wrap( ~ factor(ROOT_TYPE, levels = c("Se", "Cr", "postCr")), ncol = 3) +
+    theme_bw() +
+    labs(
+        subtitle = paste0("DAT", unique(over3leaf$DAT)),
+        # x = bquote(bold("Temperature ("*degree*"C)")), 
+        x = "Temperature (\u00B0C)", 
+        y = "NBT intensity"
+    ) +
+    geom_point(position = position_jitter(width = 0.1)) +
+    geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
+    geom_text(
+        data = stat_res,
+        mapping = aes(indep_var, MAX + letter_nudge_y, label = letter),
+        size = 7,
+        inherit.aes = FALSE
+    ) +
+    scale_y_continuous(limits = y_range) +
+    scale_color_brewer(palette = "Set1", direction = -1) +
+    theme(
+        text = element_text(family = "sans", face = "bold", size = 20),
+        axis.title.x.bottom = element_text(margin = margin(t = 10)),
+        axis.title.y.left = element_text(margin = margin(r = 10)),
+        legend.position = "none"
+    )
+ggplotly(p1)
+```
