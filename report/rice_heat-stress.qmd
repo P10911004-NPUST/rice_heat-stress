@@ -1,0 +1,188 @@
+---
+title: "Rice heat-stress"
+page-layout: full
+format: 
+  html:
+      grid: 
+        body-width: 800px
+        sidebar-width: 0px
+        margin-width: 200px
+      toc: true
+editor: source
+execute: 
+  eval: true
+  echo: false
+  include: false
+  warning: false
+fig-dpi: 660
+fig-format: jpeg
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+suppressMessages({
+    rm(list = ls())
+    gc()
+    if (!is.null(dev.list())) dev.off()
+    
+    source("https://github.com/P10911004-NPUST/statools/blob/main/R/oneway_test.R?raw=TRUE")
+    
+    library(tidyverse)
+    library(geomtextpath)
+    library(plotly)
+})
+```
+
+```{r}
+csv_list <- list.files("../img/NBT/", pattern = "\\.csv$", full.names = TRUE, recursive = TRUE)
+csv_list <- csv_list[grep("OUT_DAT", csv_list)]
+
+rawdata <- map(csv_list, read.csv) %>% list_rbind()
+rawdata <- rawdata %>% 
+    mutate(
+        DAT = as.factor(str_replace(img_name, ".*DAT(\\d(\\d)?).*", "\\1")),
+        TEMP = as.factor(str_replace(img_name, ".*T(\\d(\\d)?).*", "\\1")),
+        REP = as.numeric(str_replace(img_name, ".*R(\\d(\\d)?).*", "\\1")),
+        ROOT_TYPE = factor(str_extract(img_name, "Se|Cr|postCr")),
+        nbt_intensity = nbt_intensity / 1e6,
+        nbt_area = nbt_area / 1000,
+        is_good_data = !(str_detect(img_name, "cancel") | is.na(nbt_area) | is.na(nbt_intensity))
+    )
+
+root_n <- rawdata %>%
+    group_by(DAT, TEMP, REP) %>% 
+    count(ROOT_TYPE, .drop = FALSE) %>% 
+    ungroup() %>% 
+    summarise(
+        AVG = mean(n), 
+        SE = sd(n) / sqrt(length(n)),
+        .by = c(DAT, TEMP, ROOT_TYPE)
+    )
+
+desc_df <- rawdata %>% 
+    filter(is_good_data) %>% 
+    summarise(
+        area_mean = mean(nbt_area),
+        area_max = max(nbt_area),
+        intensity_mean = mean(nbt_intensity),
+        intensity_max = max(nbt_intensity),
+        .by = c(DAT, TEMP, ROOT_TYPE)
+    )
+```
+
+# Root type emergence
+```{r, include=TRUE}
+#| label: fig-root-emergence
+#| fig-cap: "Emergence of different root types after 2-5 days of 28&deg;C (blue) and 38&deg;C (red) heat treatment. Se: Seminal root, Cr: embryonic crown root, postCr: post-embryonic crown root."
+
+root_n <- filter(root_n, ROOT_TYPE != "Se")
+root_n$group <- as.factor(paste(root_n$TEMP, root_n$ROOT_TYPE))
+
+p0 <- root_n %>% 
+    ggplot(aes(DAT, AVG, color = TEMP, linetype = ROOT_TYPE, group = group, label = ROOT_TYPE)) +
+    theme_minimal() +
+    labs(
+        x = "Days after treatment", 
+        y = "Number of roots", 
+        color = "Temparature", 
+        linetype = element_blank()
+    ) +
+    geom_point(size = 2) +
+    geom_errorbar(aes(ymin = AVG - SE, ymax = AVG + SE), width = 0.1, alpha = 0.7) +
+    geom_textline(linewidth = 0.5, hjust = 0.92, size = 5) +
+    scale_y_continuous(limits = c(0, 5)) +
+    scale_color_brewer(palette = "Set1", direction = -1) +
+    theme(
+        text = element_text(family = "sans", face = "bold", size = 20),
+        axis.title.x.bottom = element_text(margin = margin(t = 10)),
+        axis.title.y.left = element_text(margin = margin(r = 10)),
+        legend.position = "none",
+        legend.title = element_text(size = 16),
+        legend.text = element_text(face = "plain", size = 14)
+    )
+p0
+```
+
+# NBT staining intensity
+
+```{r}
+stat_res <- data.frame()
+for (dat in unique(rawdata$DAT)){
+    df0 <- rawdata %>% filter(DAT == dat)
+    for (root in unique(df0$ROOT_TYPE)){
+        df1 <- df0 %>% 
+            filter(ROOT_TYPE == root) %>% 
+            filter(is_good_data) %>% 
+            drop_na()
+        
+        sample_size <- df1 %>% 
+            count(TEMP) %>% 
+            summarise(n = min(n))
+        
+        if (sample_size$n < 3) next
+        
+        res <- oneway_test(df1, nbt_intensity ~ TEMP)$results
+        res$ROOT_TYPE <- root
+        res$DAT <- dat
+        
+        stat_res <- rbind(stat_res, res)
+    }
+}
+```
+
+<br>
+
+## DAT 2
+
+```{r, include=TRUE}
+p0 <- rawdata %>% 
+    filter(is_good_data) %>% 
+    filter(DAT == 2) %>% 
+    drop_na()
+
+.stat_res <- filter(stat_res, DAT == 2)
+
+y_range <- c(floor(min(.stat_res$MIN) * 0.9), ceiling(max(.stat_res$MAX) * 1.2))
+letter_nudge_y <- (y_range[2] - max(.stat_res$MAX)) * 0.43
+.stat_res$letter_pos <- .stat_res$MAX + letter_nudge_y
+
+ggplot(p0, aes(TEMP, nbt_intensity)) +
+    facet_wrap( ~ ROOT_TYPE, nrow = 1) +
+    theme_bw() +
+    labs(
+        x = bquote(bold("Temperature ("*degree*"C)")), 
+        y = "NBT intensity"
+    ) +
+    geom_point(position = position_jitter(width = 0.1)) +
+    geom_boxplot(alpha = 0.3, outlier.shape = NA) +
+    geom_text(
+        data = .stat_res,
+        mapping = aes(indep_var, MAX + letter_nudge_y, label = letter),
+        size = 5
+    ) +
+    scale_y_continuous(limits = y_range) +
+    theme(
+        text = element_text(family = "sans", face = "bold", size = 20),
+        axis.title.x.bottom = element_text(margin = margin(t = 10)),
+        axis.title.y.left = element_text(margin = margin(r = 10))
+    )
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
