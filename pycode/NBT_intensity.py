@@ -118,5 +118,5 @@ def nbt_intensity(img_path):
 # # DAT 5
 # nbt_intensity("./img/NBT/DAT5_28-vs-38_20240418")
 
-# DAT 3 over 3 leaf
-nbt_intensity("./img/NBT/DAT3_28-vs-38_over3leaf_20240425")
+# # DAT 3 over 3 leaf
+# nbt_intensity("./img/NBT/DAT3_28-vs-38_over3leaf_20240425")

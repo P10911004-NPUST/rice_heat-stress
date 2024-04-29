@@ -1,9 +1,10 @@
 ---
 title: "Rice heat-stress"
+date: 2024-Apr-26
 format: 
   html:
       grid: 
-        body-width: 1000px
+        body-width: 1100px
         sidebar-width: 0px
         margin-width: 200px
       toc: true
@@ -13,8 +14,7 @@ execute:
   echo: false
   include: false
   warning: false
-fig-dpi: 660
-fig-format: png
+fig-format: svg
 editor_options: 
   chunk_output_type: console
 ---
@@ -34,17 +34,6 @@ suppressMessages({
 })
 ```
 
-# Heat treatment after 2-days after germination
-
-| Microscope parameter | Value  |
-|:--------------------:|:------:|
-|    Exposure time     | 500 ms |
-|         Cost         |  2.0   |
-|   Light intensity    |  30%   |
-|    Visual Magnif.    |  50X   |
-
-<br>
-
 ```{r}
 csv_list <- list.files("../img/NBT/", pattern = "\\.csv$", full.names = TRUE, recursive = TRUE)
 csv_list <- csv_list[grep("OUT_DAT", csv_list)]
@@ -62,6 +51,7 @@ rawdata <- rawdata %>%
         nbt_area = nbt_area / 1000,
         is_good_data = !(str_detect(img_name, "cancel") | is.na(nbt_area) | is.na(nbt_intensity))
     )
+# write.csv(rawdata, "combined_rawdata.csv", row.names = FALSE)
 
 root_n <- rawdata %>%
     group_by(DAT, TEMP, REP) %>% 
@@ -70,16 +60,6 @@ root_n <- rawdata %>%
     summarise(
         AVG = mean(n), 
         SE = sd(n) / sqrt(length(n)),
-        .by = c(DAT, TEMP, ROOT_TYPE)
-    )
-
-desc_df <- rawdata %>% 
-    filter(is_good_data) %>% 
-    summarise(
-        area_mean = mean(nbt_area),
-        area_max = max(nbt_area),
-        intensity_mean = mean(nbt_intensity),
-        intensity_max = max(nbt_intensity),
         .by = c(DAT, TEMP, ROOT_TYPE)
     )
 ```
@@ -119,8 +99,6 @@ p0
 ```
 
 # NBT staining intensity
-
-<!-- # Statistics -->
 
 ```{r}
 stat_res_0 <- data.frame()
@@ -171,7 +149,7 @@ for (dat in unique(rawdata$DAT)){
             y = "NBT intensity"
         ) +
         geom_point(position = position_jitter(width = 0.1)) +
-        geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
+        geom_boxplot(alpha = 0.3, outliers = FALSE, outlier.shape = NA) +
         geom_text(
             data = stat_res_1,
             mapping = aes(indep_var, MAX + letter_nudge_y, label = letter),
@@ -193,7 +171,18 @@ for (dat in unique(rawdata$DAT)){
 }
 ```
 
-## DAT 2
+## Samples: two-day after germination
+
+| Microscope parameter | Value  |
+|:--------------------:|:------:|
+|    Exposure time     | 500 ms |
+|         Cost         |  2.0   |
+|   Light intensity    |  30%   |
+|    Visual Magnif.    |  50X   |
+
+<br>
+
+### DAT 2
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_2)
@@ -201,29 +190,43 @@ ggplotly(p0$DAT_2)
 
 <br>
 
-::: {layout-ncol=3}
-![](images/DAT2/DAT2_T28_R1_Se_RAW_ch00.png)
+::: {#fig-DAT2_Se layout-ncol=3}
+![](images/DAT2_28-vs-38_20240415/DAT2_T28_R1_Se_RAW_ch00.png)
 
-![](images/DAT2/DAT2_T28_R3_Se_RAW_ch00.png)
+![](images/DAT2_28-vs-38_20240415/DAT2_T28_R3_Se_RAW_ch00.png)
 
-![](images/DAT2/DAT2_T28_R4_Se_RAW_ch00.png)
+![](images/DAT2_28-vs-38_20240415/DAT2_T28_R4_Se_RAW_ch00.png)
 
-Seminal root
-:::
+![](images/DAT2_28-vs-38_20240415/DAT2_T38_R1_Se_RAW_ch00.png)
 
-::: {layout-ncol=3}
-![](images/DAT2/DAT2_T28_R1_Cr1_RAW_ch00.png)
+![](images/DAT2_28-vs-38_20240415/DAT2_T38_R3_Se_RAW_ch00.png)
 
-![](images/DAT2/DAT2_T28_R3_Cr1_RAW_ch00.png)
+![](images/DAT2_28-vs-38_20240415/DAT2_T38_R4_Se_RAW_ch00.png)
 
-![](images/DAT2/DAT2_T28_R4_Cr1_RAW_ch00.png)
-
-Crown root
+NBT staining intensity of the **seminal** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 2 days.
 :::
 
 <br>
 
-## DAT 3
+::: {#fig-DAT2_Cr layout-ncol=3}
+![](images/DAT2_28-vs-38_20240415/DAT2_T28_R1_Cr1_RAW_ch00.png)
+
+![](images/DAT2_28-vs-38_20240415/DAT2_T28_R3_Cr1_RAW_ch00.png)
+
+![](images/DAT2_28-vs-38_20240415/DAT2_T28_R4_Cr1_RAW_ch00.png)
+
+![](images/DAT2_28-vs-38_20240415/DAT2_T38_R1_Cr1_RAW_ch00.png)
+
+![](images/DAT2_28-vs-38_20240415/DAT2_T38_R3_Cr1_RAW_ch00.png)
+
+![](images/DAT2_28-vs-38_20240415/DAT2_T38_R4_Cr1_RAW_ch00.png)
+
+NBT staining intensity of the **crown** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 2 days.
+:::
+
+<br><hr><br>
+
+### DAT 3
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_3)
@@ -231,29 +234,43 @@ ggplotly(p0$DAT_3)
 
 <br>
 
-::: {layout-ncol=3}
-![](images/DAT3/DAT3_T28_R1_Se_RAW_ch00.png)
+::: {#fig-DAT3_Se layout-ncol=3}
+![](images/DAT3_28-vs-38_20240416/DAT3_T28_R1_Se_RAW_ch00.png)
 
-![](images/DAT3/DAT3_T28_R1_Se_RAW_ch00.png)
+![](images/DAT3_28-vs-38_20240416/DAT3_T28_R2_Se_RAW_ch00.png)
 
-![](images/DAT3/DAT3_T28_R1_Se_RAW_ch00.png)
+![](images/DAT3_28-vs-38_20240416/DAT3_T28_R3_Se_RAW_ch00.png)
 
-Seminal root
-:::
+![](images/DAT3_28-vs-38_20240416/DAT3_T38_R1_Se_RAW_ch00.png)
 
-::: {layout-ncol=3}
-![](images/DAT2_T28_R1_Cr1_RAW_ch00.png)
+![](images/DAT3_28-vs-38_20240416/DAT3_T38_R2_Se_RAW_ch00.png)
 
-![](images/DAT2_T28_R3_Cr1_RAW_ch00.png)
+![](images/DAT3_28-vs-38_20240416/DAT3_T38_R3_Se_RAW_ch00.png)
 
-![](images/DAT2_T28_R4_Cr1_RAW_ch00.png)
-
-Crown root
+NBT staining intensity of the **seminal** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 3 days.
 :::
 
 <br>
 
-## DAT 4
+::: {#fig-DAT3_Cr layout-ncol=3}
+![](images/DAT3_28-vs-38_20240416/DAT3_T28_R1_Cr1_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_20240416/DAT3_T28_R2_Cr1_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_20240416/DAT3_T28_R3_Cr1_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_20240416/DAT3_T38_R1_Cr1_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_20240416/DAT3_T38_R4_Cr1_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_20240416/DAT3_T38_R3_Cr1_RAW_ch00.png)
+
+NBT staining intensity of the **crown** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 3 days.
+:::
+
+<br><hr><br>
+
+### DAT 4
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_4)
@@ -261,13 +278,87 @@ ggplotly(p0$DAT_4)
 
 <br>
 
-## DAT 5
+::: {#fig-DAT4_Se layout-ncol=3}
+![](images/DAT4_28-vs-38_20240417/DAT4_T28_R1_Se_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T28_R2_Se_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T28_R3_Se_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T38_R7_Se_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T38_R3_Se_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T38_R1_Se_20240417_RAW_ch00.png)
+
+NBT staining intensity of the **seminal** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 4 days.
+:::
+
+<br>
+
+::: {#fig-DAT4_Cr layout-ncol=3}
+![](images/DAT4_28-vs-38_20240417/DAT4_T28_R4_Cr3_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T28_R8_Cr3_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T28_R8_Cr1_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T38_R4_Cr3_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T38_R8_Cr3_20240417_RAW_ch00.png)
+
+![](images/DAT4_28-vs-38_20240417/DAT4_T38_R8_Cr1_20240417_RAW_ch00.png)
+
+NBT staining intensity of the **crown** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 4 days.
+:::
+
+<br><hr><br>
+
+### DAT 5
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_5)
 ```
 
-## DAT3 (Over-3-leaf)
+<br>
+
+::: {#fig-DAT5_Se layout-ncol=3}
+![](images/DAT5_28-vs-38_20240418/DAT5_T28_R1_Se_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T28_R2_Se_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T28_R3_Se_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T38_R1_Se_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T38_R2_Se_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T38_R3_Se_20240418_RAW_ch00.png)
+
+NBT staining intensity of the **seminal** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 5 days.
+:::
+
+<br>
+
+::: {#fig-DAT5_Cr layout-ncol=3}
+![](images/DAT5_28-vs-38_20240418/DAT5_T28_R1_Cr1_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T28_R2_Cr1_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T28_R3_Cr1_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T38_R1_Cr1_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T38_R2_Cr1_20240418_RAW_ch00.png)
+
+![](images/DAT5_28-vs-38_20240418/DAT5_T38_R3_Cr1_20240418_RAW_ch00.png)
+
+NBT staining intensity of the **crown** roots after treated with 28&deg;C (up) and 38&deg;C (down) for 5 days.
+:::
+
+<br><hr><br>
+
+## Samples: three-leaf age
 
 Check for post-embryonic crown root.
 
@@ -279,6 +370,8 @@ Check for post-embryonic crown root.
 |    Visual Magnif.    |  30X   |
 
 <br>
+
+### Post-embryonic crown roots
 
 ```{r, include=TRUE}
 over3leaf <- list.files("../img/NBT/", pattern = "over3leaf", full.names = TRUE, recursive = TRUE)
@@ -328,11 +421,28 @@ ggplotly(p1)
 
 <br>
 
-# NBT staining intensity average
+::: {#fig-DAT3_postCr layout-ncol=3}
+![](images/DAT3_28-vs-38_over3leaf_20240425/DAT3_T28_R2_postCr1_20240425_30X_RAW_ch00.png)
 
-Averaging the NBT intensity by the staining area seems minimizing the variations. \$ NBT intensity average = \frac{NBT staining intensity}{NBT staining area} \$
+![](images/DAT3_28-vs-38_over3leaf_20240425/DAT3_T28_R2_postCr2_20240425_30X_RAW_ch00.png)
 
-<!-- # Statistics -->
+![](images/DAT3_28-vs-38_over3leaf_20240425/DAT3_T28_R2_postCr3_20240425_30X_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_over3leaf_20240425/DAT3_T38_R2_postCr1_20240425_30X_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_over3leaf_20240425/DAT3_T38_R2_postCr2_20240425_30X_RAW_ch00.png)
+
+![](images/DAT3_28-vs-38_over3leaf_20240425/DAT3_T38_R2_postCr3_20240425_30X_RAW_ch00.png)
+
+NBT staining intensity of the **post-embryonic** crown roots after treated with 28&deg;C (up) and 38&deg;C (down) for 3 days.
+:::
+
+<br>
+
+# NBT staining intensity per area
+
+Averaging the NBT intensity by the staining area seems minimizing the variations. 
+$$ NBT\ intensity\ per\ area = \frac{NBT\ staining\ intensity}{NBT\ staining\ area} $$
 
 ```{r}
 stat_res_0 <- data.frame()
@@ -371,7 +481,7 @@ for (dat in unique(rawdata$DAT)){
         filter(ROOT_TYPE %in% unique(stat_res_1$ROOT_TYPE)) %>% 
         drop_na()
     
-    y_range <- c(floor(min(stat_res_1$MIN) * 0.85), ceiling(max(stat_res_1$MAX) * 1.25))
+    y_range <- c(floor(min(stat_res_1$MIN) * 0.9), ceiling(max(stat_res_1$MAX) * 1.1))
     letter_nudge_y <- (y_range[2] - max(stat_res_1$MAX)) * 0.43
     
     p1 <- ggplot(df0, aes(TEMP, nbt_mean, color = TEMP, text = img_name)) +
@@ -380,7 +490,7 @@ for (dat in unique(rawdata$DAT)){
         labs(
             subtitle = paste0("DAT", dat),
             x = "Temperature (\u00B0C)", 
-            y = "NBT intensity average"
+            y = "NBT intensity per area"
         ) +
         geom_point(position = position_jitter(width = 0.1)) +
         geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
@@ -405,37 +515,52 @@ for (dat in unique(rawdata$DAT)){
 }
 ```
 
-## DAT 2
+<br>
+
+## Samples: two-day after germination
+
+| Microscope parameter | Value  |
+|:--------------------:|:------:|
+|    Exposure time     | 500 ms |
+|         Cost         |  2.0   |
+|   Light intensity    |  30%   |
+|    Visual Magnif.    |  50X   |
+
+<br>
+
+### DAT 2
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_2)
 ```
 
-<br>
+<br><hr><br>
 
-## DAT 3
+### DAT 3
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_3)
 ```
 
-<br>
+<br><hr><br>
 
-## DAT 4
+### DAT 4
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_4)
 ```
 
-<br>
+<br><hr><br>
 
-## DAT 5
+### DAT 5
 
 ```{r, include=TRUE}
 ggplotly(p0$DAT_5)
 ```
 
-## DAT3 (Over-3-leaf)
+<br>
+
+## Samples: three-leaf age
 
 Check for post-embryonic crown root.
 
@@ -446,7 +571,14 @@ Check for post-embryonic crown root.
 |   Light intensity    |  30%   |
 |    Visual Magnif.    |  30X   |
 
+<br>
+
+### Post-embryonic crown roots
+
 ```{r, include=TRUE}
+#| label: fig-over3leaf
+#| fig-cap: "Observation of post-embryonic crown root NBT staining condition. The 3-leaf age samples were respectively treated with 28&deg;C and 38&deg;C for 3 days."
+
 over3leaf <- list.files("../img/NBT/", pattern = "over3leaf", full.names = TRUE, recursive = TRUE)
 over3leaf <- read.csv(over3leaf) %>% 
     filter(str_detect(img_name, "30X")) %>% 
@@ -473,7 +605,7 @@ p1 <- ggplot(over3leaf, aes(TEMP, nbt_mean, color = TEMP, text = img_name)) +
         subtitle = paste0("DAT", unique(over3leaf$DAT)),
         # x = bquote(bold("Temperature ("*degree*"C)")), 
         x = "Temperature (\u00B0C)", 
-        y = "NBT intensity"
+        y = "NBT intensity per area"
     ) +
     geom_point(position = position_jitter(width = 0.1)) +
     geom_boxplot(alpha = 0.3, outlier.shape = NA, outliers = FALSE) +
@@ -493,3 +625,33 @@ p1 <- ggplot(over3leaf, aes(TEMP, nbt_mean, color = TEMP, text = img_name)) +
     )
 ggplotly(p1)
 ```
+
+
+# Ongoing tasks
+1. Arabidopsis heat-stress isoform alternative splicing detection;
+2. Automatic NBT staining detection;
+3. RGF1 downstreams (datasets: ***col*** vs ***ritf1***);
+4. Rice heat-stress experiment (root type, temp., and RGF1 conc. determination);
+5. EDU staining (meristem cell counting);
+6. Rice mutant lines screening;
+7. GUS staining
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
