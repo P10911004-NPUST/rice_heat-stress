@@ -1,5 +1,5 @@
-import math
 import cv2
+import math
 
 def min_filter(img, kernel=(3, 3), iteration=1):
    shape = cv2.MORPH_RECT
