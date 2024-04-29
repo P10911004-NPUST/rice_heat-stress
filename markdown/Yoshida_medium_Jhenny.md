@@ -12,8 +12,7 @@
 | K<sub>2</sub>SO<sub>4</sub>                                |   71.4    |   VIII   |
 | CaCl<sub>2</sub>                                           |   88.6    |    IV    |
 | MgSO<sub>4</sub> &bullet; 7H<sub>2</sub>O                  |    324    |   VIII   |
-
-|
+|                                                            |           |
 
 | Complete 800x Micro stock                                                                   | Grams / L | Location |
 | :------------------------------------------------------------------------------------------ | :-------: | :------: |
@@ -24,8 +23,7 @@
 | CuSO<sub>4</sub> &bullet; 5H<sub>2</sub>O                                                   |   0.031   |
 | FeCl<sub>3</sub> &bullet; 6H<sub>2</sub>O                                                   |    7.7    |
 | Citric acid (monohydrate)                                                                   |   11.9    |
-
-|
+|                                                                                             |           |
 
 ### 稀釋培養液 ( pH 5.8 )
 
