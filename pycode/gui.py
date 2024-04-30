@@ -53,12 +53,13 @@ def run_nbt():
 
     df0 = pd.DataFrame.from_dict(df0)
     df0.to_csv(output_csv, index=False)
-
     nbt_label_log.set("Finished !")
 
 
 if __name__ == "__main__":
+
     root = tk.Tk()
+    root.iconbitmap("icon.ico")
     root.title("RIA")
     root.geometry("600x350")
 
@@ -91,11 +92,18 @@ if __name__ == "__main__":
     ############################################################################
     # Run NBT
     ############################################################################
+
     nbt_frame = tk.Frame(master=root)
+
     nbt_button = tk.Button(
-        master=nbt_frame, text="NBT intensity", font="Calibri 15", command=run_nbt
+        master=nbt_frame,
+        text="NBT intensity",
+        font="Calibri 15",
+        command=run_nbt,
     )
+
     nbt_label_log = tk.StringVar()
+
     nbt_label = tk.Label(
         master=nbt_frame,
         text="NBT intensity",
