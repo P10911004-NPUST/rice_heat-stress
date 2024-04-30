@@ -1,11 +1,6 @@
 import os
 import tkinter as tk
 from tkinter import filedialog
-import ttkbootstrap as ttk
-
-root = tk.Tk()
-root.title("RIA")
-root.geometry("600x350")
 
 
 def select_folder():
@@ -15,53 +10,45 @@ def select_folder():
         for i in os.listdir(dirname)
         if i.lower().endswith((".jpg", ".jpeg", "tif", "tiff", "png"))
     ]
-    img_count.set(f"Load in {len(images)} images")
-    img_list.set(images)
+    folder_img_list.set(images)
+    folder_img_num.set(f"Load in {len(images)} images")
 
 
-def select_file():
-    dirname = filedialog.askopenfilenames()
-    images = [
-        i
-        for i in os.listdir(dirname)
-        if i.lower().endswith((".jpg", ".jpeg", "tif", "tiff", "png"))
-    ]
+if __name__ == "__main__":
 
-    img_count.set(f"Load in {len(images)} images")
-    img_list.set(images)
+    root = tk.Tk()
+    root.title("RIA")
+    root.geometry("600x350")
 
+    title_label = tk.Label(
+        master=root, text="Root Image Analyzer (RIA)", font=("Calibri 20 bold")
+    )
+    title_label.pack()
 
-title_label = tk.Label(
-    master=root, text="Root Image Analyzer (RIA)", font=("Calibri 20 bold")
-)
-title_label.pack()
+    """ Folder selection
+    Select folder only, the program will automatically read in images within the directory specified
+    """
+    folder_frame = tk.Frame(master=root)
 
-folder_frame = tk.Frame(master=root)
-folder_button = tk.Button(
-    master=folder_frame,
-    text="Select folder",
-    font=("Calibri 15"),
-    command=select_folder,
-)
-folder_frame.pack(pady=20, padx=20)
-folder_button.pack(side="top")
+    folder_button = tk.Button(
+        master=folder_frame,
+        text="Select folder",
+        font=("Calibri 15"),
+        command=select_folder,
+    )
 
-file_frame = tk.Frame(master=root)
-file_button = tk.Button(
-    master=folder_frame,
-    text="Select file",
-    font=("Calibri 15"),
-    command=select_file,
-)
-file_frame.pack(pady=20, padx=20)
-file_button.pack(side="bottom")
+    folder_img_num = tk.StringVar()
+    folder_img_list = tk.StringVar()
 
-img_count = tk.StringVar()
-img_list = tk.StringVar()
-label_img_count = tk.Label(master=root, textvariable=img_count)
-label_img_list = tk.Label(master=root, textvariable=img_list)
-label_img_list.pack(side="bottom")
-label_img_count.pack(side="right")
+    folder_label = tk.Label(
+        master=folder_frame,
+        text="Select folder with images",
+        font=("Calibri 15"),
+        textvariable=folder_img_num,
+    )
 
+    folder_frame.pack(pady=20, padx=20)
+    folder_button.pack(padx=20, side="left", anchor="center")
+    folder_label.pack(padx=20, side="right", anchor="center")
 
-root.mainloop()
+    root.mainloop()
