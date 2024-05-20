@@ -29,7 +29,6 @@
 
 |     | 1L  | 2L  | 4L  | 存放位置 |
 | :-- | :-: | :-: | :-: | :------: |
-
 800x Macro stock (mL)
 NH<sub>4</sub>NO<sub>3</sub> | 1.25 | 2.5 | 5 |
 NaH2PO4 &bullet; H<sub>2</sub>O | 1.25 | 2.5 | 5 |

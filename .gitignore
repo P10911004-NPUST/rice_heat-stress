@@ -36,8 +36,10 @@
 # Environment
 /pyenv
 /renv
-/report/rice_heat-stress_files
-/report/rice_heat-stress.html
+/report
+/results
+/img
+/misc
 
 # History files
 .Rhistory
