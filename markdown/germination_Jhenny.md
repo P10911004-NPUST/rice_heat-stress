@@ -39,7 +39,7 @@
 
 ### 配製消毒液
 
-> 2.5% Bleach (漂白水) --> 2.4 ml  
+> 6% Bleach (漂白水) --> 2.4 ml  (最終濃度為 2.5% )  
 > ddH<sub>2</sub>O --> 2.6 ml  
 > Tween20 (展著劑) --> 1 drop
 
@@ -64,3 +64,15 @@
 8. 播種至裝有 40ml 培養液的離心管內的鐵絲網上，每管一顆；
 9. 視情況調整鐵絲網高度，使種子稍微接觸液面即可；
 10. 暗室 30&deg;C，培養 48 小時。
+
+<br>
+
+# Optimal temperature
+| Stage | Optimal temperature (&deg;C) |
+| :---: | :---: |
+Germination | 20 - 35
+Coleoptile emergence | 25 - 30
+Rooting | 25 - 28
+Leaf exertion | 31
+Tillering | 31
+| | |

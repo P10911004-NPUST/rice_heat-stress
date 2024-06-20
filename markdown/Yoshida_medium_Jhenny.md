@@ -12,18 +12,20 @@
 | K<sub>2</sub>SO<sub>4</sub>                                |   71.4    |   VIII   |
 | CaCl<sub>2</sub>                                           |   88.6    |    IV    |
 | MgSO<sub>4</sub> &bullet; 7H<sub>2</sub>O                  |    324    |   VIII   |
-|                                                            |           |
+|                                                            |           |          |
+
+#### Micro-stock
 
 | Complete 800x Micro stock                                                                   | Grams / L | Location |
 | :------------------------------------------------------------------------------------------ | :-------: | :------: |
-| MnCl<sub>2</sub> &bullet; 4H<sub>2</sub>O                                                   |    1.5    |          |
-| (NH<sub>4</sub>)<sub>6</sub> &bullet; MO<sub>7</sub>O<sub>24</sub> &bullet; 4H<sub>2</sub>O |   0.074   |
-| H<sub>3</sub>BO<sub>3</sub>                                                                 |   0.934   |
-| ZnSO<sub>4</sub> &bullet; 7H<sub>2</sub>O                                                   |   0.035   |
-| CuSO<sub>4</sub> &bullet; 5H<sub>2</sub>O                                                   |   0.031   |
-| FeCl<sub>3</sub> &bullet; 6H<sub>2</sub>O                                                   |    7.7    |
-| Citric acid (monohydrate)                                                                   |   11.9    |
-|                                                                                             |           |
+| MnCl<sub>2</sub> &bullet; 4H<sub>2</sub>O                                                   |    1.5    |   VIII   |
+| (NH<sub>4</sub>)<sub>6</sub> &bullet; MO<sub>7</sub>O<sub>24</sub> &bullet; 4H<sub>2</sub>O |   0.074   |   VIII   |
+| H<sub>3</sub>BO<sub>3</sub>                                                                 |   0.934   |   VIII   |
+| ZnSO<sub>4</sub> &bullet; 7H<sub>2</sub>O                                                   |   0.035   |   VIII   |
+| CuSO<sub>4</sub> &bullet; 5H<sub>2</sub>O                                                   |   0.031   |   VIII   |
+| FeCl<sub>3</sub> &bullet; 6H<sub>2</sub>O                                                   |    7.7    |   VIII   |
+| Citric acid (monohydrate)                                                                   |   11.9    |   VIII   |
+|                                                                                             |           |          |
 
 ### 稀釋培養液 ( pH 5.8 )
 
