@@ -2,7 +2,7 @@
 
 ## 配製 NBT 溶液
 > 10 mM sodium phosphate buffer (pH 7.8)  
-10 mM NaN<sub>3</sub>  
+10 mM NaN<sub>3</sub> (sodium azide; located in IV)  
 1 mg mL<sup>-1</sup> NBT powder
 
 每個樣本大約需要 0.5 ml NBT 溶液浸泡。  
