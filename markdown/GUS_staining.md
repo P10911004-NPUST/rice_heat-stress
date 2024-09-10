@@ -10,13 +10,11 @@ Thereafter observed under a dissection microscope.
 
 ## Prepare GUS solution
 | Chemical | Concentration | Storage location |
-|      :---     | :---: | :---: |  
-|      X-Gluc   | 1 mM | -20&deg;C |  
-|      Na-P     | 50 mM |  III   |
-|     Methanol  | 7% |  D  |
-|  TritonX-100  | 0.1%  | II |
-||||
-
+|      :---      | :---:  |    :---:  |  
+|      X-Gluc    | 1 mM   | -20&deg;C |  
+|      Na-P      | 50 mM  |     III   |
+|     Methanol   | 7%     |      D    |
+|  TritonX-100   | 0.1%   |      II   |
 
 ### X-Gluc
 > IUPAC name: 5-Bromo-4-chloro-1H-indol-3-yl β-D-glucopyranosiduronic acid  
@@ -25,26 +23,26 @@ Thereafter observed under a dissection microscope.
 Should be dissolved in DMF.  
 Prepare 100 mM stock solution on N,N,-dimethylformamide (DMF) and store at -20&deg;C.  
 
-$ 0.1\ M = \frac{\frac{x\ g}{422.61\ gmol^{-1}}}{0.01\ L} $
+$$0.1\ M = \frac{\frac{x\ g}{422.61\ gmol^{-1}}}{0.01\ L}$$
 
-$ x = 0.42261 g $
+$$x = 0.42261 g$$
 
 > Dissolve **0.42261 g** X-Gluc in **10 mL** DMF
 
-|   total   |  100 mL  |
-|   :---   |  :---:  |
-|  100 mM X-Gluc  |   1 mL  |
-|  Na-P (pH7.0)   |  50 mL  |
-|  Methanol       |   7 mL  |
-|  TritonX-100    | 100 mL  |
-|  ddH<sub>2</sub>O          |  42 mL  |
-|||
+|   total               |   100 mL  |
+|   :---                |   :---:   |
+|   100 mM X-Gluc       |    1 mL   |
+|   Na-P (pH7.0)        |   50 mL   |
+|   Methanol            |    7 mL   |
+|   TritonX-100         |  100 mL   |
+|   ddH<sub>2</sub>O    |   42 mL   |
+
 
 
 ### Sodium phosphate (Na-P) (pH 7.0)
-|  Chemical | Concentration | Storage location |  Addition |
+|  Chemical            | Concentration | Storage location |  Addition |
 |      :---     | :---: | :---: |   :----:      |
-|      Na<sub>2</sub>HPO<sub>4</sub>   | 1 M | III |  57.7 mL |
-|      NaH<sub>2</sub>PO<sub>4</sub>     | 1 M |  III   |  42.3 mL |
-| Total |     |   |    100 mL   |
-|||| |
+|      Na<sub>2</sub>HPO<sub>4</sub>     |  1 M |   III |   57.7 mL |
+|      NaH<sub>2</sub>PO<sub>4</sub>     |  1 M |   III |   42.3 mL |
+|      Total                             |      |       |  100 mL   |
+
