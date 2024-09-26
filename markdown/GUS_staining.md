@@ -9,14 +9,23 @@ Stained samples were destained in ethanol (for root, water is fine) until the ch
 Thereafter observed under a dissection microscope.
 
 ## Prepare GUS solution
-| Chemical | Concentration | Storage location |
+| Stock             |  Concentration  |  Storage location  |  Addition  |
+| :---               | :---: | :---: |   ----:      |
+| X-Gluc                       |  100 mM  |  -20&deg;C  | 1 mL   |
+| Sodium phosphate |   50 mM  | III |  50 mL   |
+| Methanol                     |   100%     |   D   |    7 mL   |
+| TritonX-100        | 100%  | II  |  0.1 mL   |
+| ddH<sub>2</sub>O   |    |    |   42 mL   |
+| Total    |         |        |          100 mL                    |
+
+<!-- | Chemical | Concentration | Storage location |
 |      :---      | :---:  |    :---:  |  
 |      X-Gluc    | 1 mM   | -20&deg;C |  
 |      Na-P      | 50 mM  |     III   |
 |     Methanol   | 7%     |      D    |
-|  TritonX-100   | 0.1%   |      II   |
+|  TritonX-100   | 0.1%   |      II   | -->
 
-### X-Gluc
+### Prepare 100 mM X-Gluc stock solution
 > IUPAC name: 5-Bromo-4-chloro-1H-indol-3-yl β-D-glucopyranosiduronic acid  
 > Other name: 5-Bromo-4-chloro-3-indolyl-β-D-glucuronide
 
@@ -25,21 +34,12 @@ Prepare 100 mM stock solution on N,N,-dimethylformamide (DMF) and store at -20&d
 
 $$0.1\ M = \frac{\frac{x\ g}{422.61\ gmol^{-1}}}{0.01\ L}$$
 
-$$x = 0.42261 g$$
+$$x = 0.42261\ g = 422.61\ mg$$
 
-> Dissolve **0.42261 g** X-Gluc in **10 mL** DMF
-
-|   total               |   100 mL  |
-|   :---                |   :---:   |
-|   100 mM X-Gluc       |    1 mL   |
-|   Na-P (pH7.0)        |   50 mL   |
-|   Methanol            |    7 mL   |
-|   TritonX-100         |  100 mL   |
-|   ddH<sub>2</sub>O    |   42 mL   |
+> Dissolve **422.61 mg** X-Gluc in **10 mL** DMF
 
 
-
-### Sodium phosphate (Na-P) (pH 7.0)
+### Prepare 100 mM sodium phosphate stock solution (pH 7.0)
 |  Chemical            | Concentration | Storage location |  Addition |
 |      :---     | :---: | :---: |   :----:      |
 |      Na<sub>2</sub>HPO<sub>4</sub>     |  1 M |   III |   57.7 mL |
