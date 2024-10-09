@@ -1,3 +1,8 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
 # RNeasy&reg; Micro Kit
 
 The kit contents:
@@ -40,7 +45,9 @@ The kit contents:
 <sup>4</sup> **DNase I incubation mix**: Add 10 &micro;L DNase I stock solution to 70 &micro;L Buffer RDD, mix by inverting the tube, and put on ice.
 
 ## Procedure
-> All instrument should be sterilized prior to the experiment
+
+> All instruments should be sterilized prior to the experiment
+
 ### Cell lysis
 1. Dissect &leq; 5 mg tissue and dab the surface dry gently (better to use KimWipes paper). 
 2. Put the tissue into an eppendorf, slightly centrifuge to spin down the tissue to the bottom of the eppendorf. If the tissue is not used immediately, store the sample at -80&deg;C.
