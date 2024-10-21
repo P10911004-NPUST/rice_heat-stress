@@ -26,3 +26,15 @@ or prepare the stock solution separately,
 | 1 M Na<sub>2</sub>HPO<sub>4</sub> (141.96 g / L)  | 89.6 mL |
 | Total                                             |  100 mL |
 
+## 0.1 M ( pH 7.0 )
+| Chemical                       | M.W. (g/mol)  | Addition  |
+| :---                           | :---:         | ---:      |
+| NaH<sub>2</sub>PO<sub>4</sub>  | 119.98        | 4.47 g    |
+| Na<sub>2</sub>HPO<sub>4</sub>  | 141.96        | 8.906 g   |
+| ddH<sub>2</sub>O               |               |  1 L      |
+
+> 1. Prepare 0.8 L of distilled water in a suitable container.  
+> 2. Add **4.47 g** of sodium dihydrogen phosphate (**NaH<sub>2</sub>PO<sub>4</sub>**) to the solution.
+> 3. Add **8.906 g** of sodium phosphate dibasic (**Na<sub>2</sub>HPO<sub>4</sub>**) to the solution.
+> 4. Add distilled water until the volume is 1 L.
+> 5. Phosphate buffer is highly water soluble and has a high buffering capacity, but will inhibit enzymatic activity and precipitates in ethanol.

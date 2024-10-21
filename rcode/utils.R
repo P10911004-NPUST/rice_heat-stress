@@ -21,3 +21,24 @@ def_long_short_root <- function(data, x){
 
 
 RGF1_colors_gradient <- c("#dabfff", "#907ad6", "#4f518c", "#2c2a4a")
+
+
+opt_nclust <- function(
+        data,
+        vars = NULL
+){
+    if (!is.null(vars)) df0 <- data[[vars]]
+    
+    opt_nclust <- lapply(
+        X = c("silhouette", "wss", "gap_stat"),
+        FUN = function(fns) {
+            factoextra::fviz_nbclust(
+                x = df0, 
+                FUNcluster = kmeans, 
+                method = fns
+            )
+        }
+    )
+    
+    return(opt_nclust)
+} 
