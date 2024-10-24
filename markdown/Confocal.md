@@ -1,8 +1,10 @@
 ---
 output:
-  html_document: default
-  pdf_document: default
+  html_document:
+    theme: 
+      version: 4
 ---
+
 # Confocal laser scanning microscope
 
 ### 打開 防塵套

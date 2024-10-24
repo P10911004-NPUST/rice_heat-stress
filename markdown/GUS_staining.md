@@ -1,3 +1,10 @@
+---
+output:
+  html_document:
+    theme: 
+      version: 4
+---
+
 # GUS staining
 
 > 1 mM X-Gluc  

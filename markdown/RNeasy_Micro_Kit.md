@@ -1,8 +1,10 @@
 ---
 output:
-  html_document: default
-  pdf_document: default
+  html_document:
+    theme: 
+      version: 4
 ---
+
 # RNeasy&reg; Micro Kit
 
 The kit contents:
