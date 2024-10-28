@@ -11,7 +11,7 @@
 
 
 
-<title>Confocal</title>
+<title>DNA_extraction_fast-method</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -593,170 +593,285 @@ display: none;
 </div>
 
 
-<div id="confocal-laser-scanning-microscope" class="section level1">
-<h1>Confocal laser scanning microscope</h1>
-<div id="打開-防塵套" class="section level3">
-<h3>打開 防塵套</h3>
-</div>
-<div id="打開-顯微鏡系統-打開順序從-1-到-4" class="section level3">
-<h3>打開 顯微鏡系統 ( 打開順序：從 1 到 4 )</h3>
+<div id="dna-extraction" class="section level1">
+<h1>DNA extraction</h1>
+<div id="preparation" class="section level2">
+<h2>Preparation:</h2>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Material</th>
+<th align="center">Quantity per sample</th>
+<th align="center">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Extraction buffer <sup>†</sup></td>
+<td align="center">400 µL</td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">Isopropanol (2-propanol)</td>
+<td align="center">300 µL</td>
+<td align="center">Around 70% of the supernatant taken from the
+buffer</td>
+</tr>
+<tr class="odd">
+<td align="center">Ethanol (EtOH)</td>
+<td align="center">1000 µL</td>
+<td align="center">Use DNase-free ethanol and ddH<sub>2</sub>O</td>
+</tr>
+<tr class="even">
+<td align="center">Tris-EDTA</td>
+<td align="center">100 µL</td>
+<td align="center">Commercial product</td>
+</tr>
+</tbody>
+</table>
+<div id="extraction-buffer" class="section level3">
+<h3><sup>†</sup> Extraction buffer</h3>
 <blockquote>
-<ul>
-<li>1 和 2 號：在桌底下，順時鐘打開<br />
-</li>
-<li>3 號：在桌上，是一個儀器的開關鍵<br />
-</li>
-<li>4 號：在上方，是電腦開關</li>
-</ul>
+<p>200 mM Tris-HCl (pH 7.5)<br />
+250 mM NaCl<br />
+25 mM EDTA<br />
+0.5% SDS</p>
 </blockquote>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Extraction buffer stock solution</th>
+<th align="center">Addition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1 M Tris-HCl (pH 7.5) <sup>※</sup></td>
+<td align="center">20 mL</td>
+</tr>
+<tr class="even">
+<td align="center">5 M NaCl</td>
+<td align="center">5 mL</td>
+</tr>
+<tr class="odd">
+<td align="center">500 mM EDTA <sup>†</sup></td>
+<td align="center">5 mL</td>
+</tr>
+<tr class="even">
+<td align="center">10% SDS <sup>§</sup></td>
+<td align="center">5 mL</td>
+</tr>
+<tr class="odd">
+<td align="center">ddH<sub>2</sub>O</td>
+<td align="center">65 mL</td>
+</tr>
+<tr class="even">
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">Total:</td>
+<td align="center">100 mL</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="啟動-電腦軟件-zen" class="section level3">
-<h3>啟動 電腦軟件 (Zen)</h3>
-<p>Zen → Zen system → 等待左側菜單載入完成 ( 大約 30 秒 )</p>
 </div>
-<div id="檢查-物鏡倍率" class="section level3">
-<h3>檢查 物鏡倍率</h3>
-<p>開始操作前，確認目前是 5 倍鏡 ( 左手邊的 monitor, 進入
-<b style="color:darkgrey">Microscope</b> 可查看)</p>
+<div id="procedure" class="section level2">
+<h2>Procedure:</h2>
+<ol style="list-style-type: decimal">
+<li>Cut 5-10 pieces of root tissues, powderized them after frozen with
+liquid nitrogen;</li>
+</ol>
 <blockquote>
-<ul>
-<li>若 monitor 熒幕出現 “lower Z limit”
-訊息，這表示載物台已處於最低位置。 執行其他操作前，先把載物台略微上調 (
-載物台滾輪 順時鐘 旋轉 ), 該訊息會自動消失, monitor 才可正常操作。</li>
-</ul>
+<p>Caution: if directly powderized within ependorf, after fill in liquid
+nitrogen into the tube, DO NOT close the lid, the eppendorf will
+exploded.</p>
 </blockquote>
-</div>
-<div id="放入-樣本玻片" class="section level3">
-<h3>放入 樣本玻片</h3>
-<ol style="list-style-type: decimal">
-<li>按 <b style="color:red">Load position</b> ( 在 monitor 上 );</li>
-<li>輕緩推開顯微鏡的頭部，註意手不要碰觸到上面的轉輪;</li>
-<li>由於光源是由下往上，因此玻片需朝下 (
-必須確保蓋玻片牢固地被固定在玻片上，絕對不能掉下來 );</li>
-<li>把玻片卡入載物台 (先把玻片卡入一側的卡槽，再移動另一側的卡槽);</li>
-<li>把顯微鏡頭部拉回來。</li>
+<ol start="2" style="list-style-type: decimal">
+<li>Add <b>400 µL</b> of the <b style="color:orange">extraction
+buffer</b>, gently inverting the tube to mix the buffer;</li>
+<li>Slightly <b style="color:orange">centrifuge</b> to bring down all
+the mixtures to the bottom of the eppendorf. If there are many samples,
+they should be placed on ice;</li>
+<li>Place on <b style="color:orange">benchtop</b> at <b>room
+temperature</b> for <b>1 hour</b>;</li>
+<li><b style="color:orange">Centrifuge</b> at <b>15000 rpm</b> for <b>15
+minutes</b> at room temperature to bring down the tissue residues;</li>
+<li><b>Transfer the supernatant</b> (~ 300µL) to a new tube;</li>
+<li>Add 210 µL isopropanol to <b>precipitate the DNA</b>. The volume of
+isopropanol should be around 0.7 volume of the supernatant; Gently mix
+the isopropanol with the supernatant;</li>
+<li>Keep the mixture at 4°C for 24 hours or -20°C for 2 hours to
+facillitate DNA precipitation;</li>
+<li><b>Centrifuge</b> at 15000 rpm for 15 minutes at room temperature to
+<b>bring down the DNA</b>; Pay attention to the eppendorf position, the
+DNA palette should be skewed on one side of the tube bottom;</li>
+<li><b>Discard the supernatant</b>; Carefully absorb the supernatant by
+not touching or too close to the DNA palette;</li>
+<li><b>Wash the DNA palette</b> by rinsing with 70% EtOH for 3 times
+(the volume same as the isopropanol); DO NOT invert or pipetting; the
+DNA palette should be always sticking on the tube bottom;
+<b>Centrifuge</b> at 15000 rpm for 10 minutes at 4°C for each rinse, to
+make sure the DNA palette didn’t float up;</li>
+<li><b>Dry the DNA</b> by putting the eppendorf in the dry incubator and
+set the temperature at 60°C. the lid of the eppendorf should be opened
+to let the DNA dry;</li>
+<li>Add 100 µL Tris-EDTA to <b>dissolve the DNA</b>, put in the dry
+incubator at 60°C to accelerate the dissolution. The lid of the
+eppendorf should be closed to avoid evaporation;</li>
+<li>After dissolve, <b>measure the DNA quantity and quality</b>; the
+NanoDrop™ only requires 1 µL of the DNA solution. Slightly centrifuge
+the DNA solution to make sure all water / solution on the eppendorf wall
+is fully bring down to the bottom, otherwise the DNA concentration would
+be not accurate;</li>
+<li>Store the DNA solution in -20°C.</li>
 </ol>
 </div>
-<div id="初步-對焦" class="section level3">
-<h3>初步 對焦</h3>
-<ol style="list-style-type: decimal">
-<li>電腦上先選擇 <b style="color:orange">Locate</b> 巨集，切換至 BF 或
-DIC 視野;</li>
-<li>使用搖桿尋找樣本目標區域;</li>
-<li>使用顯微鏡本體的轉輪或 monitor 的轉輪進行初步對焦。</li>
-</ol>
+<div id="quality-assurance" class="section level2">
+<h2>Quality assurance:</h2>
+<p>Reference: <a href="https://ntuhmc.ntuh.gov.tw/epaper-57th.htm" class="uri">https://ntuhmc.ntuh.gov.tw/epaper-57th.htm</a></p>
+<div id="wavelength-detection" class="section level3">
+<h3>Wavelength detection</h3>
+<table>
+<colgroup>
+<col width="55%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Wavelength (nm)</th>
+<th align="left">Detected Compound</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">230</td>
+<td align="left">EtOH, EDTA, carbohydrates, phenol, Guanidone HCL (for
+DNA isolation)</td>
+</tr>
+<tr class="even">
+<td align="center">260</td>
+<td align="left">RNA,ssDNA, dsDNA, guanidine isothiocyabate (for RNA
+isolation)</td>
+</tr>
+<tr class="odd">
+<td align="center">270</td>
+<td align="left">Phenolic solution (TRIzol for RNA isolation)</td>
+</tr>
+<tr class="even">
+<td align="center">280</td>
+<td align="left">Protein, phenol, other contamination</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="熒光參數" class="section level3">
-<h3>熒光參數</h3>
+<div id="ideal-wavelength-ratio-quality-indicator" class="section level3">
+<h3>Ideal wavelength ratio (quality indicator):</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Nucleic acid</th>
+<th align="center">260 / 280</th>
+<th align="center">260 / 230</th>
+<th align="center">260 / 270</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">DNA</td>
+<td align="center">~ 1.8</td>
+<td align="center">&gt; 1.8</td>
+<td align="center">&gt; 1.2</td>
+</tr>
+<tr class="even">
+<td align="center">RNA</td>
+<td align="center">~ 2.0</td>
+<td align="center">&gt; 1.8</td>
+<td align="center">&gt; 1.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="stock-solution-protocol" class="section level2">
+<h2>Stock solution protocol:</h2>
+<div id="tris-hcl-stock-solution-1-m" class="section level3">
+<h3><sup>※</sup> Tris-HCl stock solution ( 1 M )</h3>
+<p>To prepare a 1 M solution of Tris-HCl,</p>
 <ol style="list-style-type: decimal">
-<li>進入 <b style="color:orange">Acquisition</b> 巨集;</li>
-<li>在 <b style="color:darkgrey">Experiment</b> 裡選擇欲使用之波長組合 (
-例如 405 + 488 + 561 );</li>
-<li>等待 laser 預熱 (直到各波長之紅色背景消失);</li>
-<li>勾選欲打開之波長 ( 例如 488 nm 和 561 nm );</li>
-<li>點選主要波長，<b style="color:violet">Pinhole</b> 設置為 1 A.U. (
-每批次只需設置一次 );</li>
-<li>點選主要波長並勾選 T-PMT
-(白光)，此為同步白光和主要熒光的鐳射強度;</li>
-<li>設置主波長的 <b style="color:violet">Laser intensity</b> 和
-<b style="color:violet">Master gain</b> 參數 ( 逐次按 Snap 觀察 );</li>
+<li>Dissolve 121.1 g of Tris base in 800 mL of ddH<sub>2</sub>O;</li>
+<li>Adjust the pH to the desired value by adding concentrated HCl;</li>
+<li>Allow the solution to cool to room temperature before making final
+adjustments to the pH;</li>
+<li>Adjust the volume of the solution to 1 L with ddH<sub>2</sub>O.
+Dispense into aliquots and sterilize by autoclaving.</li>
 </ol>
+<table>
+<thead>
+<tr class="header">
+<th align="center">pH</th>
+<th align="center">12N HCl addition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">7.4</td>
+<td align="center">70 mL</td>
+</tr>
+<tr class="even">
+<td align="center">7.6</td>
+<td align="center">60 mL</td>
+</tr>
+<tr class="odd">
+<td align="center">8.0</td>
+<td align="center">42 mL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="edta-stock-solution" class="section level3">
+<h3><sup>†</sup> EDTA stock solution</h3>
 <blockquote>
-<ul>
-<li>Laser intensity : 激發更多熒光蛋白，但鐳射過強容易破壞蛋白;<br />
-</li>
-<li>Master gain : 光電倍增，提高對熒光的 sensitivity, 但會同時增加
-signal 和 noise。Gain 值太高也會使邊緣模糊。</li>
-</ul>
+<p>EDTA ( Ethylenediamenetetraacetic acid )</p>
 </blockquote>
-<ol start="8" style="list-style-type: decimal">
-<li>次要波長無需再設置 Laser intensity, 調整 Master gain 即可 ( Laser
-intensity 會和主波長同步 );</li>
-<li>微調焦距 ( 使用 Continuous 模式，調好後記得再次點 Continuous
-取消連拍模式，以免長時間鐳射過度破壞蛋白 );</li>
-<li>勾選 Range indicator 檢查各波段是否過曝，再微調鐳射參數;</li>
-</ol>
-<blockquote>
-<ul>
-<li>藍色 : signal 較弱</li>
-<li>紅色 : 過曝，應降低 Laser intensity 或 Master gain</li>
-</ul>
-</blockquote>
-</div>
-<div id="z-stack" class="section level3">
-<h3>Z-stack</h3>
+<p>To prepare EDTA at 0.5 M (pH 8.0),</p>
 <ol style="list-style-type: decimal">
-<li>勾選 Z-stack;</li>
-<li>進入 Continuous 模式，調整焦距，設定 First 和 Last layer;
-以接近熒光最強的圖層焦距作為 First layer, 再接著往下設定 Last layer;
-以能夠涵蓋所有欲觀察之對象為目標;</li>
-<li>First 和 Last layer 設定好後，直接採用 optimal range 即可;</li>
+<li>Add 186.1 g of disodium EDTA • 2H<sub>2</sub>O to 800 mL of
+ddH<sub>2</sub>O;</li>
+<li>Stir vigorously on a magnetic stirrer to dissolve the EDTA;</li>
+<li>Adjust the pH to 8.0 with NaOH (~ 20 g of NaOH pellets);</li>
 </ol>
 <blockquote>
-<ul>
-<li>Optimal range 為 Pinhole 的一半，意即每一層掃描都會有 50%
-與上一層重疊;</li>
-</ul>
+<p>Note: The disodium salt of EDTA will not go into solution until the
+pH is adjusted to ~ 8.0 by the addition of NaOH.</p>
 </blockquote>
 <ol start="4" style="list-style-type: decimal">
-<li>選取中間層 ( 縮寫為 “C” )
-微調參數並檢查是否過曝；這一層應該為亮度最高;</li>
-<li>調整 Resolution: <b style="color:violet">Frame size → Preset</b> (
-至少 1024 × 1024 );</li>
-<li>( Optional ) 也可調整 Scan speed ( 數值越低, 清晰度越高, 6 或 7
-較為理想 );</li>
-<li>按 Start experiment 開始掃描。</li>
+<li>Dispense into aliquots and sterilize by autoclaving.</li>
 </ol>
 </div>
-<div id="image-processing" class="section level3">
-<h3>Image processing</h3>
+<div id="sds-stock-solution-10" class="section level3">
+<h3><sup>§</sup> SDS stock solution ( 10% )</h3>
+<blockquote>
+<p>Sodium dodecyl sulfate, sodium lauryl sulfate</p>
+</blockquote>
+<p>To prepare a 10% (w/v) solution,</p>
 <ol style="list-style-type: decimal">
-<li>進入 <b style="color:orange">Processing</b> 巨集;</li>
-<li>Method 選擇 Orthogonal projection;</li>
-<li>Parameter 裡選擇欲用以進行 stacking 的圖層範圍;</li>
-<li>Thickness 參數為從第一層到第幾層要做 stacking;</li>
-<li>設定完成後，點選 Apply 即可產生 stacked layer。</li>
+<li>Dissolve 100 g of electropheresis-grade SDS in 900 mL of
+ddH<sub>2</sub>O;</li>
+<li>Heat to 68°C and stir with a magnetic stirrer to assist dissolution.
+If necessary, adjust the pH to 7.2 by adding a few drops of concentrated
+HCl;</li>
+<li>Adjust the volume to 1 L with ddH<sub>2</sub>O;</li>
+<li>Store at room temperature. Sterilization is not necessary. DO NOT
+autoclave.</li>
 </ol>
 </div>
-<div id="oil-lens" class="section level3">
-<h3>Oil lens</h3>
-<blockquote>
-<ul>
-<li>已上油的玻片置入載物台後，不可再切換鏡頭 (
-因鏡頭模組旋轉將使油滴飛濺，並且其他鏡頭也將沾上油滴 );</li>
-<li>油鏡是滴在玻片上，水鏡才是滴在鏡頭上。</li>
-</ul>
-</blockquote>
-<ol style="list-style-type: decimal">
-<li>先以<b style="color:darkgray">低倍率</b>找到樣本並且對好焦距;</li>
-<li>先切換鏡頭到油鏡倍率 ( exp. 63X oil ),
-彈出視窗先不理會，然後再卸下玻片滴油;</li>
-</ol>
-<blockquote>
-<ul>
-<li>拿起玻片前，確認目前在 Acquisition 巨集 ( 若在 Locate
-巨集，則點選遮罩鐳射光源 )，避免鐳射直接照射眼睛</li>
-</ul>
-</blockquote>
-<ol start="3" style="list-style-type: decimal">
-<li>拿起玻片，在玻片上滴一小滴油，再放回載物台
-(滴油那一面同樣朝下);</li>
-<li>點 Done ( 不可點 Back )，此時鏡頭自動往上貼近玻片並沾上油;</li>
-<li>先用目鏡找樣本並對焦;</li>
-<li>回到 Acquisition 巨集，使用主波長，調整焦距;</li>
-<li>後續步驟和一般流程一樣;</li>
-<li>換玻片必須點 Load position;</li>
-<li>使用完油鏡後，按 Load position, 卸下玻片, 以 Lens paper 和 100%
-酒精, 輕緩擦拭油鏡鏡頭;</li>
-</ol>
-<blockquote>
-<ul>
-<li>大約 三次 單一方向 輕抹即可把油擦除;</li>
-</ul>
-</blockquote>
-<ol start="10" style="list-style-type: decimal">
-<li>再以新的 Lens paper 把該鏡頭擦乾。</li>
-</ol>
 </div>
 </div>
 
