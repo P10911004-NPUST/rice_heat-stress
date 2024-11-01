@@ -83,8 +83,8 @@ Reference: https://ntuhmc.ntuh.gov.tw/epaper-57th.htm
 ### Ideal wavelength ratio (quality indicator):
 | Nucleic acid | 260 / 280 | 260 / 230 | 260 / 270 |
 | :---:        | :---:     | :---:     | :---:     |
-| DNA          | ~ 1.8     | > 1.8     | > 1.2     |
-| RNA          | ~ 2.0     | > 1.8     | > 1.2     |
+| DNA          | ~ 1.8     | > 2.0     | > 1.2     |
+| RNA          | ~ 2.0     | > 2.0     | > 1.2     |
 
 
 ## Stock solution protocol:
