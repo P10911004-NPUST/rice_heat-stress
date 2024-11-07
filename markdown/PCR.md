@@ -7,6 +7,8 @@ output:
 
 # Polymerase Chain Reaction (PCR)
 
+## Preparation  
+
 | Material <sup>&#8251;</sup>                  | Quantity per sample | Note                                                        |
 | :---:                     | :---:               | :---:                                                       |
 | gDNA <sup>&dagger;</sup>  | 40 ng               | Store at -20&deg;C                                          |
@@ -23,6 +25,7 @@ the same concentration, for example 10 ng/&micro;L.
 
 ## Procedure:
 1. Prepare the total amount of the required working solution ( F-primer, R-primer, 2X-Taq );
+
 > - For example, if we had 10 samples, then me make the working solution by adding 
 > 4 &micro;L <b style="color:orange">F-primer</b>, 
 > 4 &micro;L <b style="color:orange">R-primer</b>, 
