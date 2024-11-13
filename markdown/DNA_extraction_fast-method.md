@@ -128,6 +128,7 @@ To prepare a 10% (w/v) solution,
 2. Heat to 68&deg;C and stir with a magnetic stirrer to assist dissolution.
 If necessary, adjust the pH to 7.2 by adding a few drops of concentrated HCl;
 3. Adjust the volume to 1 L with ddH<sub>2</sub>O;
-4. Store at room temperature. Sterilization is not necessary. DO NOT autoclave.
+4. Store at room temperature. Sterilization is not necessary. 
+<b style='color:red'>DO NOT</b> autoclave.
 
 
