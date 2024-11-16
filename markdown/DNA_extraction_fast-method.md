@@ -5,7 +5,8 @@ output:
       version: 4
 ---
 
-# DNA extraction
+# DNA extraction (fast method)
+- take less time, but low concentration of DNA
 
 ## Preparation:
 | Material                              | Quantity per sample | Note                                                |
