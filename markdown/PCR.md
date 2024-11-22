@@ -31,7 +31,7 @@ the same concentration, for example 10 ng/&micro;L.
 > 4 &micro;L <b style="color:orange">R-primer</b>, 
 > and 50 &micro;L <b style="color:orange">2X-Taq</b> into a new 200 &micro;L PCR tube.
 
-2. Portioning the working solution into the new 200&micro;L PCR tubes ( around 6 &micro;L for each sample );
+2. Portioning the working solution into the new 200&micro;L PCR tubes ( 5.8 &micro;L for each sample );
 3. Lastly, add the sample gDNA stock solution;
 4. Close the lid tightly, and swipe the tube gently with finger several time to mix the solution well;
 5. Slightly centrifuge to bring down the solution;

@@ -13,7 +13,7 @@ output:
 | :---:                                 | :---:               | :---:                                               |
 | Extraction buffer <sup>&dagger;</sup> | 400 &micro;L        |                                                     |
 | Isopropanol (2-propanol)              | 300 &micro;L        | Around 70% of the supernatant taken from the buffer |
-| Ethanol (EtOH)                        | 1000 &micro;L       | Use DNase-free ethanol and ddH<sub>2</sub>O         |
+| Ethanol (EtOH)                        | 1000 &micro;L       | Dilute the DNase-free ethanol using ddH<sub>2</sub>O         |
 | Tris-EDTA                             | 100 &micro;L        | Commercial product                                  |
 
 
@@ -36,6 +36,7 @@ output:
 
 ## Procedure:
 1. Put two steel balls into each 1.5 mL eppendorf;
+
 > - The steel balls must had been washed with 70% EtOH and autoclaved
 
 2. Add 200 &micro;L extraction buffer into each eppendorf;
@@ -43,15 +44,18 @@ output:
 3. Directly insert the samples into each eppendorf;
 
 4. Homogenize the samples and the buffer with a homogenizer;
-> <b>There are two containers for the homogenizer;</b>
-> - each containers should be balanced (the amount and placement of the samples)
-> - after mounted the containers on the machine, fasten tight the big roller, and stuck in the tenons
+
+> - <b>There are two containers for the homogenizer;</b>
+> - each containers should be balanced (the amount and placement of the samples);
+> - put a tissue on top of the eppendorfs' lid, this can prevent the solution seep out to the container bottom, and also eliminates the space between the container and the cover, improves grinding efficiency; 
+> - after mounted the containers on the machine, fasten tight the big roller, and stuck in the tenons.
 
 5. Confirm the machine settings and start homogenizing;
-> - Frequency : 30 hits / sec
-> - Time : 1.0 min
 
-6. Centrifuge at room temperature ( > 15000 rpm, 5 mins ) to bring down the bubbles;
+> - Frequency : 30 hits / sec ( maximum frequency )
+> - Time : 2.0 mins &times; 3
+
+6. Centrifuge at room temperature ( > 15000 rpm, 10 mins ) to bring down the bubbles;
 
 7. Dry bath ( 60&deg;C, > 1 hour );
 
@@ -63,7 +67,7 @@ output:
 
 11. Add isopropanol into the supernatant, leave overnight at -20&deg;C;
 
-12. Centrifuge at -4&deg;C ( > 15000 rpm, 10 mins ) to bring down the DNA;
+12. Centrifuge at 4&deg;C ( > 15000 rpm, 10 mins ) to bring down the DNA;
 
 13. Discard the supernatant carefully. Do not touch the tube bottom, which sticking with the DNA palette;
 
@@ -77,7 +81,7 @@ output:
 
 18. Add 20 &micro;L DNase-free water and dry bath at 60&deg;C for around 5 mins to dissolve the DNA palette;
 
-19. After the DNA was fully dissolved, slightly centrifuge at room temperature to sink all solution;
+19. After the DNA was fully dissolved, slightly centrifuge at room temperature to bring down all solution on the tube wall;
 
 20. Check the DNA concentration and quality.
 

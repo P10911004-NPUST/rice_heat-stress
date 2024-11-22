@@ -30,7 +30,7 @@ For example, to make a 3% big gel, add 1.2 g agarose powder (ultra pure grade) t
 > - use mid-low firepower, 1 mins &rarr; 30 secs &rarr; add ddH<sub>2</sub>O &rarr; 20 secs &rarr; 10 secs
 
 2. Add 0.001 volume of SYBR stock solution into the gel solution immediately, gently shake to mix them well;
-> - For example, 40 mL gel requires 4 &micro;L 1000X SYBR stock solution.
+> - For example, 40 mL gel requires 40 &micro;L 1000X SYBR stock solution.
 3. Pour the gel into the gel container and wait for solidification (around 15 mins);
 
 ### Machine electrode
@@ -43,7 +43,7 @@ and make sure the gel was fully submerged in the buffer;
 7. Add loading dye to the PCR product. The loading dye final concentration should be 1X.
 For example, 2 &micro;L 6X loading dye + 10 &micro;L PCR product;
 8. Smoothly inject 2 &micro;L ladder marker into the first and the last wells of the gel;
-9. Smoothly inject the blank and PCR products;
+9. Smoothly inject the blank and the PCR products ( around 6 &micro;L ) into the wells;
 
 ### Kick-off
 10. Set the voltage as <b>135 V</b> and the runtime as <b>40 mins</b>;

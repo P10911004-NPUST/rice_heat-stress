@@ -11,7 +11,7 @@
 
 
 
-<title>DNA_extraction_fast-method</title>
+<title>Gel_electrophoresis_Southern</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -593,288 +593,139 @@ display: none;
 </div>
 
 
-<div id="dna-extraction-fast-method" class="section level1">
-<h1>DNA extraction (fast method)</h1>
-<ul>
-<li>take less time, but low concentration of DNA</li>
-</ul>
+<div id="gel-electrophoresis-southern" class="section level1">
+<h1>Gel electrophoresis (Southern)</h1>
 <div id="preparation" class="section level2">
-<h2>Preparation:</h2>
+<h2>Preparation</h2>
 <table>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col width="27%" />
+<col width="21%" />
+<col width="15%" />
+<col width="36%" />
 </colgroup>
 <thead>
 <tr class="header">
 <th align="center">Material</th>
-<th align="center">Quantity per sample</th>
-<th align="center">Note</th>
+<th align="center">Concentration</th>
+<th align="center">Final concentration</th>
+<th align="center">Location</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">Extraction buffer <sup>†</sup></td>
-<td align="center">400 µL</td>
-<td align="center"></td>
+<td align="center">PCR product</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">Store at 4°C</td>
 </tr>
 <tr class="even">
-<td align="center">Isopropanol (2-propanol)</td>
-<td align="center">300 µL</td>
-<td align="center">Around 70% of the supernatant taken from the
-buffer</td>
+<td align="center">TAE buffer <sup>※</sup></td>
+<td align="center">50X</td>
+<td align="center">0.5X</td>
+<td align="center">II</td>
 </tr>
 <tr class="odd">
-<td align="center">Ethanol (EtOH)</td>
-<td align="center">1000 µL</td>
-<td align="center">Use DNase-free ethanol and ddH<sub>2</sub>O</td>
+<td align="center">Agarose gel <sup>†</sup></td>
+<td align="center">–</td>
+<td align="center">3%</td>
+<td align="center">II</td>
 </tr>
 <tr class="even">
-<td align="center">Tris-EDTA</td>
-<td align="center">100 µL</td>
-<td align="center">Commercial product</td>
+<td align="center">SYBR<sup>®</sup> stock solution <sup>*</sup></td>
+<td align="center">1000X</td>
+<td align="center">1X</td>
+<td align="center">II</td>
+</tr>
+<tr class="odd">
+<td align="center">Loading Dye</td>
+<td align="center">6X</td>
+<td align="center">1X</td>
+<td align="center">4°C (c)</td>
+</tr>
+<tr class="even">
+<td align="center">RTU-100 (Ladder marker)</td>
+<td align="center">–</td>
+<td align="center">–</td>
+<td align="center">4°C (c)</td>
 </tr>
 </tbody>
 </table>
-<div id="extraction-buffer" class="section level3">
-<h3><sup>†</sup> Extraction buffer</h3>
-<blockquote>
-<p>200 mM Tris-HCl (pH 7.5)<br />
-250 mM NaCl<br />
-25 mM EDTA<br />
-0.5% SDS</p>
-</blockquote>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Extraction buffer stock solution</th>
-<th align="center">Addition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1 M Tris-HCl (pH 7.5) <sup>※</sup></td>
-<td align="center">20 mL</td>
-</tr>
-<tr class="even">
-<td align="center">5 M NaCl</td>
-<td align="center">5 mL</td>
-</tr>
-<tr class="odd">
-<td align="center">500 mM EDTA <sup>†</sup></td>
-<td align="center">5 mL</td>
-</tr>
-<tr class="even">
-<td align="center">10% SDS <sup>§</sup></td>
-<td align="center">5 mL</td>
-</tr>
-<tr class="odd">
-<td align="center">ddH<sub>2</sub>O</td>
-<td align="center">65 mL</td>
-</tr>
-<tr class="even">
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">Total:</td>
-<td align="center">100 mL</td>
-</tr>
-</tbody>
-</table>
-</div>
+<p><sup>※</sup> To prepare the 0.5X TAE buffer, make at least 1 L, as
+each run requires at least 500 mL 0.5X TAE buffer;</p>
+<p><sup>†</sup> The big gel slot requires around 40 mL gel solution; the
+small gel slot requires 20 mL gel solution. For example, to make a 3%
+big gel, add 1.2 g agarose powder (ultra pure grade) to 40 mL 0.5X TAE
+buffer.</p>
+<p><sup>*</sup> To prepare 1000X SYBR stock solution, dilutes 100 µL
+SYBR<sup>®</sup> raw solution with 900 µL DMSO. This chemical is used to
+stain the DNA and detected by UV radiation.</p>
 </div>
 <div id="procedure" class="section level2">
 <h2>Procedure:</h2>
+<div id="make-the-gel" class="section level3">
+<h3>Make the gel</h3>
 <ol style="list-style-type: decimal">
-<li>Cut 5-10 pieces of root tissues, powderized them after frozen with
-liquid nitrogen;</li>
-</ol>
-<blockquote>
-<p>Caution: if directly powderized within ependorf, after fill in liquid
-nitrogen into the tube, DO NOT close the lid, the eppendorf will
-exploded.</p>
-</blockquote>
-<ol start="2" style="list-style-type: decimal">
-<li>Add <b>400 µL</b> of the <b style="color:orange">extraction
-buffer</b>, gently inverting the tube to mix the buffer;</li>
-<li>Slightly <b style="color:orange">centrifuge</b> to bring down all
-the mixtures to the bottom of the eppendorf. If there are many samples,
-they should be placed on ice;</li>
-<li>Place on <b style="color:orange">benchtop</b> at <b>room
-temperature</b> for <b>1 hour</b>;</li>
-<li><b style="color:orange">Centrifuge</b> at <b>15000 rpm</b> for <b>15
-minutes</b> at room temperature to bring down the tissue residues;</li>
-<li><b>Transfer the supernatant</b> (~ 300µL) to a new tube;</li>
-<li>Add 210 µL isopropanol to <b>precipitate the DNA</b>. The volume of
-isopropanol should be around 0.7 volume of the supernatant; Gently mix
-the isopropanol with the supernatant;</li>
-<li>Keep the mixture at 4°C for 24 hours or -20°C for 2 hours to
-facillitate DNA precipitation;</li>
-<li><b>Centrifuge</b> at 15000 rpm for 15 minutes at room temperature to
-<b>bring down the DNA</b>; Pay attention to the eppendorf position, the
-DNA palette should be skewed on one side of the tube bottom;</li>
-<li><b>Discard the supernatant</b>; Carefully absorb the supernatant by
-not touching or too close to the DNA palette;</li>
-<li><b>Wash the DNA palette</b> by rinsing with 70% EtOH for 3 times
-(the volume same as the isopropanol); DO NOT invert or pipetting; the
-DNA palette should be always sticking on the tube bottom;
-<b>Centrifuge</b> at 15000 rpm for 10 minutes at 4°C for each rinse, to
-make sure the DNA palette didn’t float up;</li>
-<li><b>Dry the DNA</b> by putting the eppendorf in the dry incubator and
-set the temperature at 60°C. the lid of the eppendorf should be opened
-to let the DNA dry;</li>
-<li>Add 100 µL Tris-EDTA to <b>dissolve the DNA</b>, put in the dry
-incubator at 60°C to accelerate the dissolution. The lid of the
-eppendorf should be closed to avoid evaporation;</li>
-<li>After dissolve, <b>measure the DNA quantity and quality</b>; the
-NanoDrop™ only requires 1 µL of the DNA solution. Slightly centrifuge
-the DNA solution to make sure all water / solution on the eppendorf wall
-is fully bring down to the bottom, otherwise the DNA concentration would
-be not accurate;</li>
-<li>Store the DNA solution in -20°C.</li>
+<li><p>Prepare the gel. After adding agarose powder into the 0.5X TAE
+buffer, melt them with microwave. Gently shake the vial during each time
+points. &gt; - use mid-low firepower, 1 mins → 30 secs → add
+ddH<sub>2</sub>O → 20 secs → 10 secs</p></li>
+<li><p>Add 0.001 volume of SYBR stock solution into the gel solution
+immediately, gently shake to mix them well; &gt; - For example, 40 mL
+gel requires 4 µL 1000X SYBR stock solution.</p></li>
+<li><p>Pour the gel into the gel container and wait for solidification
+(around 15 mins);</p></li>
 </ol>
 </div>
-<div id="quality-assurance" class="section level2">
-<h2>Quality assurance:</h2>
-<p>Reference: <a href="https://ntuhmc.ntuh.gov.tw/epaper-57th.htm" class="uri">https://ntuhmc.ntuh.gov.tw/epaper-57th.htm</a></p>
-<div id="wavelength-detection" class="section level3">
-<h3>Wavelength detection</h3>
-<table>
-<colgroup>
-<col width="55%" />
-<col width="44%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Wavelength (nm)</th>
-<th align="left">Detected Compound</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">230</td>
-<td align="left">EtOH, EDTA, carbohydrates, phenol, Guanidone HCL (for
-DNA isolation)</td>
-</tr>
-<tr class="even">
-<td align="center">260</td>
-<td align="left">RNA,ssDNA, dsDNA, guanidine isothiocyabate (for RNA
-isolation)</td>
-</tr>
-<tr class="odd">
-<td align="center">270</td>
-<td align="left">Phenolic solution (TRIzol for RNA isolation)</td>
-</tr>
-<tr class="even">
-<td align="center">280</td>
-<td align="left">Protein, phenol, other contamination</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="ideal-wavelength-ratio-quality-indicator" class="section level3">
-<h3>Ideal wavelength ratio (quality indicator):</h3>
-<table>
-<thead>
-<tr class="header">
-<th align="center">Nucleic acid</th>
-<th align="center">260 / 280</th>
-<th align="center">260 / 230</th>
-<th align="center">260 / 270</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">DNA</td>
-<td align="center">~ 1.8</td>
-<td align="center">&gt; 2.0</td>
-<td align="center">&gt; 1.2</td>
-</tr>
-<tr class="even">
-<td align="center">RNA</td>
-<td align="center">~ 2.0</td>
-<td align="center">&gt; 2.0</td>
-<td align="center">&gt; 1.2</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="stock-solution-protocol" class="section level2">
-<h2>Stock solution protocol:</h2>
-<div id="tris-hcl-stock-solution-1-m" class="section level3">
-<h3><sup>※</sup> Tris-HCl stock solution ( 1 M )</h3>
-<p>To prepare a 1 M solution of Tris-HCl,</p>
-<ol style="list-style-type: decimal">
-<li>Dissolve 121.1 g of Tris base in 800 mL of ddH<sub>2</sub>O;</li>
-<li>Adjust the pH to the desired value by adding concentrated HCl;</li>
-<li>Allow the solution to cool to room temperature before making final
-adjustments to the pH;</li>
-<li>Adjust the volume of the solution to 1 L with ddH<sub>2</sub>O.
-Dispense into aliquots and sterilize by autoclaving.</li>
-</ol>
-<table>
-<thead>
-<tr class="header">
-<th align="center">pH</th>
-<th align="center">12N HCl addition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">7.4</td>
-<td align="center">70 mL</td>
-</tr>
-<tr class="even">
-<td align="center">7.6</td>
-<td align="center">60 mL</td>
-</tr>
-<tr class="odd">
-<td align="center">8.0</td>
-<td align="center">42 mL</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="edta-stock-solution" class="section level3">
-<h3><sup>†</sup> EDTA stock solution</h3>
-<blockquote>
-<p>EDTA ( Ethylenediamenetetraacetic acid )</p>
-</blockquote>
-<p>To prepare EDTA at 0.5 M (pH 8.0),</p>
-<ol style="list-style-type: decimal">
-<li>Add 186.1 g of disodium EDTA • 2H<sub>2</sub>O to 800 mL of
-ddH<sub>2</sub>O;</li>
-<li>Stir vigorously on a magnetic stirrer to dissolve the EDTA;</li>
-<li>Adjust the pH to 8.0 with NaOH (~ 20 g of NaOH pellets);</li>
-</ol>
-<blockquote>
-<p>Note: The disodium salt of EDTA will not go into solution until the
-pH is adjusted to ~ 8.0 by the addition of NaOH.</p>
-</blockquote>
+<div id="machine-electrode" class="section level3">
+<h3>Machine electrode</h3>
 <ol start="4" style="list-style-type: decimal">
-<li>Dispense into aliquots and sterilize by autoclaving.</li>
+<li>Prepare the electropheresis machine, the electrode direction should
+be from negative to positive;</li>
+<li>After the gel was solidified, put the gel container together with
+the gel into the elctrophoresis machine;</li>
+<li>Add some TAE buffer (same strength with the gel; 0.5X in this case)
+into the electropheresis machine and make sure the gel was fully
+submerged in the buffer;</li>
 </ol>
 </div>
-<div id="sds-stock-solution-10" class="section level3">
-<h3><sup>§</sup> SDS stock solution ( 10% )</h3>
-<blockquote>
-<p>Sodium dodecyl sulfate, sodium lauryl sulfate</p>
-</blockquote>
-<p>To prepare a 10% (w/v) solution,</p>
+<div id="load-sample" class="section level3">
+<h3>Load sample</h3>
+<ol start="7" style="list-style-type: decimal">
+<li>Add loading dye to the PCR product. The loading dye final
+concentration should be 1X. For example, 2 µL 6X loading dye + 10 µL PCR
+product;</li>
+<li>Smoothly inject 2 µL ladder marker into the first and the last wells
+of the gel;</li>
+<li>Smoothly inject the blank and PCR products;</li>
+</ol>
+</div>
+<div id="kick-off" class="section level3">
+<h3>Kick-off</h3>
+<ol start="10" style="list-style-type: decimal">
+<li>Set the voltage as <b>135 V</b> and the runtime as <b>40 mins</b>;
+&gt; <b>5 ~ 10 V / cm</b> for DNA size &lt; 1 kb;<br />
+&gt; 4 ~ 10 V / cm for DNA size between 1 ~ 12 kb;<br />
+&gt; 1 ~ 3 V / cm for DNA size greater than 12 kb.<br> &gt; <i>Note: For
+our machine, the distance between the electrodes is around 13.5
+cm.</i></li>
+</ol>
+</div>
+</div>
+<div id="gel-imaging" class="section level2">
+<h2>Gel-imaging</h2>
 <ol style="list-style-type: decimal">
-<li>Dissolve 100 g of electropheresis-grade SDS in 900 mL of
-ddH<sub>2</sub>O;</li>
-<li>Heat to 68°C and stir with a magnetic stirrer to assist dissolution.
-If necessary, adjust the pH to 7.2 by adding a few drops of concentrated
-HCl;</li>
-<li>Adjust the volume to 1 L with ddH<sub>2</sub>O;</li>
-<li>Store at room temperature. Sterilization is not necessary.
-<b style="color:red">DO NOT</b> autoclave.</li>
+<li>Turn on the machine (Bio-Rad Gel Doc XR+);</li>
+<li>Put in the gel;</li>
+<li>Start up the “Image Lab” software;</li>
+<li>New protocol;</li>
+<li>Gel imaging;</li>
+<li>Application → Select → Nucleic acid → SYBR<sup>®</sup> Safe;</li>
+<li>Position Gel → Filter 1 → adjust gel position;</li>
+<li>Run protocol;</li>
+<li>Export for publication ( Export for analysis is 16-bit images
+).</li>
 </ol>
-</div>
 </div>
 </div>
 
