@@ -76,3 +76,13 @@ Rooting | 25 - 28
 Leaf exertion | 31
 Tillering | 31
 | | |
+
+
+# With Gel
+> Murashige & Skoog medium (Duchefa Biochemie)  
+> Basal salt mixture  
+> Content: 215.1 g  
+> Concentration: 4302.09 mg / L
+
+> Difco TM Agar (bacteriological agar)  
+> 10 g / L (1%)

@@ -1,4 +1,5 @@
 # OsRGF1-1
+- LOC_Os02g09760
 - Asp-Tyr(SO3H)-His-Ser-Val-Arg-Arg-His-Pro-Hyp-Ser-His-Asn ( DYHSVRRHPPSHN )
 - Molecular Weight: 1697.82 g/mol
 - 1 mM stock solution stored in 4&deg;C refrigerator

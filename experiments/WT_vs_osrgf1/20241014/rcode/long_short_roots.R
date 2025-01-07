@@ -4,6 +4,7 @@ source("C:/jklai/github/statools/R/detect_outliers.R")
 source("C:/jklai/github/statools/R/thresholding.R")
 source("C:/jklai/github/statools/R/utils.R")
 source("C:/jklai/github/plotools/R/utils4ggplot.R")
+source("../../../../rcode/utils.R")
 
 set.seed(1)
 theme_set(theme_bw_01)
@@ -35,19 +36,23 @@ df0 <- rawdata %>%
 
 # Define long short root ====
 df0 <- df0 %>% 
-    group_by(genotype) %>% 
+    group_by(genotype) %>%
     mutate(
-        root_type = case_when(
-            root_length > otsu_threshold(root_length) ~ "long",
-            root_length <= otsu_threshold(root_length) ~ "short",
-            TRUE ~ NA_character_
-        )
+        root_type = def_long_short_root(root_length)
+        # root_type = case_when(
+        #     root_length > otsu_threshold(root_length) ~ "long",
+        #     root_length <= otsu_threshold(root_length) ~ "short",
+        #     TRUE ~ NA_character_
+        # )
     ) %>% 
-    ungroup() %>% 
+    ungroup() %>%
     group_by(genotype, root_type) %>% 
     filter(!detect_outliers(nbt_area), !detect_outliers(avg_nbt)) %>% 
     ungroup()
 
+df0 %>% 
+    group_by(genotype, root_type) %>% 
+    count()
 
 # Root types ====
 for ( i in unique(df0$root_type) ) {
