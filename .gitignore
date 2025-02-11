@@ -10,11 +10,19 @@
 
 # Images
 *.jpg
+*.JPG
 *.jpeg
+*.JPEG
 *.tif
+*.TIF
 *.tiff
+*.TIFF
 *.png
+*.PNG
 *.bmp
+*.BMP
+*.gif
+*.GIF
 
 # Files
 *.xsl
@@ -32,6 +40,10 @@
 *.gtf
 *.gff*
 *.bed
+*.ab1
+*.seq
+*.scn
+*.pm
 
 # Environment
 /pyenv
