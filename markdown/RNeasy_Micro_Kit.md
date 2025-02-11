@@ -8,6 +8,7 @@ output:
 # RNeasy&reg; Micro Kit
 
 The kit contents:
+
 > Buffer RLT (store at 15 - 25&deg;C)  
 > Buffer RPE (working solution) (store at 15 - 25&deg;C)  
 > Buffer RDD (store at 15 - 25&deg;C)  
@@ -65,19 +66,19 @@ The kit contents:
 10. Add <b style='color: darkorange'>350 &micro;L 70% EtOH</b> into the sample, mix well with pipetting. <i><b style='color: red'>DO NOT centrifuge</b></i>. Proceed to the next step immediately.
 
 ### Wash
-11. Transfer the sample to an <b style='color: darkorange'>RNeasy MinElute&reg; spin column</b> in a <b style='color: orange'>2 mL collection tube</b>. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). Discard the <b style='color:green'>flow-through</b>.
+11. Transfer the sample to an <b style='color: darkorange'>RNeasy MinElute&reg; spin column</b> in a <b style='color: orange'>2 mL collection tube</b>. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). <b>Discard the flow-through</b>.
 
-12. Add <b style='color: darkorange'>350 &micro;L Buffer RW1</b> to the RNeasy MinElute&reg; spin column. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). Discard the <b style='color:green'>flow-through</b>.
+12. Add <b style='color: darkorange'>350 &micro;L Buffer RW1</b> to the RNeasy MinElute&reg; spin column. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). <b>Discard the flow-through</b>.
 
 13. Add the <b style='color: darkorange'>DNase I incubation mix (80 &micro;L)</b> to the RNeasy MinElute&reg; spin column membrane. Place on the benchtop (15 mins, 20-30&deg;C).
 
-14. Add **350 &micro;L Buffer RW1** to the RNeasy MinElute&reg; spin column. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). Discard the <b style='color:green'>collection tube</b>.
+14. Add <b style='color: darkorange'>350 &micro;L Buffer RW1</b> to the RNeasy MinElute&reg; spin column. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). <b>Discard the collection tube</b>.
 
-15. Place the RNeasy MinElute&reg; spin column in a <b style='color: orange'>new 2 mL collection tube</b>. Add <b style='color: darkorange'>500 &micro;L Buffer RPE</b> to the spin column. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). Discard the <b style='color:green'>flow-through</b>.
+15. Place the RNeasy MinElute&reg; spin column in a <b style='color: orange'>new 2 mL collection tube</b>. Add <b style='color: darkorange'>500 &micro;L Buffer RPE</b> to the spin column. Close the lid and centrifuge (15 secs, &geq; 15000 rpm). <b>Discard the flow-through</b>.
 
-16. Add <b style='color: darkorange'>500&micro;L of 80% EtOH</b> to the spin column. Close the lid and centrifuge (2 mins, &geq; 15000 rpm). Discard the <b style='color:green'>collection tube</b>.
+16. Add <b style='color: darkorange'>500&micro;L of 80% EtOH</b> to the spin column. Close the lid and centrifuge (2 mins, &geq; 15000 rpm). <b>Discard the collection tube</b>.
 
-17. Place the RNeasy MinElute&reg; spin column in a <b style='color: orange'>new 2 mL collection tube</b>. Open the lid of the spin column, and centrifuge (5 mins, &geq; 15000 rpm) to dry the membrane. Discard the <b style='color:green'>flow-through</b> and <b style='color:green'>collection tube</b>.
+17. Place the RNeasy MinElute&reg; spin column in a <b style='color: orange'>new 2 mL collection tube</b>. Open the lid of the spin column, and centrifuge (5 mins, &geq; 15000 rpm) to dry the membrane. <b>Discard the flow-through and collection tube</b>.
 
 ### Elute RNA
 18. Place the RNeasy MinElute&reg; spin column in a <b style='color: orange'>new 1.5 mL collection tube</b>. Add 14 &micro;L RNase-free water directly to the center of the spin column membrane. Close the lid gently, and centrifuge (1 min, &geq; 15000 rpm) to elute the RNA.

@@ -1,4 +1,12 @@
+---
+output:
+  html_document:
+    theme: 
+      version: 4
+---
+
 # NBT staining
+Nitro blue Tetrazolium Chloride
 
 > - 10 mM <b>sodium phosphate buffer (Na-P) (pH 7.8)</b>  
 > - 10 mM <b>NaN<sub>3</sub> (sodium azide)</b>  
@@ -15,3 +23,6 @@
 |                               |              |                 |          |
 | ddH<sub>2</sub>O              |              | 1 L             |        |
 
+
+1. Dissect the root and fully immersed into the NBT solution.  
+2. Vacumm 1 hour under ~ 675 mmHg (the lid should be opened), subsequently incubate under 37&deg;C for 40 mins.
