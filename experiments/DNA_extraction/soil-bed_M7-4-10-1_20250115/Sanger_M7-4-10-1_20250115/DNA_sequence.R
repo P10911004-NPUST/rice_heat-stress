@@ -30,7 +30,6 @@ read_DNA <- function(dna_file_dir) {
 
 
 lst <- list()
-# names(vct) <- vector("character", length(file_list))
 for (i in seq_along(file_list)) 
 {
     f <- read_DNA(file_list[i])
@@ -43,6 +42,15 @@ dna <- c(dna, OsRGF1, AtRGF1)
 print(dna)
 Biostrings::writeXStringSet(dna, filepath = "./DNA_sequence.fa", format = "fasta")
 
-# res <- pwalign::pairwiseAlignment(dna[1:23], dna[24])
-# res
+res <- pwalign::pairwiseAlignment(
+    pattern = dna[grepl("M07", names(dna))], 
+    subject = dna[names(dna) == "WT"]
+)
+
+res <- pwalign::aligned(res)
+
+
+
+
+
 
