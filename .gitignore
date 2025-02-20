@@ -23,6 +23,8 @@
 *.BMP
 *.gif
 *.GIF
+*.czi
+*.CZI
 
 # Files
 *.xsl
