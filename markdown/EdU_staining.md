@@ -39,13 +39,13 @@ output:
 - Add the incredients in the order listed in the table; otherwise, the reaction will not proceed optimally. 
 - Use the cocktail immediately after preparation. The Click-iT&reg; reaction buffer additive is susceptable to oxidation and is the limiting factor to the Click-iT&reg; reaction cocktail's effectiveness over time.
 
-| Component  | Material name                               | Addition per sample  | Addition per sample  |
-| :---:      | :---                                        | :---:                | :---:                |  
-| C          | **1X** Click-iT&reg; EdU reaction buffer    | 85 &micro;L          | 170 &micro;L         |
-| D          | CuSO<sub>4</sub>                            | 4 &micro;L           | 8 &micro;L           |
-| B          | Alexa Fluor&reg; azide                      | 0.25 &micro;L        | 0.5 &micro;L         |
-| E          | **1X** Click-iT&reg; EdU buffer additive    | 10 &micro;L          | 20 &micro;L          |
-| Total:     |                                             | ~ 100 &micro;L       | ~ 200 &micro;L       |
+| Component  | Material name                               | Addition per sample  | Add for 4 samples  |
+| :---:      | :---                                        | :---:                | :---:              |  
+| C          | **1X** Click-iT&reg; EdU reaction buffer    | 85 &micro;L          | 340 &micro;L       |
+| D          | CuSO<sub>4</sub>                            | 4 &micro;L           | 16 &micro;L        |
+| B          | Alexa Fluor&reg; azide                      | 0.25 &micro;L        | 1 &micro;L         |
+| E          | **1X** Click-iT&reg; EdU buffer additive    | 10 &micro;L          | 40 &micro;L        |
+| Total:     |                                             | ~ 100 &micro;L       | ~ 400 &micro;L     |
 ||||
 
 ### Incubation
