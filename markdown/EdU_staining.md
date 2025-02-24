@@ -28,7 +28,7 @@ output:
 2. Incubate for <b style='color: violet'>30 minutes</b> under <b style='color: violet'>room temperature</b>;
 3. Remove fixative solution and add 1 mL of <b style='color: violet'>1X PBS</b> to wash the roots. <b style='color: violet'>Wash three times ( 3 &times; 10 mins )</b>.
 
-- <b style='color: orange'>You can safely store the samples in the PBS solution for several hours after washing the fixative solution.</b>
+- <b style='color: orange'>You can safely store the samples in 1X PBS solution up tp 24 hours after washing the fixative solution.</b>
 
 ## Step 3: EdU detection
 ### Prepare the cocktail
@@ -57,18 +57,41 @@ output:
 
 ## Step 4: Confocal parameters
 
-| Parameters                                               |  Theoretical value  |  Our machine                 |
-| :----                                                    |  :---:              |  :---:                       |
-| Excitation peak                                          |  495 nm             |  488 nm                      |
-| Emission peak                                            |  519 nm             |  500 ~ 600 nm                |
-| Magnification                                            |                     |  10X                         |
-| Laser intensity ( <b style='color: green;'>488 nm</b> )  |                     |  10X                         |
-| Master Gain                                              |                     |  600 V                       |
-| Pinhole                                                  |                     |  1 AU &approx; 26 &micro;m   |
-| Z-stack interval                                         |                     |  2 &micro;m                  |
-| Scan speed                                               |                     |  7                           |
-| Scan direction                                           |                     |  <b>&xharr;</b>              |
+| Parameters                                                  |  Theoretical value  |  Our machine           |
+| :----                                                       |  :---:              |  :---:                 |
+| Excitation peak                                             |  495 nm             |  488 nm                |
+| Emission peak                                               |  519 nm             |  500 ~ 600 nm          |
+| Magnification                                               |                     |  10X                   |
+| Laser intensity ( <b style='color: #97ed1d'>488 nm</b> )  |                     |  0.9%                  |
+| Master Gain                                                 |                     |  740 V                 |
+| Pinhole                                                     |                     |  &approx; 32 &micro;m  |
+| Z-stack interval                                            |                     |  2 &micro;m            |
+| Scan speed                                                  |                     |  8                     |
+| Scan direction                                              |                     |  <b>&xrarr;</b>        |
 |||
+&
+## Step 5: Image processing
+1. Use <b style='color: violet'>ImageJ</b> with <b style='color: violet'>bioformats_package.jar</b> plugin to proceed the confocal images;
+- The plugin ( bioformats_package.jar ) can be downloaded from <a href='https://www.openmicroscopy.org/bio-formats/downloads/'>https://www.openmicroscopy.org/bio-formats/downloads/</a>
+- The plugin should be placed in the <b><i>"/ImageJ/plugins/jars"</i></b> directory
+
+2. Open the confocal .czi file with the ImageJ, the "<b>Bio-Formats Import Options</b>" will automatically pop up;
+
+3. Select the options as follow:
+
+| Options             | Choose         |
+| :---:               | :---:          |
+| View stack with:    | Hyperstack     |
+| Color mode:         | Colorized      |
+| Autoscale           | &#9745;        |
+
+4. Stack the image layers and perform max intensity projection along the Z-axis;
+- `Image` &rarr; `Stacks` &rarr; `Z project...` &rarr; `Projection type: Max Intensity`
+
+5. Save the images as TIFF format;
+- `File` &rarr; `Save as` &rarr; `Tiff...`
+
+6. Select the region of interest (ROI) and measure.
 
 <div style='page-break-after: always;'></div>
 
@@ -116,7 +139,7 @@ The 1X solution could be stored at 2 ~ 6&deg;C for 6 months.
 | ddH<sub>2</sub>O                       |               | 1 L          |
 ||||
 
-10X PBS &rarr; Adjust to pH 7.4 &rarr; Autoclave &rarr; Dilute to 1X ( 100 mL 10X PBS + 900 mL ddH<sub>2</sub>O )
+- 10X PBS &xrarr; Adjust to pH 7.4 &xrarr; Autoclave &xrarr; Dilute to 1X ( 100 mL 10X PBS + 900 mL ddH<sub>2</sub>O )
 
 ## <b><sup>&sect;</sup> Fixative solution</b>
 | Chemical               | Addition        | Final concentration | Storage location |
