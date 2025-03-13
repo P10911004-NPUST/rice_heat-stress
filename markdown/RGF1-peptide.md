@@ -9,3 +9,14 @@
 ## Prepare 1 mM RGF1 stock solution
 1 mg peptide + 589 &micro;L ddH<sub>2</sub>O  
 After fully diluted, take into a protein low-binding eppendorf, and stored at 4&deg;C.
+
+
+## Make RGF1 peptide solution / gel
+
+| Final concentration (nM)      | Stock solution   | Add stock solution   |
+| :---:                         | :---:            | :---:                |
+| 0.1 nM                        | 1 &micro;M       | 10 &micro;L          |  
+| 1 nM                          | 1 &micro;M       | 100 &micro;L         |
+| 10 nM                         | 1 mM             | 1 &micro;L           |
+| 100 nM                        | 1 mM             | 10 &micro;L          |
+| Dilute in ddH<sub>2</sub>O    |                  | 100 mL               |

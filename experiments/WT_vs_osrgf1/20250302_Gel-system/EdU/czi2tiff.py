@@ -23,7 +23,7 @@ img_list = [i for i in os.listdir(img_dir) if i.endswith((".czi"))]
 ###########################################################################
 # Maximum intensity
 ###########################################################################
-df0 = pd.DataFrame(columns = ["img_name", "area", "total_intensity"])
+df0 = pd.DataFrame(columns = ["img_name", "slices", "area", "total_intensity"])
 for i in img_list:
     img = czifile.imread(os.path.join(img_dir, i))
     img = np.array(img, dtype=np.double)
@@ -51,6 +51,7 @@ for i in img_list:
         df0, 
         pd.DataFrame({
             "img_name": [i], 
+            "slices": [channel],
             "area": [staining_area], 
             "total_intensity": [total_intensity], 
             "avg_intensity": [avg_intensity]

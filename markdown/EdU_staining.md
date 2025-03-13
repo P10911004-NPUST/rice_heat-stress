@@ -19,16 +19,16 @@ output:
 
 ## Step 1: EdU incubation &rarr; labeling cells with EdU
 1. Prepare <b style='color: violet'>incubation medium</b> containing <b style='color: violet'>10 &micro;M Component A</b>;
-- For example, in 5 samples scenario, add 100 &micro;L Component A ( 10 mM ) into 100 mL half-MS medium for the experiment. Then, repackage the diluted Component A to new falcon tubes, each tube takes around 20 mL for each sample ( make sure the roots can be fully submerged into the solution).
+- For example, in 5 samples scenario, add 100 &micro;L Component A ( 10 mM ) into 100 mL half-MS medium for the experiment. Then, repackage the diluted Component A to new falcon tubes, each tube takes around 20 mL for each sample ( make sure the root tips can be fully submerged into the solution).
 2. Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>2 hours</b>.
-- Directly immersed the roots in the solution, <b style='color: red'>DO NOT</b> cut the shoot part, the plant should be still alive. The root should be fully submerged into the solution. Do not over-pushing the root to avoid roots injury. 
+- Directly immersed the roots in the solution, <b style='color: red'>DO NOT</b> cut the shoot part, the plant should still alive. The root should be fully submerged into the solution. Do not over-pushing the root to avoid roots injury. 
 
 ## Step 2: Fixation
-1. Cut the root tip and immerse in 1 mL <b style='color: violet'>fixative solution</b>;
+1. Cut the root tip and immerse in 200 &micro;L <b style='color: violet'>fixative solution</b> in eppendorf;
 2. Incubate for <b style='color: violet'>30 minutes</b> under <b style='color: violet'>room temperature</b>;
-3. Remove fixative solution and add 1 mL of <b style='color: violet'>1X PBS</b> to wash the roots. <b style='color: violet'>Wash three times ( 3 &times; 10 mins )</b>.
+3. Remove fixative solution and add 200 &micro;L of <b style='color: violet'>1X PBS</b> to wash the roots. <b style='color: violet'>Wash three times ( 3 &times; 10 mins )</b>.
 
-- <b style='color: orange'>You can safely store the samples in 1X PBS solution up tp 24 hours after washing the fixative solution.</b>
+- <b style='color: orange'>You can safely store the samples in 1X PBS solution up to 24 hours after washing the fixative solution.</b>
 
 ## Step 3: EdU detection
 ### Prepare the cocktail
@@ -88,6 +88,9 @@ output:
 4. Stack the image layers and perform max intensity projection along the Z-axis;
 - `Image` &rarr; `Stacks` &rarr; `Z project...` &rarr; `Projection type: Max Intensity`
 
+> Optional: Shows scale bar in the image.  
+`Analyze` &xrarr; `Tools` &xrarr; `Scale Bar...`
+
 5. Save the images as TIFF format;
 - `File` &rarr; `Save as` &rarr; `Tiff...`
 
@@ -95,6 +98,10 @@ output:
 
 <div style='page-break-after: always;'></div>
 
+
+<!-- ================================================================================================================= -->
+<!-- Materials -->
+<!-- ================================================================================================================= -->
 # Materials Provided by the kit
 | Component             | Material name                             | C10351 <sup>*</sup> | Concentration |
 | :---:                 | :---                                      |  :---:              |  :---:        |
