@@ -41,7 +41,7 @@ The kit contents:
 
 <sup>1</sup> **Buffer RLT mixture**: Add 10 &micro;L &beta;-mercaptoethanol (&beta;-ME) to 1 mL Buffer RLT. The mixture can be stored at room temperature for up to 1 month.
 
-<sup>2</sup> **Buffer RPE working solution**: Add 4 volumes of ethanol (&geq; 96% to Buffer RPE). In this case, add 2000 &micro;L ethanol to 500 &micro;L Buffer RPE.
+<sup>2</sup> **Buffer RPE working solution**: Add 4 volumes of &geq; 96% ethanol to Buffer RPE. In this case, add 2000 &micro;L ethanol to 500 &micro;L Buffer RPE.
 
 <sup>3</sup> **DNase I stock solution**: Dissolve the lyophilized DNase I in 550 &micro;L RNase-free water. Mix gently by inverting the vial. Do not vortex. Store the stock solution as single use aliquots at -20&deg;C (9 months) or 2-8&deg;C (1 month). Do not refreeze after thawing.
 
@@ -58,10 +58,10 @@ The kit contents:
 4. The drill of the TissueLyser instrument should be pre-cold, by inserting it into the liquid nitrogen.
 5. Take out the eppendorf and powderize the tissue with the TissueLyser instrument (this step is extremely important to yield high quantity and quality of RNA, and this step also should be finished as quick as possible).
 6. Add <b style='color: darkorange'>350 &micro;L Buffer RLT mixture</b> into the eppendorf and immediately vortex to homogenize the buffer and the powderized tissue (10-15 secs)
-7. Now we had obtained the ***raw lysate***. Place the eppendorf on ice to inhibit enzymatic activity of the lysate (if you have many samples to work with).
+7. Now we obtained the <b style='color: violet'>raw lysate</b>. Place the eppendorf on ice to inhibit enzymatic activity of the lysate.
 
 ### Collect the lysate supernatant
-8. Centrifuge the raw lysate (3 mins, 15000 rpm).
+8. Centrifuge the raw lysate ( 3 mins, 15000 rpm ).
 9. Carefully take the centrifuged lysate supernatant to a new eppendorf, and then place on ice.
 10. Add <b style='color: darkorange'>350 &micro;L 70% EtOH</b> into the sample, mix well with pipetting. <i><b style='color: red'>DO NOT centrifuge</b></i>. Proceed to the next step immediately.
 
