@@ -17,22 +17,24 @@ output:
 
 # Experimental Procedure
 
-## Step 1: EdU incubation &rarr; labeling cells with EdU
+## Step 1: Labeling
 1. Prepare <b style='color: violet'>incubation medium</b> containing <b style='color: violet'>10 &micro;M Component A</b>;
 - For example, in 5 samples scenario, add 100 &micro;L Component A ( 10 mM ) into 100 mL half-MS medium for the experiment. Then, repackage the diluted Component A to new falcon tubes, each tube takes around 20 mL for each sample ( make sure the root tips can be fully submerged into the solution).
-2. Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>2 hours</b>.
+2. Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>1 hour</b>.
 - Directly immersed the roots in the solution, <b style='color: red'>DO NOT</b> cut the shoot part, the plant should still alive. The root should be fully submerged into the solution. Do not over-pushing the root to avoid roots injury. 
 
 ## Step 2: Fixation
 1. Cut the root tip and immerse in 200 &micro;L <b style='color: violet'>fixative solution</b> in eppendorf;
 2. Incubate for <b style='color: violet'>30 minutes</b> under <b style='color: violet'>room temperature</b>;
-3. Remove fixative solution and add 200 &micro;L of <b style='color: violet'>1X PBS</b> to wash the roots. <b style='color: violet'>Wash three times ( 3 &times; 10 mins )</b>.
+3. Remove fixative solution and add 200 &micro;L of <b style='color: violet'>1X PBS</b> to wash the roots. Repeat this wash  procedure three times, for each 10 mins ( <b style='color: violet'>3 &times; 10 mins</b> ).
 
-- <b style='color: orange'>You can safely store the samples in 1X PBS solution up to 24 hours after washing the fixative solution.</b>
+- <b style='color: darkorange'>You can safely store the samples in 1X PBS solution up to 24 hours after washed out the fixative solution.</b>
 
-## Step 3: EdU detection
-### Prepare the cocktail
+## Step 3: Detection
+### **Prepare the cocktail**
 1. Firstly, dilute the <b style='color: violet'>Component C</b> and <b style='color: violet'>Component E</b> from 10X to <b style='color: violet'>1X</b> using <b style='color: violet'>ddH<sub>2</sub>O</b>. Calculate the total usage amount according to the following tables.
+- 10X Component C is stored at 4&deg;C in the kit box.
+- 10X Component E is stored at -20&deg;C in Jhenny's box.
 - Prepare the Component C and E as much as necessary only for that day's experiments, and use on the same day.
 
 2. Add the <b style='color: violet'>Click-iT&reg; reaction cocktail</b> ingredients as follow. 
@@ -48,7 +50,7 @@ output:
 | Total:     |                                             | ~ 100 &micro;L       | ~ 400 &micro;L     |
 ||||
 
-### Incubation
+### **Incubation**
 3. Remove wash solution and add <b style='color: violet'>100 &micro;L</b> of <b style='color: violet'>Click-iT&reg; reaction cocktail</b> for each sample;
 4. Incubate for <b style='color: violet'>30 minutes</b> at <b style='color: violet'>room temperature</b>. Must be <b style='color: violet'>protected from light</b>;
 5. Remove the reaction cocktail and wash once with 100 &micro;L of Click-iT&reg; reaction rince buffer ( <b style='color: violet'>Component F</b> );
@@ -69,7 +71,7 @@ output:
 | Scan speed                                                  |                     |  8                     |
 | Scan direction                                              |                     |  <b>&xrarr;</b>        |
 |||
-&
+
 ## Step 5: Image processing
 1. Use <b style='color: violet'>ImageJ</b> with <b style='color: violet'>bioformats_package.jar</b> plugin to proceed the confocal images;
 - The plugin ( bioformats_package.jar ) can be downloaded from <a href='https://www.openmicroscopy.org/bio-formats/downloads/'>https://www.openmicroscopy.org/bio-formats/downloads/</a>
@@ -96,6 +98,7 @@ output:
 
 6. Select the region of interest (ROI) and measure.
 
+
 <div style='page-break-after: always;'></div>
 
 
@@ -103,19 +106,19 @@ output:
 <!-- Materials -->
 <!-- ================================================================================================================= -->
 # Materials Provided by the kit
-| Component             | Material name                             | C10351 <sup>*</sup> | Concentration |
-| :---:                 | :---                                      |  :---:              |  :---:        |
-| A <sup>&#9768;</sup>  | EdU **working solution**                  | 525 &micro;L        | 10 mM         |
-| B <sup>&ensp;</sup>   | Alexa Fluor&reg; azide 488                | 330 &micro;L        | 1X            |
-| C <sup>&#8251;</sup>  | Click-iT&reg; EdU **reaction buffer**     | 15 mL               | 10X           |
-| D <sup>&ensp;</sup>   | CuSO<sub>4</sub>                          | 1 vial              | 100 mM        |
-| E <sup>&sect;</sup>   | Click-iT&reg; EdU **buffer additive**     | 400 mg              | 10X           |
-| F <sup>&ensp;</sup>   | Click-iT&reg; reaction **rinse buffer**   | 125 mL              | 1X            |
+| Component            | Material name                           | C10351 <sup>*</sup> | Concentration |
+| :---:                | :---                                    |  :---:              |  :---:        |
+| A <sup>&#9768;</sup> | EdU **working solution**                | 525 &micro;L        | 10 mM         |
+| B <sup>&ensp;</sup>  | Alexa Fluor&reg; azide 488              | 330 &micro;L        | 1X            |
+| C <sup>&#8251;</sup> | Click-iT&reg; EdU **reaction buffer**   | 15 mL               | 10X           |
+| D <sup>&ensp;</sup>  | CuSO<sub>4</sub>                        | 1 vial              | 100 mM        |
+| E <sup>&sect;</sup>  | Click-iT&reg; EdU **buffer additive**   | 400 mg              | 10X           |
+| F <sup>&ensp;</sup>  | Click-iT&reg; reaction **rinse buffer** | 125 mL              | 1X            |
 |||||
 
 <sup>*</sup> **C10351**: Catalogue number. All the raw materials in this kit should be stored at <b style='color: violet'>2 ~ 6&deg;C</b>, <b style='color: violet'>dessiccated</b>, <b style='color: violet'>protect from light</b>, and <b style='color: red'>DO NOT FREEZE</b>.  
 
-<sup>&#9768;</sup> **Component A**: This is the EdU chemical stock solution. When in use, dilute to 10 &micro;M to the complete medium for that day's experiments, and use on the same day.
+<sup>&#9768;</sup> **Component A**: This is the EdU chemical stock solution. When in use, dilute to 10 &micro;M to the complete medium for that day's experiments, and use on the same day. The 10 mM stock solution is stored at -20&deg;C ( the EdU powder also put in -20&deg;C, in Jhenny's box ), and the 10 mM aliquots are stored at 4&deg;C (in the EdU kit box, put together with the other components).
 
 <sup>&#8251;</sup> **Component C**: Dilute from 10X to 1X using ddH<sub>2</sub>O, *i.e.*, 15 mL 10X Component C + 135 mL ddH<sub>2</sub>O. 
 The 1X solution could be stored at 2 ~ 6&deg;C for 6 months.  

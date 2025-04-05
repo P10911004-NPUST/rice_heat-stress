@@ -5,7 +5,9 @@ output:
       version: 4
 ---
 
-# RNeasy&reg; Micro Kit
+# RNA extraction
+
+<a href=''>RNeasy&reg; Micro Kit</a>
 
 The kit contents:
 
