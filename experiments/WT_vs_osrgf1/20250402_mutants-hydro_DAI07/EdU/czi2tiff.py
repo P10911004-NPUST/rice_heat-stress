@@ -16,7 +16,7 @@ def Z_projection(img, methods = "max_intensity"):
     out_img = Image.fromarray(RGB_img, mode="RGB")
     return out_img
 
-img_dir = "./WT-vs-mutants_Mock_20250303"
+img_dir = "./WT-vs-mutants_Mock_20250404"
 img_list = [i for i in os.listdir(img_dir) if i.endswith((".czi"))]
 
 
@@ -115,7 +115,7 @@ if False:
 
         total_intensity = arr1.sum()
         staining_area = np.sum(arr1 > 0)
-        avg_intensity = total_intensity / staining_area
+        avg_intensity = 0 if staining_area == 0 else total_intensity / staining_area
 
         # Export as RGB image in TIFF format
         RGB_img = np.zeros((width, height, 3), dtype=np.uint8)

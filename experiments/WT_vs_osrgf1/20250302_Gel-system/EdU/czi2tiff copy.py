@@ -15,7 +15,7 @@ def Z_projection(img, methods = "max_intensity"):
     out_img = Image.fromarray(RGB_img, mode="RGB")
     return out_img
 
-img_dir = "./WT-vs-mutants_Mock_20250221"
+img_dir = "./WT-vs-mutants_Mock_20250303"
 img_list = [i for i in os.listdir(img_dir) if i.endswith((".czi"))]
 
 bioimg = BioImage(os.path.join(img_dir, img_list[0]), reader=bioio_czi.Reader)

@@ -112,7 +112,7 @@ The kit contents:
 - <i>**Note**: Use only thin-wall, clear, 0.5 mL PCR tubes ( Cat. No. <a href='https://www.thermofisher.com/search/results?query=Q32856'>Q32856</a> ) for the Qubit&trade; 4 Fluorometer.</i>
 
 2. Label the tube lids.
-- <i>**Note**: Do not label the side of the tubes. Label the lid of each standard tube correctly, as the calibration of the Qubit&trade; Fluorometer requires the standards to be inserted into the instrument in the right order.</i>
+- <i>**Note**: Do not label the side of the tubes, that will affect light penetration. Label the lid of each standard tube correctly, as the calibration of the Qubit&trade; Fluorometer requires the standards to be inserted into the instrument in the right order.</i>
 
 3. Prepare the <b style='color: orange'>working solution</b> by diluting Component A 1:200 in Component B for each tube ( sample + standard solutions ). For example, 10 &micro;L Component A + 1990 &micro;L Component B for 10 tubes ( 8 samples + 2 standards ). 
 - <i>**Note**: <b style='color: red'>DO NOT</b> mix the working solution in a glass container. Use clean plastic tube</i>

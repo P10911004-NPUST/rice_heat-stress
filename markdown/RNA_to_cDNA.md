@@ -12,7 +12,8 @@ output:
 # Procedure
 
 ### 1. Anneal primer to template RNA
-1.1 Combine the following components in a PCR reaction tube.
+
+Combine the following components in a PCR reaction tube.
 
 | Component                       | Concentration      | Volume       | Location               |
 | :---:                           | :---:              | :---:        | :---:                  |
@@ -20,3 +21,4 @@ output:
 | dNTP mix                        | 10 mM              | 1 &micro;L   | $-20{\degree}C, 4-3-1$ |
 | RNA template                    | 10 ng / &micro;L   | 5 &micro;L   | &dash; |
 
+### 2. Prepare RT reaction mix
