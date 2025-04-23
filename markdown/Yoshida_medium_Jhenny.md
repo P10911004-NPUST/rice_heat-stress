@@ -66,5 +66,5 @@ Yoshida's stock solution for root architecture media rice
 
 
 ### 配製 pH 校正溶液 ( NaOH & HCl )
-$$ M = \frac{mol}{L} = \frac{g\ /\ 分子量}{L} $$
+$$ M = \frac{mol}{L} = \frac{\frac{g}{mol.weight}}{L} $$
 $$ N = M \times 解離常數 $$

@@ -64,7 +64,7 @@ for i in img_list:
 df0.to_csv(os.path.join(img_dir, "total_intensity.csv"), index=False)
 
 
-if False:
+if True:
     ###########################################################################
     # Get the min & max values of this batch of images
     ###########################################################################

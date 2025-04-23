@@ -46,12 +46,15 @@ ggplot(df0, aes(genotype, root_length, colour = genotype)) +
         mapping = aes(GROUP, CLD_POS, label = CLD),
         size = 8
     ) +
+    scale_x_discrete(
+        labels = c("WT", "<i>osrgf1-7</i>", "<i>osrgf1-8</i>")
+    ) +
     scale_y_continuous(limits = c(25, 55), breaks = seq(25, 55, 5)) +
     scale_color_manual(values = c("#010111", "#FF8C00", "#A034F0", "#159090")) +
     theme(
         legend.position = "none",
         axis.title.x.bottom = element_blank(),
-        axis.text.x.bottom = element_markdown(size = 22)
+        axis.text.x.bottom = element_markdown(size = 24)
     )
 
 ggsave2(filename = "root_length.jpg")
