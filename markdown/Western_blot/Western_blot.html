@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Western_blot.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="western-blot"><strong>Western Blot</strong></h1>
+<p>Bio-Rad's  <a href='./Protein_Blotting_Guide.pdf'>Protein Blotting Guide</a></p>
+<br>
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- Protein extraction -->
+<!-- ------------------------------------------------------------------------------------ -->
+<h2 id="step-01-protein-extraction"><strong>Step 01. Protein extraction</strong></h2>
+<p>Sample buffer</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Chemical</th>
+<th style="text-align:center">Stock<br>Concentration</th>
+<th style="text-align:center">Addition</th>
+<th style="text-align:center">Final<br>Concentration</th>
+<th style="text-align:center">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Tris (pH 6.8) <sup>α</sup></td>
+<td style="text-align:center">0.5 M</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">120 mM</td>
+<td style="text-align:center">Yu-Chun</td>
+</tr>
+<tr>
+<td style="text-align:left">Glycerol <sup>β</sup></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">Ⅴ</td>
+</tr>
+<tr>
+<td style="text-align:left">SDS</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">4%</td>
+<td style="text-align:center">Ⅲ</td>
+</tr>
+<tr>
+<td style="text-align:left">DTT <sup>γ</sup></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">5 mM</td>
+<td style="text-align:center">4°C (d)</td>
+</tr>
+<tr>
+<td style="text-align:left">Bromophenol Blue <sup>δ</sup></td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.01%</td>
+<td style="text-align:center">Ⅶ</td>
+</tr>
+<tr>
+<td style="text-align:left">Total per 10 samples</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">200 µL</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><sup>α</sup> <span style='font-size:0.9em'></span> Yellow color.</p>
+<p><sup>β</sup> <span style='font-size:0.9em'></span> Glycerol stock is too sticky to take with pipette tip. Directly pour in a falcon tube and dilute to 50% with same volume of ddH<sub>2</sub>O.</p>
+<p><sup>γ</sup> <span style='font-size:0.9em'></span> DTT is a string reductant which is used to break the disulfide bond. An alternative is 10% β-mercaptoethanol.</p>
+<p><sup>δ</sup> <span style='font-size:0.9em'></span> Bromophenol Blue sodium salt should be protected from light. DO NOT directly take from the stock vial for experimental use, keep your own stock aliquots (exp. 10%) instead.</p>
+</blockquote>
+<br>
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- Protein purification -->
+<!-- ------------------------------------------------------------------------------------ -->
+<h2 id="step-02-protein-purification--optional"><strong>Step 02. Protein purification ( optional )</strong></h2>
+<br>
+<div style='page-break-after: always;'></div>
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- Gel preparation -->
+<!-- ------------------------------------------------------------------------------------ -->
+<h2 id="step-03-gel-preparation"><strong>Step 03. Gel preparation</strong></h2>
+<p><b style="color:red">Important:</b> Before starting the gel preparation, fill in some ddH<sub>2</sub>O into the well to make sure the well is completely sealed.</p>
+<h3 id="separating-gel--10-acrylamide">Separating Gel ( 10% Acrylamide )</h3>
+<ol>
+<li>
+<p>The stacking gel should be on top of the separating gel. Thus, fill in the separating gel first into the well.</p>
+</li>
+<li>
+<p>Prepare the separating gel by adding the chemicals into a new tube following the order of the table below.</p>
+</li>
+</ol>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Chemical</th>
+<th style="text-align:center">Stock<br>Concentration</th>
+<th style="text-align:center">Addition</th>
+<th style="text-align:center">Final<br>Concentration</th>
+<th style="text-align:center">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ddH<sub>2</sub>O</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">3.7 mL<br>3.2 mL<br>2.6 mL</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">—</td>
+</tr>
+<tr>
+<td style="text-align:left">Acrylamide <sup>α</sup></td>
+<td style="text-align:center">30%</td>
+<td style="text-align:center">2.13 mL<br>2.67 mL<br>3.2 mL</td>
+<td style="text-align:center">8%<br>10%<br>12%</td>
+<td style="text-align:center">4°C (3 door)</td>
+</tr>
+<tr>
+<td style="text-align:left">Tris (pH 8.8)</td>
+<td style="text-align:center">1.5 M</td>
+<td style="text-align:center">2 mL</td>
+<td style="text-align:center">375 mM</td>
+<td style="text-align:center">Yu-Chun</td>
+</tr>
+<tr>
+<td style="text-align:left">SDS</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">80 µL</td>
+<td style="text-align:center">0.1%</td>
+<td style="text-align:center">Ⅲ</td>
+</tr>
+<tr>
+<td style="text-align:left">APS <sup>β</sup></td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">80 µL</td>
+<td style="text-align:center">0.1%</td>
+<td style="text-align:center">4°C (d)</td>
+</tr>
+<tr>
+<td style="text-align:left">TEMED <sup>γ</sup></td>
+<td style="text-align:center">1000X</td>
+<td style="text-align:center">8 µL</td>
+<td style="text-align:center">1X</td>
+<td style="text-align:center">Yu-Chun</td>
+</tr>
+<tr>
+<td style="text-align:left"><b>Total</b></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><b>8 mL</b></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><sup>α</sup> <span style='font-size:0.9em'>Acrylamide/Bis is stored at 4°C ( three door refrigerator, upper left corner ). It should be protected from light. The stock solution should not be used directly. Take the solution as aliquots and keep your own.</span></p>
+<p><sup>β</sup> <span style='font-size:0.9em'>APS should be stored at -20°C for long term storage. This chemical is relatively unstable.</span></p>
+<p><sup>γ</sup> <span style='font-size:0.9em'>TEMED is an essential catalyst for polyacrylamide gel polymerization. It is used with ammonium persulfate (APS). Incresing the TEMED concentration ( exp. increase from 1X to 5X ) will speed up the gel solidification process.</span></p>
+</blockquote>
+<ol start="3">
+<li>
+<p>After the TEMED was added, the gel starts to solidify. Thus, the gel solution should be thoroughly mixed and immediately fill in to the well.</p>
+</li>
+<li>
+<p>After filling in the separating gel into the well, before the gel solidified, immediately add 100% isopropanol on top of the separating gel to flatten the gel surface.</p>
+</li>
+<li>
+<p>After the separating gel was solidified, pour out the isopropanol and add some ddH<sub>2</sub>O to rinse the gel.</p>
+</li>
+<li>
+<p>Prepare the stacking gel in a new tube.</p>
+</li>
+</ol>
+<br>
+<h3 id="stacking-gel--4-acrylamide">Stacking Gel ( 4% Acrylamide )</h3>
+<ol>
+<li>The stacking gel preparation is similar with the separating gel. Add the chemicals into a new tube following the order of the table below.</li>
+</ol>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Chemical</th>
+<th style="text-align:center">Stock<br>Concentration</th>
+<th style="text-align:center">Addition</th>
+<th style="text-align:center">Final<br>Concentration</th>
+<th style="text-align:center">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ddH<sub>2</sub>O</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">3 mL</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Acrylamide</td>
+<td style="text-align:center">30%</td>
+<td style="text-align:center">0.67 mL</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Tris (pH 6.8)</td>
+<td style="text-align:center">0.5 M</td>
+<td style="text-align:center">1.25 mL</td>
+<td style="text-align:center">125 mM</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">SDS</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">50 µL</td>
+<td style="text-align:center">0.1%</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">APS</td>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">50 µL</td>
+<td style="text-align:center">0.1%</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">TEMED</td>
+<td style="text-align:center">1000X</td>
+<td style="text-align:center">5 µL</td>
+<td style="text-align:center">1X</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><b>Total</b></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><b>5 mL</b></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ol start="2">
+<li>Before the stacking gel starts to solidify, immediately insert the comb.</li>
+<li>After the stacking gel was completely solidified, mark down the position of each loading well. Otherwise, after pulling out the comb, the loading wells are difficult to be recognized.</li>
+</ol>
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- Gel electrophoresis -->
+<!-- ------------------------------------------------------------------------------------ -->
+<h2 id="step-04-gel-electrophoresis"><strong>Step 04. Gel electrophoresis</strong></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Phase</th>
+<th style="text-align:center">Voltage (V)</th>
+<th style="text-align:center">Time (mins)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Ⅰ   ( stacking gel )</td>
+<td style="text-align:center">~ 80</td>
+<td style="text-align:center">~ 30</td>
+</tr>
+<tr>
+<td style="text-align:left">Ⅱ   ( separating gel )</td>
+<td style="text-align:center">~ 125</td>
+<td style="text-align:center">~ 90</td>
+</tr>
+</tbody>
+</table>
+<br>
+<!-- ------------------------------------------------------------------------------------ -->
+<!-- Transfer -->
+<!-- ------------------------------------------------------------------------------------ -->
+<h2 id="step-05-transfer"><strong>Step 05. Transfer</strong></h2>
+<p>Bio-Rad's <a href='./Transfer_Buffer_Formulations.pdf'>Transfer Buffer Formulations</a></p>
+<h3 id="prepare-transfer-buffer-stock-10x">Prepare transfer buffer stock (10X)</h3>
+<p>We are using the Bjerrum Schafer-Nielsen Buffer ( BSN buffer ). For convenience, make a 10X stock solution first, without the methanol. When in use, dilute to 1X with ddH<sub>2</sub>O and do not forget to add the methanol.</p>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Chemical</th>
+<th style="text-align:center">Stock<br>Concentration</th>
+<th style="text-align:center">Addition</th>
+<th style="text-align:center">Final<br>Concentration</th>
+<th style="text-align:center">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Tris base</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">58.2 g</td>
+<td style="text-align:center">480 mM</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">Glycine</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">29.3 g</td>
+<td style="text-align:center">390 mM</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">ddH<sub>2</sub>O</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center">~ 1 L</td>
+<td style="text-align:center">—</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center"><b>Total</b></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><b>1 L</b></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Voltage (V)</th>
+<th style="text-align:center">Time (mins)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">~ 100</td>
+<td style="text-align:center">~ 40</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h2 id="step-06-hybridization"><strong>Step 06. Hybridization</strong></h2>
+<br>
+<div style='page-break-after: always;'></div>
+<h2 id="step-07-imaging"><strong>Step 07. Imaging</strong></h2>
+<p><a href='https://www.bio-rad.com/en-tw/product/chemidoc-xrs-system'>Bio-Rad Molecular Imager® ChemiDoc™ XRS+</a></p>
+<ol start="0">
+<li>
+<p>Pull out the lower door and put the membrane on the platform. The membrane could be placed on a clear plastic cover to avoid directly contacting the machine platform.</p>
+</li>
+<li>
+<p>Open the <code>Imager Lab</code> software.</p>
+</li>
+<li>
+<p>Create a new protocol by pressing <code>New Protocol</code>.</p>
+</li>
+<li>
+<p>Switch to <code>1. Gel Imaging</code> section.</p>
+</li>
+</ol>
+<h3 id="take-the-marker-image">Take the <strong>marker</strong> image</h3>
+<ol start="4">
+<li>Look in the <em><strong>Application</strong></em> panel, press <code>Select...</code> ⟶ <code>Custom</code> ⟶ <code>marker</code>. If the <code>marker</code> option was not found, then set the parameters as follow:</li>
+</ol>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Marker Setting</th>
+<th style="text-align:center">Option</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Light source</td>
+<td style="text-align:center">White epi illumination</td>
+</tr>
+<tr>
+<td style="text-align:left">Filter</td>
+<td style="text-align:center">Standard filter ( Filter 1 )</td>
+</tr>
+<tr>
+<td style="text-align:left">Image color</td>
+<td style="text-align:center">Gray</td>
+</tr>
+<tr>
+<td style="text-align:left">Binning</td>
+<td style="text-align:center">1 × 1</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ol start="5">
+<li>
+<p>Press <code>Position Gel</code></p>
+</li>
+<li>
+<p>Make sure the bar, which is on top of the machine, already switched to <em><strong>Filter 1</strong></em>.</p>
+</li>
+<li>
+<p>Open the upper door, adjust the membrane position and orientation according to the alignment grids on the screen.</p>
+</li>
+<li>
+<p>Press <code>Run Protocol</code> to take the marker image.</p>
+</li>
+<li>
+<p>Save the marker image ( optional ), and minimize the marker image window.</p>
+</li>
+</ol>
+<h3 id="take-the-membrane-image">Take the <strong>membrane</strong> image</h3>
+<ol start="10">
+<li>
+<p>Press <code>Select...</code> ⟶ <code>Blots</code> ⟶ <code>Chemi Hi Resolution</code>.</p>
+</li>
+<li>
+<p>Look in the <em><strong>Image Exposure</strong></em> panel, select <code>Signal Accumulation Mode</code> and press <code>Setup</code>. Set the parameters case by case. For example:</p>
+</li>
+</ol>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:center">Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">First image time (sec)</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:left">Last image time (sec)</td>
+<td style="text-align:center">300</td>
+</tr>
+<tr>
+<td style="text-align:left">Total number of images</td>
+<td style="text-align:center">10</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ol start="12">
+<li>
+<p>Press <code>Run Protocol</code>.</p>
+</li>
+<li>
+<p>Switch the bar, which is on top of the machine, to <em><strong>No Filter</strong></em>. Press <code>OK</code>.</p>
+</li>
+<li>
+<p>Save the desired membrane images.</p>
+</li>
+</ol>
+<h3 id="merge-marker-and-membrane-image">Merge marker and membrane image</h3>
+<ol start="15">
+<li>
+<p>Press <code>Open</code> to load in the desired membrane image.</p>
+</li>
+<li>
+<p>Look in the <em><strong>Analysis Tool Box</strong></em> panel on the left hand side, press <code>Image Tools</code>.</p>
+</li>
+<li>
+<p>Press <code>Merge</code> ⟶ <code>OK</code>. Make sure the chosen marker image is correct.</p>
+</li>
+<li>
+<p>Export the merged image. Press <code>Export</code> ⟶ <code>Export for Publication...</code> ⟶ select <code>600 dpi</code> ⟶ <code>Export...</code> ( save as TIFF file format is recommended ).</p>
+</li>
+<li>
+<p>Completed. Do not forget to take the membrane and switch off the machine.</p>
+</li>
+</ol>
+
+</body>
+</html>
