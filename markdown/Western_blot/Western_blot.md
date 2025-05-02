@@ -7,11 +7,7 @@ output:
 ---
 
 # **Western Blot**
-
-Bio-Rad's  <a href='./Protein_Blotting_Guide.pdf'>Protein Blotting Guide</a>
-
-<br>
-
+- Bio-Rad's <a href='https://www.bio-rad.com/webroot/web/pdf/lsr/literature/Bulletin_2895.pdf'>Protein Blotting Guide</a>
 
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 01. Protein extraction**
@@ -36,13 +32,13 @@ Sample buffer
 > <sup>&delta;</sup> <span style='font-size:0.9em'></span> Bromophenol Blue sodium salt should be protected from light. DO NOT directly take from the stock vial for experimental use, keep your own stock aliquots (exp. 10%) instead.
 
 
-<br>
+<br />
 
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 02. Protein purification ( optional )**
 <!-- ------------------------------------------------------------------------------------ -->
 
-<br>
+<br />
 <div style='page-break-after: always;'></div>
 
 
@@ -82,7 +78,7 @@ Sample buffer
 
 6. Prepare the stacking gel in a new tube.
 
-<br>
+<br />
 
 ### Stacking Gel ( 4% Acrylamide )
 
@@ -101,6 +97,8 @@ Sample buffer
 2. Before the stacking gel starts to solidify, immediately insert the comb.
 3. After the stacking gel was completely solidified, mark down the position of each loading well. Otherwise, after pulling out the comb, the loading wells are difficult to be recognized.
 
+<br />
+
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 04. Gel electrophoresis**
 <!-- ------------------------------------------------------------------------------------ -->
@@ -110,14 +108,13 @@ Sample buffer
 | &#8544; &ensp; ( stacking gel )    | ~ 80        | ~ 30          |
 | &#8545; &ensp; ( separating gel )  | ~ 125       | ~ 90          |
 
-<br>
+<br />
 <div style='page-break-after: always;'></div>
 
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 05. Transfer**
 <!-- ------------------------------------------------------------------------------------ -->
-
-Bio-Rad's <a href='./Transfer_Buffer_Formulations.pdf'>Transfer Buffer Formulations</a>
+- Bio-Rad's <a href='https://www.bio-rad.com/webroot/web/pdf/lsr/literature/Bulletin_6211.pdf'>Transfer Buffer Formulations</a>
 
 ### Prepare 10X transfer buffer stock
 
@@ -147,20 +144,20 @@ We are using the Bjerrum Schafer-Nielsen Buffer. For convenience, make a 10X sto
 > | ~ 100       | ~ 40          |
 
 
-<br>
+<br />
 <div style='page-break-after: always;'></div>
 
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 06. Hybridization**
 <!-- ------------------------------------------------------------------------------------ -->
 
-<br>
+<br />
 <div style='page-break-after: always;'></div>
 
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 07. Imaging**
 <!-- ------------------------------------------------------------------------------------ -->
-<a href='https://www.bio-rad.com/en-tw/product/chemidoc-xrs-system'>Bio-Rad Molecular Imager&reg; ChemiDoc&trade; XRS+</a>
+- <a href='https://www.bio-rad.com/en-tw/product/chemidoc-xrs-system'>Bio-Rad Molecular Imager&reg; ChemiDoc&trade; XRS+</a> with ImageLab&trade; software  
 
 0. Pull out the lower door and put the membrane on the platform. The membrane could be placed on a clear plastic cover to avoid directly contacting the machine platform.
 
