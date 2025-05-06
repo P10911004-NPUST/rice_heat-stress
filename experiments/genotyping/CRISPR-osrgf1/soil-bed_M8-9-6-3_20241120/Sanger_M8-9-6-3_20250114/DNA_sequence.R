@@ -7,14 +7,6 @@ suppressMessages({
     if (!require(pwalign)) BiocManager::install("pwalign", ask = FALSE)
 })
 
-AtRGF1 <- Biostrings::readDNAStringSet("C:/jklai/IRGSP/AtRGF1_AT5G60810.fa", format = "fasta")
-names(AtRGF1) <- "AtRGF1"
-
-OsRGF1 <- Biostrings::readDNAStringSet("C:/jklai/IRGSP/LOC_Os02g09760.fa", format = "fasta")
-names(OsRGF1) <- "OsRGF1"
-
-file_list <- list.files("./sanger_data", pattern = "\\.seq", full.names = TRUE)
-
 read_DNA <- function(dna_file_dir) {
     if (grepl("WT", dna_file_dir)) {
         sample_id <- "WT"
@@ -28,18 +20,33 @@ read_DNA <- function(dna_file_dir) {
 }
 
 
+AtRGF1 <- Biostrings::readDNAStringSet("C:/jklai/IRGSP/AtRGF1_AT5G60810.fa", format = "fasta")
+names(AtRGF1) <- "AtRGF1"
+
+OsRGF1 <- Biostrings::readDNAStringSet("C:/jklai/IRGSP/LOC_Os02g09760.fa", format = "fasta")
+names(OsRGF1) <- "OsRGF1"
+
+mature_OsRGF1 <- Biostrings::readDNAStringSet("./mature_OsRGF1_DNA_sequence.fa", format = "fasta")
+names(mature_OsRGF1) <- "mature_OsRGF1"
+
+OsRGF1_primers <- Biostrings::readDNAStringSet("./OsRGF1_primer_sequence.fa", format = "fasta")
+names(OsRGF1_primers) <- c("CRP-OsRGF1-F", "CRP-OsRGF1-R")
+
+
+file_list <- list.files("./sanger_data", pattern = "\\.seq", full.names = TRUE)
+
 lst <- list()
-# names(vct) <- vector("character", length(file_list))
 for (i in seq_along(file_list)) 
 {
     f <- read_DNA(file_list[i])
     lst[f[["id"]]] <- f[["seq"]]
 }
+lst <- lst[order(names(lst))]
 
 dna <- Biostrings::DNAStringSet(unlist(lst))
-dna <- c(dna, OsRGF1, AtRGF1)
+dna <- c(dna, OsRGF1_primers, mature_OsRGF1, OsRGF1, AtRGF1)
 Biostrings::writeXStringSet(dna, filepath = "./DNA_sequence.fa", format = "fasta")
 
 res <- pwalign::pairwiseAlignment(dna[1:23], dna[24])
-res
+as.list(res)
 

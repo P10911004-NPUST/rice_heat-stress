@@ -46,6 +46,13 @@
 *.seq
 *.scn
 *.pm
+## SnapGene
+*.dna
+## MEGA
+*.mas
+## Unipro UGENE
+*.gb
+*.uprj
 
 # Environment
 /pyenv

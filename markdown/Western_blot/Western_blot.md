@@ -16,18 +16,18 @@ output:
 Sample buffer
 > | Chemical                             | Stock<br>Concentration | Addition      | Final<br>Concentration | Location      |
 > | :-------------------                 | :-----:                | :-----:       | :-----:                | :-------:     |
-> | Tris (pH 6.8) <sup>&alpha;</sup>     | 0.5 M                  |               | 120 mM                 | Yu-Chun       |
+> | Tris (pH 6.8) <sup>&alpha;</sup>     | 0.5 M                  |               | 120 mM                 | make yourself       |
 > | Glycerol <sup>&beta;</sup>           |                        |               | 5%                     | &#8548;       |
 > | SDS                                  | 10%                    |               | 4%                     | &#8546;       |
 > | DTT <sup>&gamma;</sup>               |                        |               | 5 mM                   | 4&deg;C (d)   |
 > | Bromophenol Blue <sup>&delta;</sup>  | 10%                    |               | 0.01%                  | &#8550;       |
 > | Total per 10 samples                 |                        | 200 &micro;L  |                        |               |
 > 
-> <sup>&alpha;</sup> <span style='font-size:0.9em'></span> Yellow color.
+> <sup>&alpha;</sup> <span style='font-size:0.9em'></span> Prepare by yourself.
 > 
-> <sup>&beta;</sup> <span style='font-size:0.9em'></span> Glycerol stock is too sticky to take with pipette tip. Directly pour in a falcon tube and dilute to 50% with same volume of ddH<sub>2</sub>O.
+> <sup>&beta;</sup> <span style='font-size:0.9em'></span> Glycerol stock is too sticky to take with pipette tip. Aliquot some of it into a falcon tube and dilute to 50% with the same volume of ddH<sub>2</sub>O.
 > 
-> <sup>&gamma;</sup> <span style='font-size:0.9em'></span> DTT is a string reductant which is used to break the disulfide bond. An alternative is 10% &beta;-mercaptoethanol.
+> <sup>&gamma;</sup> <span style='font-size:0.9em'></span> DTT is a strong reductant which is used to break the disulfide bond. An alternative is 10% &beta;-mercaptoethanol.
 > 
 > <sup>&delta;</sup> <span style='font-size:0.9em'></span> Bromophenol Blue sodium salt should be protected from light. DO NOT directly take from the stock vial for experimental use, keep your own stock aliquots (exp. 10%) instead.
 
@@ -58,7 +58,7 @@ Sample buffer
 > | :-------------------          | :-----:                | :-----:     | :-----:                | :-------:         |
 > | ddH<sub>2</sub>O              | &mdash;  | 3.7 mL<br>3.2 mL<br>2.6 mL     | &mdash;           | &mdash;           |
 > | Acrylamide <sup>&alpha;</sup> | 30%      | 2.13 mL<br>2.67 mL<br>3.2 mL   | 8%<br>10%<br>12%  | 4&deg;C (3 door)  |
-> | Tris (pH 8.8)                 | 1.5 M                  | 2 mL        | 375 mM                 | Yu-Chun           |
+> | Tris (pH 8.8)                 | 1.5 M                  | 2 mL        | 375 mM                 | make yourself           |
 > | SDS                           | 10%                    | 80 &micro;L | 0.1%                   | &#8546;           |
 > | APS <sup>&beta;</sup>         | 10%                    | 80 &micro;L | 0.1%                   | 4&deg;C (d)       |
 > | TEMED <sup>&gamma;</sup>      | 1000X                  | 8 &micro;L  | 1X                     | Yu-Chun           |
@@ -88,7 +88,7 @@ Sample buffer
 > | :--------------: | :-------:              | :-------:   | :-------:              | :----:   |
 > | ddH<sub>2</sub>O | &mdash;                | 3 mL        | &mdash;                |          |
 > | Acrylamide       | 30%                    | 0.67 mL     | 10%                    |          |
-> | Tris (pH 6.8)    | 0.5 M                  | 1.25 mL     | 125 mM                 |          |
+> | Tris (pH 6.8)    | 0.5 M                  | 1.25 mL     | 125 mM                 | make yourself         |
 > | SDS              | 10%                    | 50 &micro;L | 0.1%                   |          |
 > | APS              | 10%                    | 50 &micro;L | 0.1%                   |          |
 > | TEMED            | 1000X                  | 5 &micro;L  | 1X                     |          |
@@ -102,6 +102,8 @@ Sample buffer
 <!-- ------------------------------------------------------------------------------------ -->
 ## **Step 04. Gel electrophoresis**
 <!-- ------------------------------------------------------------------------------------ -->
+
+Running buffer [ Tris (pH 6.8) + Glycine + SDS ] ( yellow color commercial solution, Yu-Chun bench )
 
 | Phase                              | Voltage (V) | Time (mins)   |
 | :---                               | :---:       | :---:         |
@@ -148,8 +150,10 @@ We are using the Bjerrum Schafer-Nielsen Buffer. For convenience, make a 10X sto
 <div style='page-break-after: always;'></div>
 
 <!-- ------------------------------------------------------------------------------------ -->
-## **Step 06. Hybridization**
+## **Step 06. Immunodetection**
 <!-- ------------------------------------------------------------------------------------ -->
+
+[ TBS buffer involved ]
 
 <br />
 <div style='page-break-after: always;'></div>
@@ -159,7 +163,7 @@ We are using the Bjerrum Schafer-Nielsen Buffer. For convenience, make a 10X sto
 <!-- ------------------------------------------------------------------------------------ -->
 - <a href='https://www.bio-rad.com/en-tw/product/chemidoc-xrs-system'>Bio-Rad Molecular Imager&reg; ChemiDoc&trade; XRS+</a> with ImageLab&trade; software  
 
-0. Pull out the lower door and put the membrane on the platform. The membrane could be placed on a clear plastic cover to avoid directly contacting the machine platform.
+0. Pull out the lower door and load the membrane on the platform. The membrane could be placed on a clear plastic cover to avoid directly contacting the machine platform.
 
 1. Open the `Imager Lab` software.
 
@@ -192,11 +196,11 @@ We are using the Bjerrum Schafer-Nielsen Buffer. For convenience, make a 10X sto
 10. Press `Select...` &xrarr; `Blots` &xrarr; `Chemi Hi Resolution`.
 
 11. Look in the ***Image Exposure*** panel, select `Signal Accumulation Mode` and press `Setup`. Set the parameters case by case. For example:  
-> | Parameters | Values |
-> | :----------- | :---: |
-> | First image time (sec) | 30 |
-> | Last image time (sec) | 300 |
-> | Total number of images | 10 |
+> | Parameters              | Values |
+> | :-----------            | :---:  |
+> | First image time (sec)  | 30     |
+> | Last image time (sec)   | 300    |
+> | Total number of images  | 10     |
 
 12. Press `Run Protocol`.
 
@@ -214,4 +218,4 @@ We are using the Bjerrum Schafer-Nielsen Buffer. For convenience, make a 10X sto
 
 18. Export the merged image. Press `Export` &xrarr; `Export for Publication...` &xrarr; select `600 dpi` &xrarr; `Export...` ( save as TIFF file format is recommended ).
 
-19. Completed. Do not forget to take the membrane and switch off the machine.
+19. Completed. Do not forget to unload the membrane and switch off the machine.
