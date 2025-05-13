@@ -1,0 +1,88 @@
+---
+title: "Characterization of Oryza sativa RGF1 function in root meristem"
+format: html
+editor: visual
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+suppressMessages({
+    rm(list = ls())
+    if ( ! is.null(dev.list()) ) dev.off()
+    set.seed(1)
+    
+    library(tidyverse)
+    if (!require(devtools)) install.packages("devtools")
+    if (!require(statool)) devtools::install_github("P10911004-NPUST/statool", upgrade = FALSE)
+    
+    source("C:/jklai/github/plotools/R/utils4ggplot.R")
+    
+    theme_set(theme_bw_01)
+})
+```
+
+## Introduction
+
+## Materials and methods
+
+
+
+## Results and discussion
+
+### OsRGF1 is mainly expressed in root meristematic zone
+
+```{r}
+# download_url <- "https://rice.uga.edu/expression.shtml"
+
+tpm_mat <- readxl::read_excel(
+    path = "C:/jklai/IRGSP/osa1_r7.all_models.gene_exp_matrix.xlsx",
+    sheet = 1
+) %>% 
+    dplyr::filter(str_detect(transcript_id, "LOC_Os02g09760")) %>% 
+    tidyr::pivot_longer(starts_with("SRR"), names_to = "sample_id", values_to = "tpm") %>% 
+    dplyr::select("sample_id", "tpm")
+
+sample_info <- readxl::read_excel(
+    path = "C:/jklai/IRGSP/osa1_r7.all_models.gene_exp_matrix.xlsx", 
+    sheet = 2
+) %>% 
+    dplyr::rename("sample_id" = `SRA Run Accession`, "description" = `Sample Description`)
+
+df0 <- sample_info %>% 
+    dplyr::left_join(tpm_mat, by = "sample_id") %>% 
+    dplyr::mutate(
+        plant_part = str_extract(tolower(description), "leaf|stem|root|panicle|infloresence")
+    ) %>% 
+    tidyr::drop_na(tpm, plant_part) %>% 
+    dplyr::filter(str_detect(tolower(description), "seedling|flag", negate = TRUE))
+
+df0$plant_part <- stringr::str_to_title(df0$plant_part)
+df0$plant_part <- factor(df0$plant_part, levels = c("Root", "Stem", "Leaf", "Panicle", "Infloresence"))
+
+desc_df <- df0 %>% 
+    dplyr::summarise(AVG = mean(tpm), SE = sd(tpm) / sqrt(length(tpm)), .by = "plant_part")
+
+out <- oneway_test(df0, tpm ~ plant_part)
+
+p1 <- df0 %>%
+    ggplot(aes(plant_part, tpm)) +
+    labs(y = "TPM") +
+    geom_point() +
+    stat_summary(geom = "bar", fun = "mean", alpha = 0.5) +
+    ggplot2::geom_errorbar(
+        inherit.aes = FALSE,
+        data = desc_df,
+        mapping = aes(plant_part, ymin = AVG - SE, ymax = AVG + SE),
+        width = 0.45
+    ) +
+    theme(
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(angle = 15, vjust = 0.7)
+    )
+p1
+```
+
+
+
+## Conclusion

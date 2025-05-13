@@ -1,0 +1,4 @@
+Exposure [ms]: 500.00
+Gain: 1.0
+TL light Intensity [%]: 40
+Magn. Camera 1.6X | Visual 25X
