@@ -14,6 +14,7 @@ rawdata <- readxl::read_excel("../OUT_Magnif_32X.xlsx")
 df0 <- rawdata %>% 
     dplyr::filter(!str_detect(img_name, "cancel")) %>%
     dplyr::mutate(
+        DAI = str_replace(img_name, "DAI0(\\d)_.*", "\\1"),
         treatment = str_replace(img_name, ".*_(\\d{1,4})pM_.*", "\\1"),
         nbt_area = nbt_area / 1000,
         nbt_intensity = nbt_intensity / 1e6
@@ -21,11 +22,18 @@ df0 <- rawdata %>%
 
 df0$treatment <- factor(df0$treatment, levels = c("0", "1", "10", "100", "1000"))
 
-out <- oneway_test(df0, nbt_area ~ treatment)
+df1 <- df0 %>% 
+    dplyr::filter(DAI == "8") %>% 
+    dplyr::group_by(treatment) %>% 
+    dplyr::slice_max(root_length, n = 100) %>% 
+    dplyr::ungroup()
+
+out <- oneway_test(df1, nbt_area ~ treatment)
 cld <- out$cld
 cld$cld_pos <- estimate_cld_pos(cld$MAX)
+cld
 
-ggplot(df0, aes(treatment, nbt_area, color = treatment)) +
+ggplot(df1, aes(treatment, nbt_area, color = treatment)) +
     theme_bw() +
     labs(
         x = "OsRGF1 (pM)",
@@ -58,5 +66,6 @@ ggsave(
     width = 17,
     height = 11
 )
+
 
 

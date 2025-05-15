@@ -9,9 +9,10 @@
 | KOH <sup>&#8251;</sup>      | 5 M                     | ~ 800 &micro;L   | &mdash;                | &#8550;       |
 | ddH<sub>2</sub>O            | &mdash;                 | ~ 4 L            | &mdash;                | &mdash;       |
 | **Total volume**            |                         | **4 L**          |                        |               |
-| <a href=''>Phytagel (optional)<a>  | &mdash;                 | 2 g / L          | 0.2%        | &mdash;       |
 
-The final pH should be 5.7 ~ 5.8.
+ (optional) The gelling agent: <a href='https://www.sigmaaldrich.com/TW/en/product/sigma/p8169'>Phytagel ( P8169 )</a> &xrarr; 2 g / L ( 0.2% ). Located at &#8552;.
+
+The final pH should be around 5.75 ~ 5.80. Autoclave under 121&deg;C for 20 mins.
 
 <sup>&#8251;</sup> KOH is used for pH adjustment. 
 To prepare 5 M KOH solution, dilute 330 g of 85% KOH in 1 L ddH<sub>2</sub>O. Since KOH releases heat during dissolution, it is important to add the KOH granules into the water gradually and slowly.
