@@ -46,7 +46,6 @@ df1 <- df0 %>%
     # dplyr::mutate(is_outlier = Grubbs_test(nbt_area)) %>% 
     # dplyr::ungroup() %>% 
     dplyr::filter(
-        root_length < 70,
         replicate == "1"
     )
 
@@ -57,7 +56,6 @@ cld$cld_pos <- estimate_cld_pos(cld$MAX)
 ggplot(df1, aes(group, nbt_area, color = treatment)) +
     theme_classic() +
     labs(
-        # subtitle = "Replicate 1",
         y = "NBT area (10<sup>3</sup> pixels)",
         color = "RGF1 (nM)"
     ) +
@@ -77,13 +75,15 @@ ggplot(df1, aes(group, nbt_area, color = treatment)) +
             "WT", ""
         )
     ) +
-    hline_grob(1 - 0.3, 2 + 0.3, 24) +
-    hline_grob(3 - 0.3, 4 + 0.3, 24) +
-    hline_grob(5 - 0.3, 6 + 0.3, 24) +
+    scale_color_manual(values = c("#000000", "#D55E00")) +
+    scale_fill_manual(values = c("#000000", "#D55E00")) +
+    hline_grob(1 - .35, 2 + .35, 25) +
+    hline_grob(3 - .35, 4 + .35, 25) +
+    hline_grob(5 - .35, 6 + .35, 25) +
     theme(
-        text = element_text(family = "sans", face = "bold", size = 20),
+        text = element_text(family = "sans", face = "bold", size = 24),
         axis.title.x.bottom = element_blank(),
-        axis.text.x.bottom = element_markdown(hjust = c(-0.1, 0, -0.1, 0, -1, 0)),
+        axis.text.x.bottom = element_markdown(size = 24, hjust = c(.17, 0, .17, 0, -.45, 0)),
         axis.line.x.bottom = element_blank(),
         axis.ticks.x.bottom = element_blank(),
         axis.title.y.left = element_markdown(),
@@ -101,4 +101,61 @@ ggsave(
     width = 17,
     height = 11
 )
+
+
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+# Replicate 2 & 3 ====
+#<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+df2 <- df0 %>% 
+    # dplyr::group_by(group, replicate) %>% 
+    # dplyr::mutate(is_outlier = Grubbs_test(nbt_area)) %>% 
+    # dplyr::ungroup() %>% 
+    dplyr::filter(
+        replicate %in% c("2", "3")
+    )
+
+out <- oneway_test(df2, nbt_area ~ group)
+cld <- out$cld
+cld$cld_pos <- estimate_cld_pos(cld$MAX)
+
+ggplot(df2, aes(group, nbt_area, color = treatment)) +
+    theme_classic() +
+    labs(
+        subtitle = "Replicate 2",
+        y = "NBT area (10<sup>3</sup> pixels)",
+        color = "RGF1 (nM)"
+    ) +
+    geom_boxplot() +
+    geom_point(position = position_jitter(width = 0.1)) +
+    geom_text(
+        inherit.aes = FALSE,
+        data = cld,
+        mapping = aes(GROUP, cld_pos, label = CLD),
+        size = 8
+    ) +
+    scale_y_continuous(limits = c(20, 140), breaks = seq(20, 140, 20)) +
+    scale_x_discrete(
+        labels = c(
+            "<i>osrgf1-7</i>", "",
+            "<i>osrgf1-8</i>", "",
+            "WT", ""
+        )
+    ) +
+    hline_grob(1 - 0.3, 2 + 0.3, 16) +
+    hline_grob(3 - 0.3, 4 + 0.3, 16) +
+    hline_grob(5 - 0.3, 6 + 0.3, 16) +
+    theme(
+        text = element_text(family = "sans", face = "bold", size = 20),
+        plot.subtitle = element_text(hjust = 1),
+        axis.title.x.bottom = element_blank(),
+        axis.text.x.bottom = element_markdown(hjust = c(-0.1, 0, -0.1, 0, -1, 0)),
+        axis.line.x.bottom = element_blank(),
+        axis.ticks.x.bottom = element_blank(),
+        axis.title.y.left = element_markdown(),
+        legend.position = "inside",
+        legend.position.inside = c(0.5, 0.95),
+        legend.direction = "horizontal",
+        legend.background = element_blank()
+    )
+
 
