@@ -24,7 +24,7 @@ output:
 
 1. Prepare <b style='color: violet'>incubation medium</b> containing <b style='color: violet'>10 &micro;M Component A</b>;
 - For example, in 5 samples scenario, add 100 &micro;L Component A ( 10 mM ) into 100 mL half-MS medium for the experiment. Then, repackage the diluted Component A to new falcon tubes, each tube takes around 20 mL for each sample ( make sure the root tips can be fully submerged into the solution).
-2. Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>1 hour</b>.
+2. Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>1 ~ 2 hours</b>.
 - Directly immersed the roots in the solution, <b style='color: red'>DO NOT</b> cut the shoot part, the plant should still alive. The root should be fully submerged into the solution. Do not over-pushing the root to avoid roots injury. 
 
 ## Step 2: Fixation
@@ -33,7 +33,7 @@ output:
 
 2. Incubate for <b style='color: violet'>30 minutes</b> under <b style='color: violet'>room temperature</b>;
 
-3. Remove fixative solution and add 200 &micro;L of <b style='color: violet'>1X PBS</b> to wash the roots. Repeat this wash  procedure three times, for each 10 mins ( <b style='color: violet'>3 &times; 10 mins</b> ).
+3. Remove fixative solution and add 400 &micro;L of <b style='color: violet'>1X PBS</b> to wash the roots. Repeat this wash  procedure three times, for each 10 mins ( <b style='color: violet'>3 &times; 10 mins</b> ).
 - <b style='color: darkorange'>You can safely store the samples in 1X PBS solution up to 24 hours after washed out the fixative solution.</b>
 
 ## Step 3: Detection
@@ -59,7 +59,7 @@ output:
 
 ### **Incubation**
 
-3. Remove wash solution and add <b style='color: violet'>100 &micro;L</b> of <b style='color: violet'>Click-iT&reg; reaction cocktail</b> for each sample;
+3. Remove wash solution and add <b style='color: violet'>100 &micro;L</b> of <b style='color: violet'>Click-iT&reg; reaction cocktail</b> ( prepare as the table above ) for each sample;
 4. Incubate for <b style='color: violet'>30 minutes</b> at <b style='color: violet'>room temperature</b>. Must be <b style='color: violet'>protected from light</b>;
 5. Remove the reaction cocktail and wash once with 100 &micro;L of Click-iT&reg; reaction rince buffer ( <b style='color: violet'>Component F</b> );
 6. <b style='color: violet'>Wash 3 times</b> with 1X PBS ( <b style='color: violet'>3 &times; 10 mins</b> );
