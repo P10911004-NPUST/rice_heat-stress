@@ -23,7 +23,7 @@ output:
 ## Step 1: Labeling
 
 1. Prepare <b style='color: violet'>incubation medium</b> containing <b style='color: violet'>10 &micro;M Component A</b>;
-- For example, in 5 samples scenario, add 100 &micro;L Component A ( 10 mM ) into 100 mL half-MS medium for the experiment. Then, repackage the diluted Component A to new falcon tubes, each tube takes around 20 mL for each sample ( make sure the root tips can be fully submerged into the solution).
+- For example, in a 5 samples scenario, add **100 &micro;L of 10 mM Component A** into 100 mL half-MS medium for the experiment. Then, repackage the diluted 10 &micro;M Component A to new falcon tubes, each tube takes around 20 mL for each sample ( make sure the root tips can be fully submerged in the solution).
 2. Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>1 ~ 2 hours</b>.
 - Directly immersed the roots in the solution, <b style='color: red'>DO NOT</b> cut the shoot part, the plant should still alive. The root should be fully submerged into the solution. Do not over-pushing the root to avoid roots injury. 
 
@@ -34,7 +34,7 @@ output:
 2. Incubate for <b style='color: violet'>30 minutes</b> under <b style='color: violet'>room temperature</b>;
 
 3. Remove fixative solution and add 400 &micro;L of <b style='color: violet'>1X PBS</b> to wash the roots. Repeat this wash  procedure three times, for each 10 mins ( <b style='color: violet'>3 &times; 10 mins</b> ).
-- <b style='color: darkorange'>You can safely store the samples in 1X PBS solution up to 24 hours after washed out the fixative solution.</b>
+- <b style='color: darkorange'>You can store the samples in 1X PBS solution up to 24 hours in 4&deg;C after removing the fixative solution.</b>
 
 ## Step 3: Detection
 
@@ -46,24 +46,25 @@ output:
 - Prepare the Component C and E as much as necessary only for that day's experiments, and use on the same day.
 
 2. Add the <b style='color: violet'>Click-iT&reg; reaction cocktail</b> ingredients **as follow**. 
-- Add the incredients in the order listed in the table; otherwise, the reaction will not proceed optimally. 
-- Use the cocktail immediately after preparation. The Click-iT&reg; reaction buffer additive is susceptable to oxidation and is the limiting factor to the Click-iT&reg; reaction cocktail's effectiveness over time.
+- <i style='color:red'>Add the incredients in the order listed in the table; otherwise, the reaction will not proceed optimally.</i> 
+- <i style='color:red'>Use the cocktail immediately after preparation. The Click-iT&reg; reaction buffer additive is susceptable to oxidation and is the limiting factor to the Click-iT&reg; reaction cocktail's effectiveness over time.</i>
 
-> | Component | Material name                            | Addition per sample | 4 samples         |
-> | :------:  | :--------------------------------------- |:-------------------:|:-----------------:|
-> | C         | **1X** Click-iT&reg; EdU reaction buffer | 85 &micro;L         | 340 &micro;L      |
-> | D         | CuSO<sub>4</sub>                         | 4 &micro;L          | 16 &micro;L       |
-> | B         | Alexa Fluor&reg; azide                   | 0.25 &micro;L       | 1 &micro;L        |
-> | E         | **1X** Click-iT&reg; EdU buffer additive | 10 &micro;L         | 40 &micro;L       |
-> | Total:    |                                          | ~ 100 &micro;L      | ~ 400 &micro;L    |
+> | Component | Material name                            | Addition per sample  |        |
+> | :------:  | :--------------------------------------- |:-------------------: | :---:  |
+> | C         | **1X** Click-iT&reg; EdU reaction buffer | 170 &micro;L         |        |
+> | D         | CuSO<sub>4</sub>                         | 8 &micro;L           |        |
+> | B         | Alexa Fluor&reg; azide                   | 0.5 &micro;L         |        |
+> | E         | **1X** Click-iT&reg; EdU buffer additive | 20 &micro;L          |        |
+> | Total:    |                                          | ~ 200 &micro;L       |        |
 
 ### **Incubation**
 
 3. Remove wash solution and add <b style='color: violet'>100 &micro;L</b> of <b style='color: violet'>Click-iT&reg; reaction cocktail</b> ( prepare as the table above ) for each sample;
-4. Incubate for <b style='color: violet'>30 minutes</b> at <b style='color: violet'>room temperature</b>. Must be <b style='color: violet'>protected from light</b>;
-5. Remove the reaction cocktail and wash once with 100 &micro;L of Click-iT&reg; reaction rince buffer ( <b style='color: violet'>Component F</b> );
+4. Incubate for <b style='color: violet'>30 minutes</b> at <b style='color: violet'>room temperature</b>. Must be <b style='color: red'>protected from light</b>;
+5. Remove the reaction cocktail and wash once with 200 &micro;L of Click-iT&reg; reaction rince buffer ( <b style='color: violet'>Component F</b> );
 6. <b style='color: violet'>Wash 3 times</b> with 1X PBS ( <b style='color: violet'>3 &times; 10 mins</b> );
-7. Mounted into <b style='color: violet'>Fluoromount-G anti-fade</b> solution. Proceed to confocal imaging and analysis.
+7. Mount on slide with <b style='color: violet'>Fluoromount-G anti-fade</b> solution. Proceed to confocal imaging and analysis.
+- <i>Using water is also fine if the laser intensity is low and the image capturing time is short.</i>
 
 ## Step 4: Confocal parameters
 
@@ -72,11 +73,11 @@ output:
 | Excitation peak                                          | 495 nm            | 488 nm               |
 | Emission peak                                            | 519 nm            | 500 ~ 600 nm         |
 | Magnification                                            |                   | 10X                  |
-| Laser intensity ( <b style='color: #97ed1d'>488 nm</b> ) |                   | 0.9%                 |
+| Laser intensity ( <b style='color: #97ed1d'>488 nm</b> ) |                 | 0.9%                 |
 | Master Gain                                              |                   | 740 V                |
 | Pinhole                                                  |                   | &approx; 32 &micro;m |
 | Z-stack interval                                         |                   | 2 &micro;m           |
-| Scan speed                                               |                   | 8                    |
+| Scan speed                                               |                   | 7                    |
 | Scan direction                                           |                   | <b>&xrarr;</b>       |
 |                                                          |                   |                      |
 
@@ -149,7 +150,7 @@ The 1X solution could be stored at 2 ~ 6&deg;C for 6 months.
 | Fluoromount-G                                      | --            | 4&deg;C ( D cabinet ) |
 
 ### <b><sup>&delta;</sup> 1X PBS ( pH 7.4 )</b>
-- Make 10X PBS stock solution first as follow ( 10X stock located at VIII cabinet ). When in use, dilute to 1X PBS.
+- Make 10X PBS stock solution first as follow ( 10X stock located at 4&deg;C bottom right ). When in use, dilute to 1X PBS.
 > | 10X PBS contents              | M.W. (g/mol) | Addition |
 > |:----------------------------- |:------------:| --------:|
 > | NaCl                          | 58.44        | 80.1 g   |
