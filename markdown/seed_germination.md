@@ -1,21 +1,26 @@
 # Rice seed germination
 
-## 1. Break dormancy
+> All ddH<sub>2</sub>O used for this process should be sterilized.
+
+## 1. Homogenization
 1. Dehusked the seeds. Select only seeds that are well-developed, fully-filled, clean, and transparent. 
-2. Incubate the seeds in dark under 50&deg;C for 24 ~ 48 hours.
+2. Dry-incubate the seeds in dark under 50&deg;C for 24 ~ 48 hours.
 
 ## 2. Sterilization
-1. Soak the seeds in 3% bleach solution ( add one drop of detergent ) and keep gently inverting / shaking for 30 minutes.
+1. Soak the seeds in 3% bleach solution ( add one drop of detergent ) and gently inverting / shaking for 15 minutes.
 2. Wash at least 6 times with ddH<sub>2</sub>O, until bubbles are completely gone.
 
 ## 3. Priming and imbibition
-1. Soak the seeds in 3% KNO<sub>3</sub> solution under room temperature for 24 hours.
+1. <i>( optional ) Soak the seeds in 3% KNO<sub>3</sub> solution under room temperature for 24 hours.</i>
 2. Soak the seeds in 1 ~ 2% Plant Preservative Mixture&trade; ( PPM&trade; ) solution for 16 ~ 24 hours.
+- The PPM&trade; stock solution ( 100% ) is stored at 4&deg;C-(a). Dilute it with ddH<sub>2</sub>O.
 
 ## 4. Sowing
-Sow the seeds on suitable medium.  
+1. Remove the PPM solution.
+2. Sow the seeds on suitable medium.  
 > Optional: Add 0.05 ~ 0.2% ( v / v ) PPM&trade; to the medium, if it is difficult to control contamination. The PPM&trade; can be autoclaved together with the media.
 
+<div style='page-break-after: always;'></div>
 
 # Half-MS medium preparation
 
@@ -25,7 +30,7 @@ Sow the seeds on suitable medium.
 | MES hydrate                 | &mdash;                 | 2 g              | 2 g / L                | &#8546;       |
 | Sucrose                     | &mdash;                 | 10 g             | 2.5 g / L              | &#8544;       |
 | PPM&trade; (optional)       | 100%                    | 2 mL             | 0.05%                  | 4&deg;C ( a ) |
-| KOH <sup>&#8251;</sup>      | 5 M                     | ~ 700 &micro;L   | &mdash;                | &#8550;       |
+| KOH <sup>&#8251;</sup>      | 5 M                     | ~ 710 &micro;L   | &mdash;                | &#8550;       |
 | ddH<sub>2</sub>O            | &mdash;                 | ~ 4 L            | &mdash;                | &mdash;       |
 | **Total volume**            |                         | **4 L**          |                        |               |
 

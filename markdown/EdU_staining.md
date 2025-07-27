@@ -8,7 +8,7 @@ output:
 
 # **EdU staining**
 
-### <a href="https://www.thermofisher.com/order/catalog/product/tw/en/C10351">Invitrogen&trade; Click-iT&trade; EdU Alexa Fluor&trade; 488 HCS Assay</a>
+### <a href="https://www.thermofisher.com/order/catalog/product/tw/en/C10351">Invitrogen&trade; Click-iT&trade; EdU Alexa Fluor&trade; 488 HCS Assay</a> ( <a href="https://assets.thermofisher.com/TFS-Assets/LSG/manuals/mp10351.pdf">Manual</a> )
 
 > 5-Ethynyl-2'-deoxyuridine  
 > 252.22 g/mol
@@ -71,10 +71,11 @@ output:
 | Parameters                                               | Theoretical value | Our machine          |
 |:-------------------------------------------------------- |:-----------------:|:--------------------:|
 | Excitation peak                                          | 495 nm            | 488 nm               |
-| Emission peak                                            | 519 nm            | 500 ~ 600 nm         |
+| Emission peak                                            | 519 nm            | 499 ~ 539 nm         |
 | Magnification                                            |                   | 10X                  |
 | Laser intensity ( <b style='color: #97ed1d'>488 nm</b> ) |                 | 0.9%                 |
 | Master Gain                                              |                   | 740 V                |
+| Digital Gain                                             |                   | 1.0                  |
 | Pinhole                                                  |                   | &approx; 32 &micro;m |
 | Z-stack interval                                         |                   | 2 &micro;m           |
 | Scan speed                                               |                   | 7                    |
