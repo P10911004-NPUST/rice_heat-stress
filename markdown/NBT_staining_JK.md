@@ -26,4 +26,5 @@ Nitro blue Tetrazolium Chloride
 1. Dissect the root and fully immersed the root tip into the NBT solution.  
 2. Vacumm 2 minutes under ~ 650 mmHg ( the lid should be opened ). 
 3. Subsequently, close the lid and incubate under 37&deg;C for 10 minutes ~ 2 hours, depends on the root condition. 
+4. During incubation, <b style='color: red;'>protected from light</b>.
 - Generally, 10 mins is appropritate for young root ( less than one week old ), and the extremely old root ( more than two weeks old ) may require 2 hours.

@@ -1,6 +1,6 @@
 # OsRGF1-1
 
-> - LOC_Os02g09760
+> - LOC_Os02g09760 ( Old annotation: LOC_Os02g0190700 )
 > - Asp-Tyr(SO<sub>3</sub>H)-His-Ser-Val-Arg-Arg-His-Pro-Hyp-Ser-His-Asn \
 ( DYHSVRRHPPSHN )
 > - Molecular Weight: 1697.82 g/mol

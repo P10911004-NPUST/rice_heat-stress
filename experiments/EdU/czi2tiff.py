@@ -16,7 +16,7 @@ def Z_projection(img, methods = "max_intensity"):
     out_img = Image.fromarray(RGB_img, mode="RGB")
     return out_img
 
-img_dir = "./salt_stress/WT_0-100mM-salt_0-10nM-RGF1_20250724/CHO"
+img_dir = "./salt_stress/osrgf1-7_0-100mM_20250714"
 img_list = [i for i in os.listdir(img_dir) if i.endswith((".czi"))]
 
 #img0 = os.path.join(img_dir, "DAI07_M07_0nM_Cr_R13_20250725.czi")

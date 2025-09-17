@@ -45,4 +45,5 @@ the same concentration, for example 10 ng/&micro;L.
 | 56                   | 15 secs    | 30    | Annealing            |
 | 72                   | 1 min      | 30    | Extension            |
 | 72                   | 5 min      | --    | Complete extension   |
-| 4                    | $\infty$   | --    | PCR product storage  |
+| 4                    | &#8734;   | --    | PCR product storage  |
+
