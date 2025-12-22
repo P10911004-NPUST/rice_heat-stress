@@ -6,7 +6,7 @@
 | MES hydrate                 | &mdash;                 | 2 g              | 2 g / L                | &#8546;       |
 | Sucrose                     | &mdash;                 | 10 g             | 2.5 g / L              | &#8544;       |
 | PPM&trade; (optional)       | 100%                    | 2 mL             | 0.05%                  | 4&deg;C ( a ) |
-| KOH <sup>&#8251;</sup>      | 5 M                     | ~ 700 &micro;L   | &mdash;                | &#8550;       |
+| KOH <sup>&#8251;</sup>      | 5 M                     | ~ 720 &micro;L   | &mdash;                | &#8550;       |
 | ddH<sub>2</sub>O            | &mdash;                 | ~ 4 L            | &mdash;                | &mdash;       |
 | **Total volume**            |                         | **4 L**          |                        |               |
 

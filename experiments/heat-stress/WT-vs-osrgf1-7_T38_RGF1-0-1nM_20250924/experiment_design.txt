@@ -1,0 +1,3 @@
+Direct sowing on gel (Mock and 1 nM OsRGF1) after 24 hours imbibition.
+After 5 days after imbibition (DAI05), transfer to 38 degree celcius for 1 day heat treatment.
+After 1 day heat treatment (DAT01), do NBT stain (therefore, DAT01 and DAI06)

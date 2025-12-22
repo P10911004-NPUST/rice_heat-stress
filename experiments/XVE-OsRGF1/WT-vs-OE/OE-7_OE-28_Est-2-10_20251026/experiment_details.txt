@@ -1,0 +1,6 @@
+genotype: WT, OE07-8-2, OE28-3-10
+treatment: Mock, 2uM Est, 10uM Est
+
+Direct sowing on the gel containing beta-Estradiol
+DAT06
+DAI06

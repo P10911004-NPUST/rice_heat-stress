@@ -32,7 +32,7 @@ rawdata <- readxl::read_excel("../OUT_Magnif_32X.xlsx")
 
 df0 <- rawdata %>% 
     dplyr::mutate(
-        nbt_intensity = nbt_intensity / 1e7,
+        nbt_intensity = nbt_intensity / 1e6,
         genotype = str_replace(img_name, ".*_(WT|M07|M08)_(.*)nM_.*", "\\1"),
         treatment = str_replace(img_name, ".*_(WT|M07|M08)_(.*)nM_.*", "\\2"),
         group = paste(genotype, treatment, sep = "_")
@@ -67,7 +67,7 @@ ggplot(df0, aes(group, nbt_intensity, color = treatment)) +
     labs(
         # subtitle = "Gel system, DAI7, seminal root",
         x = "OsRGF1 (nM)",
-        y = "Total NBT intensity<br>(10<sup>6</sup> AU)"
+        y = "Total NBT intensity (10<sup>6</sup> AU)"
     ) +
     geom_boxplot(outliers = FALSE, alpha = 0.3) +
     geom_point(
@@ -84,21 +84,21 @@ ggplot(df0, aes(group, nbt_intensity, color = treatment)) +
     scale_x_discrete(
         labels = c("WT", "", "<i>osrgf1-7</i>", "", "<i>osrgf1-8</i>", "")
     ) +
-    scale_y_continuous(limits = c(0.5, 3.5), breaks = seq(0.5, 3.5, 0.5)) +
+    scale_y_continuous(limits = c(0, 40), breaks = seq(0, 40, 10)) +
     scale_color_manual(
         values = c("#000000", "#D55E00"),
         labels = c("Mock", "1 nM OsRGF1")
     ) +
-    hline_grob(xmin = 1 - 0.3, xmax = 2 + 0.3, y = .5 - .1) +
-    hline_grob(xmin = 3 - 0.3, xmax = 4 + 0.3, y = .5 - .1) +
-    hline_grob(xmin = 5 - 0.3, xmax = 6 + 0.3, y = .5 - .1) +
+    hline_grob(xmin = 1 - 0.3, xmax = 2 + 0.3, y = 0 - 2) +
+    hline_grob(xmin = 3 - 0.3, xmax = 4 + 0.3, y = 0 - 2) +
+    hline_grob(xmin = 5 - 0.3, xmax = 6 + 0.3, y = 0 - 2) +
     theme(
         text = element_text(family = "sans", face = "bold", size = 27),
         # plot.subtitle = element_markdown(size = 18),
         axis.title.y.left = element_markdown(margin = ggplot2::margin(r = 9)),
         axis.title.x.bottom = element_blank(),
         axis.text.x.bottom = element_markdown(
-            margin = ggplot2::margin(t = 5),
+            margin = ggplot2::margin(t = 9),
             size = 25,
             face = "bold",
             hjust = c(-.35, 0, .22, 0, .22, 0)
@@ -119,7 +119,7 @@ ggsave(
     device = "jpeg",
     dpi = 660,
     units = "cm",
-    height = 11,
+    height = 14,
     width = 17
 )
 

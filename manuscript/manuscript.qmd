@@ -26,8 +26,6 @@ suppressMessages({
 
 ## Materials and methods
 
-
-
 ## Results and discussion
 
 ### OsRGF1 is mainly expressed in root meristematic zone
@@ -82,7 +80,5 @@ p1 <- df0 %>%
     )
 p1
 ```
-
-
 
 ## Conclusion

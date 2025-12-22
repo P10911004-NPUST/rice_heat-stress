@@ -1,0 +1,6 @@
+Direct sowing on half-MS gel medium after 1 day imbibition (DAI01).
+
+After 6 days after imbibition (DAI06), transfer to hydroponic half-MS medium, 
+which respectively contains 0 and 100 pM OsRGF1, and then respectively incubate in 28/23 and 40/35 degree celcius (day/night).
+
+After 1 day treatment (DAT01, DAI07), perform NBT staining. 
