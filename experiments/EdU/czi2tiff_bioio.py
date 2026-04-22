@@ -19,7 +19,7 @@ def Z_projection(img, methods = "max_intensity"):
     out_img = Image.fromarray(RGB_img, mode="RGB")
     return out_img
 
-img_dir = "./WT-vs-osrgf1_OsRGF1-0-1nM_20250711"
+img_dir = "C:/jklai/project/rice_heat-stress/experiments/EdU/XVE-OsRGF1/WT-OE7-OE28_Est-0-2-10uM_20260319"
 img_list = [i for i in os.listdir(img_dir) if i.endswith((".czi"))]
 
 bioimg = BioImage(os.path.join(img_dir, img_list[0]), reader=bioio_czi.Reader)

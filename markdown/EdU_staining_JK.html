@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>EdU_staining_JK.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+.hljs {
+  background: #272822;
+  color: #ddd
+}
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-number,
+.hljs-name {
+  color: #f92672
+}
+.hljs-code {
+  color: #66d9ef
+}
+.hljs-attribute,
+.hljs-attr,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+  color: #bf79db
+}
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #a6e22e
+}
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: white
+}
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-title,
+.hljs-section,
+.hljs-type,
+.hljs-selector-id {
+  font-weight: bold
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file://C:\\jklai\\github\\rice_heat-stress\\markdown\\markdown-style.css" type="text/css"><link rel="stylesheet" href="file://C:\\jklai\\project\\rice_heat-stress\\markdown\\markdown-style.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="edu-staining"><strong>EdU staining</strong></h1>
+<h3 id="invitrogen-click-it-edu-alexa-fluor-488-hcs-assay--manual-"><a href="https://www.thermofisher.com/order/catalog/product/tw/en/C10351">Invitrogen™ Click-iT™ EdU Alexa Fluor™ 488 HCS Assay</a> ( <a href="https://assets.thermofisher.com/TFS-Assets/LSG/manuals/mp10351.pdf">Manual</a> )</h3>
+<h3 id="invitrogen-edu-5-ethynyl-2-deoxyuridine--manual-"><a href="https://www.thermofisher.com/order/catalog/product/E10187">Invitrogen™ EdU (5-ethynyl-2'-deoxyuridine)</a> ( <a href="https://documents.thermofisher.com/TFS-Assets/LSG/manuals/mp10044.pdf">Manual</a> )</h3>
+<hr>
+<blockquote>
+<p>EdU ( 5-Ethynyl-2'-deoxyuridine)</p>
+</blockquote>
+<blockquote>
+<p>Molecular weight: 252.22 g / mol</p>
+</blockquote>
+<blockquote>
+<h3 id="solubility">Solubility:</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Solvent</th>
+<th style="text-align:center">Maximum solubility</th>
+<th style="text-align:center">Concentration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DMSO</td>
+<td style="text-align:center">25 mg / mL</td>
+<td style="text-align:center">100 mM</td>
+</tr>
+<tr>
+<td style="text-align:center">water</td>
+<td style="text-align:center">6.25 mg / mL</td>
+<td style="text-align:center">25 mM</td>
+</tr>
+<tr>
+<td style="text-align:center">aqueous buffer</td>
+<td style="text-align:center">6.25 mg / mL</td>
+<td style="text-align:center">25 mM</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<br>
+<h1 id="materials-not-provided">Materials NOT Provided</h1>
+<h3 id="please-refer-to-the-last-page-to-make-the-pbs-10x-stock-and-fixative-solution">Please refer to the last page to make the PBS 10X stock and fixative solution.</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Material</th>
+<th style="text-align:center">Concentration</th>
+<th style="text-align:center">Storage location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Phosphate buffer saline ( PBS )</td>
+<td style="text-align:center">1X</td>
+<td style="text-align:center">JK's bench</td>
+</tr>
+<tr>
+<td style="text-align:left">Fixative solution</td>
+<td style="text-align:center">4%</td>
+<td style="text-align:center">biosafety cabinet</td>
+</tr>
+<tr>
+<td style="text-align:left">Fluoromount-G</td>
+<td style="text-align:center">--</td>
+<td style="text-align:center">4°C ( d )</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<br>
+<div style='page-break-after: always;'></div>
+<h1 id="procedure">Procedure</h1>
+<h2 id="step-1-labeling"><strong>Step 1: Labeling</strong></h2>
+<ol>
+<li>Prepare <b style='color: violet'>incubation medium</b> containing <b style='color: violet'>10 <i>µ</i>M Component A ( EdU )</b>;</li>
+</ol>
+<blockquote>
+<p>The manufacturer's manual suggests to dilute the EdU from 10 mM to 10 <i>µ</i>M for <i>in vitro</i> experiment. When EdU was dissolved in DMSO, this concentration of DMSO might facilitate the entry of organic molecules into tissue. However, 0.1% of DMSO will affect root growth. So, consider to make higher concentration of EdU stocks, change solvent, or reduce the working solution concentration.</p>
+</blockquote>
+<ol start="2">
+<li>Incubate the plants in the <b style='color: violet'>incubation medium</b> in the same cultivation condition for <b style='color: violet'>1 hour</b>.</li>
+</ol>
+<ul>
+<li>Directly immersed the roots into the solution, <b style='color: red'>DO NOT</b> cut the shoot part, the plant should still alive. The root should be fully submerged into the solution. Do not over-pushing the root to avoid roots injury.</li>
+</ul>
+<h2 id="step-2-fixation"><strong>Step 2: Fixation</strong></h2>
+<ol>
+<li>
+<p>Prepare <b style='color: violet'>200 <i>µ</i>L fixative solution</b> for each sample ( per eppendorf );</p>
+</li>
+<li>
+<p>Cut the root tip ( around 5 mm ) and fully immerse in the fixative solution;</p>
+</li>
+</ol>
+<ul>
+<li>Better to do this in biosafety cabinet. If too many roots, cut the root on a rigid agar plate ( ~ 1% ), keep the surface wet with 1X PBS to prevent the root being dried.</li>
+</ul>
+<ol start="3">
+<li>
+<p>Incubate <b style='color: violet'>30 minutes</b> under <b style='color: violet'>room temperature</b>;</p>
+</li>
+<li>
+<p>Remove fixative solution and add <b style='color: violet'>400 <i>µ</i>L 1X PBS</b> to wash the roots. Gently pipetting 5-10 times ( avoiding contact with the root tip ), then leave on the benchtop for 10 mins. Repeat this wash procedure three times ( <b style='color: violet'>3 × 10 mins</b> ).</p>
+</li>
+</ol>
+<ul>
+<li><b style='color: darkorange'>You can keep the samples in 1X PBS solution for at least 24 hours in 4°C protected from light after removing the fixative solution.</b></li>
+</ul>
+<br>
+<div style='page-break-after: always;'></div>
+<h2 id="step-3-detection"><strong>Step 3: Detection</strong></h2>
+<h3 id="prepare-the-cocktail"><strong>Prepare the cocktail</strong></h3>
+<ol>
+<li>Dilute the <b style='color: violet'>Component C</b> and <b style='color: violet'>Component E</b> from 10X to <b style='color: violet'>1X</b> using <b style='color: violet'>ddH<sub>2</sub>O</b>. Calculate the total usage amount according to the following tables.</li>
+</ol>
+<ul>
+<li>10X Component C is stored at 4°C in the kit box.</li>
+<li>10X Component E is stored at -20°C in JK's white box.</li>
+<li>Prepare the Component C and E as much as necessary only for that day's experiments, and use on the same day.</li>
+</ul>
+<ol start="2">
+<li>Add the <b style='color: violet'>Click-iT® reaction cocktail</b> ingredients <strong>as follow</strong>.</li>
+</ol>
+<ul>
+<li><b><i style='color:red'>Add the incredients in the order listed in the table; otherwise, the reaction will not proceed optimally.</i></b></li>
+<li><b><i style='color:red'>Use the cocktail immediately after preparation. The Click-iT® reaction buffer additive is susceptable to oxidation and is the limiting factor to the Click-iT® reaction cocktail's effectiveness over time.</i></b></li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Component</th>
+<th style="text-align:left">Material name</th>
+<th style="text-align:center">Addition per sample</th>
+<th style="text-align:center">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ddH<sub>2</sub>O</td>
+<td style="text-align:left">deionized ultrapure water</td>
+<td style="text-align:center">171 <i>µ</i>L</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:left"><strong>10X</strong> Click-iT® EdU reaction buffer</td>
+<td style="text-align:center">17 <i>µ</i>L</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:left">CuSO<sub>4</sub></td>
+<td style="text-align:center">8 <i>µ</i>L</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:left">Alexa Fluor® azide</td>
+<td style="text-align:center">0.5 <i>µ</i>L</td>
+<td style="text-align:center">keep in dark</td>
+</tr>
+<tr>
+<td style="text-align:center">E</td>
+<td style="text-align:left"><strong>10X</strong> Click-iT® EdU buffer additive</td>
+<td style="text-align:center">2 <i>µ</i>L</td>
+<td style="text-align:center">add before use</td>
+</tr>
+<tr>
+<td style="text-align:center">Total:</td>
+<td style="text-align:left"></td>
+<td style="text-align:center">198.5 <i>µ</i>L</td>
+<td style="text-align:center">take 197 µL</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h3 id="incubation"><strong>Incubation</strong></h3>
+<ol start="3">
+<li>Remove wash solution and add <b style='color: violet'>197 <i>µ</i>L</b> of <b style='color: violet'>Click-iT® reaction cocktail</b> ( prepare as the table above ) for each sample;</li>
+<li>Incubate for <b style='color: violet'>30 minutes</b> at <b style='color: violet'>room temperature</b>. Must be <b style='color: red'>protected from light</b>;</li>
+<li>Remove the reaction cocktail and wash once with <b style='color: violet'>200 <i>µ</i>L</b> of <b style='color: violet'>Click-iT® reaction rince buffer ( Component F )</b>;</li>
+<li><b style='color: violet'>Wash 3 times</b> with 1X PBS ( <b style='color: violet'>3 × 10 mins</b> );</li>
+<li>Mount on slide with <b style='color: violet'>Fluoromount-G anti-fade</b> solution<sup>†</sup>. Proceed to confocal imaging and analysis.</li>
+</ol>
+<p><sup>†</sup> <i>Using ddH<sub>2</sub>O is also fine if the laser intensity is low and the laser exposure time ( image capturing time ) is short.</i></p>
+<br>
+<div style='page-break-after: always;'></div>
+<h2 id="step-4-confocal-parameters"><strong>Step 4: Confocal parameters</strong></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameters</th>
+<th style="text-align:center">Theoretical value</th>
+<th style="text-align:center">Our machine</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Excitation peak</td>
+<td style="text-align:center">495 nm</td>
+<td style="text-align:center">488 nm</td>
+</tr>
+<tr>
+<td style="text-align:left">Emission peak</td>
+<td style="text-align:center">519 nm</td>
+<td style="text-align:center">499 ~ 539 nm</td>
+</tr>
+<tr>
+<td style="text-align:left">Magnification</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">10X</td>
+</tr>
+<tr>
+<td style="text-align:left">Laser intensity ( <b style='color: #97ed1d'>488 nm</b> )</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1.0%</td>
+</tr>
+<tr>
+<td style="text-align:left">Master Gain</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">700 V</td>
+</tr>
+<tr>
+<td style="text-align:left">Digital Gain</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">1.0</td>
+</tr>
+<tr>
+<td style="text-align:left">Pinhole</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">≈ 32 <i>µ</i>m</td>
+</tr>
+<tr>
+<td style="text-align:left">Z-stack interval</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">2 <i>µ</i>m</td>
+</tr>
+<tr>
+<td style="text-align:left">Scan speed</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:left">Scan direction</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"><b>⟶</b></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<br>
+<div style='page-break-after: always;'></div>
+<h2 id="step-5-image-processing"><strong>Step 5: Image processing</strong></h2>
+<ol>
+<li>Use <b style='color: violet'>ImageJ</b> with <b style='color: violet'>bioformats_package.jar</b> plugin to proceed the confocal images;</li>
+</ol>
+<ul>
+<li>
+<p>The plugin ( bioformats_package.jar ) can be downloaded from <a href='https://www.openmicroscopy.org/bio-formats/downloads/'>https://www.openmicroscopy.org/bio-formats/downloads/</a></p>
+</li>
+<li>
+<p>The plugin should be placed in the <b><i>&quot;/ImageJ/plugins/jars&quot;</i></b> directory</p>
+</li>
+</ul>
+<ol start="2">
+<li>
+<p>Open the confocal .czi file with the ImageJ, the &quot;<b>Bio-Formats Import Options</b>&quot; will automatically pop up;</p>
+</li>
+<li>
+<p>Select the options as follow:</p>
+</li>
+</ol>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Options</th>
+<th style="text-align:center">Choose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">View stack with:</td>
+<td style="text-align:center">Hyperstack</td>
+</tr>
+<tr>
+<td style="text-align:center">Color mode:</td>
+<td style="text-align:center">Colorized</td>
+</tr>
+<tr>
+<td style="text-align:center">Autoscale</td>
+<td style="text-align:center">☑</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<ol start="4">
+<li>Stack the image layers and perform max intensity projection along the Z-axis;</li>
+</ol>
+<ul>
+<li><code>Image</code> → <code>Stacks</code> → <code>Z project...</code> → <code>Projection type: Max Intensity</code></li>
+</ul>
+<blockquote>
+<p>Optional: Shows scale bar in the image.<br>
+<code>Analyze</code> ⟶ <code>Tools</code> ⟶ <code>Scale Bar...</code></p>
+</blockquote>
+<ol start="5">
+<li>Save the images as TIFF format;</li>
+</ol>
+<ul>
+<li><code>File</code> → <code>Save as</code> → <code>Tiff...</code></li>
+</ul>
+<ol start="6">
+<li>Select the region of interest (ROI) and measure.</li>
+</ol>
+<br>
+<h3 id="finished-">Finished !!!</h3>
+<br>
+<div style='page-break-after: always;'></div>
+<!-- ================================================================================================================= -->
+<!-- Materials -->
+<!-- ================================================================================================================= -->
+<h1 id="materials-provided-by-the-kit">Materials Provided by the kit</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Component</th>
+<th style="text-align:left">Material name</th>
+<th style="text-align:center">C10351 <sup>*</sup></th>
+<th style="text-align:center">Concentration</th>
+<th style="text-align:center">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A <sup>α</sup></td>
+<td style="text-align:left">EdU <strong>working solution</strong></td>
+<td style="text-align:center">525 µL</td>
+<td style="text-align:center">10 mM</td>
+<td style="text-align:center">4°C ( c )</td>
+</tr>
+<tr>
+<td style="text-align:center">B <sup>β</sup></td>
+<td style="text-align:left">Alexa Fluor® azide 488</td>
+<td style="text-align:center">330 µL</td>
+<td style="text-align:center">1X</td>
+<td style="text-align:center">4°C ( c )</td>
+</tr>
+<tr>
+<td style="text-align:center">C <sup>γ</sup></td>
+<td style="text-align:left">Click-iT® EdU <strong>reaction buffer</strong></td>
+<td style="text-align:center">15 mL</td>
+<td style="text-align:center">10X</td>
+<td style="text-align:center">4°C ( c )</td>
+</tr>
+<tr>
+<td style="text-align:center">D <sup>δ</sup></td>
+<td style="text-align:left">CuSO<sub>4</sub></td>
+<td style="text-align:center">1 vial</td>
+<td style="text-align:center">100 mM</td>
+<td style="text-align:center">4°C ( c )</td>
+</tr>
+<tr>
+<td style="text-align:center">E <sup>ε</sup></td>
+<td style="text-align:left">Click-iT® EdU <strong>buffer additive</strong></td>
+<td style="text-align:center">400 mg</td>
+<td style="text-align:center">10X</td>
+<td style="text-align:center">−20°C</td>
+</tr>
+<tr>
+<td style="text-align:center">F <sup>ζ</sup></td>
+<td style="text-align:left">Click-iT® reaction <strong>rinse buffer</strong></td>
+<td style="text-align:center">125 mL</td>
+<td style="text-align:center">1X</td>
+<td style="text-align:center">4°C ( c )</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><sup>*</sup> <strong>C10351</strong>: Catalogue number. All the raw materials in this kit should be stored at <b style='color: violet'>2 ~ 6°C</b>, <b style='color: violet'>dessiccated</b>, <b style='color: violet'>protect from light</b>, and <b style='color: violet'>DO NOT FREEZE</b>.</p>
+<p><sup>α</sup> <strong>Component A</strong>: This is the EdU chemical stock solution. Dilute to 10 <i>µ</i>M in complete medium on the day of the experiment, and use immediately. The 10 mM stock solution is stored at −20°C ( the EdU powder also put in −20°C, in JK's white box ), and the 10 mM aliquots are stored at 4°C (in the EdU kit box, put together with the other components).</p>
+<p><sup>β</sup> <strong>Component B</strong>: Fluorescence probe. Protected from light.</p>
+<p><sup>γ</sup> <strong>Component C</strong>: Dilute from 10X to 1X using ddH<sub>2</sub>O, <em>i.e.</em>, 15 mL 10X Component C + 135 mL ddH<sub>2</sub>O.<br>
+The 1X solution could be stored at 2 ~ 6°C for 6 months.</p>
+<p><sup>δ</sup> <strong>Component D</strong>: Catalyze the reaction.</p>
+<p><sup>ε</sup> <strong>Component E</strong>: Add 2 mL ddH<sub>2</sub>O to the vial of the Component E, mix until fully dissolve the powder to 10X solution. The <b style='color: violet'>10X solution</b> could be stored at <b style='color: violet'>≤ −20°C</b> for up to 1 year. If the solution develops a brown color, it has degraded and should be discarded.</p>
+<p><sup>ζ</sup> <strong>Component F</strong>: Used to wash cells after the Click-iT® reaction cocktail incubation step. This helps to remove unreacted components and reduce background. Located at 4 °C ( c ), in front of the EdU kit boxes.</p>
+<br>
+<div style='page-break-after: always;'></div>
+<h1 id="materials-not-provided-by-the-kit">Materials NOT Provided by the kit</h1>
+<h2 id="phosphate-buffer-saline--pbs---ph-74-">Phosphate buffer saline ( PBS ) ( pH 7.4 )</b></h2>
+<ul>
+<li>
+<p>Make 10X PBS stock solution first as follow ( 10X stock located at 4°C bottom right ). When in use, dilute to 1X PBS.</p>
+</li>
+<li>
+<p>10X PBS ⟶ Adjust to pH 7.4 ⟶ Autoclave ⟶ Dilute to 1X ( 100 mL 10X PBS + 900 mL ddH<sub>2</sub>O )</p>
+</li>
+</ul>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">10X PBS contents</th>
+<th style="text-align:center">M.W. (g/mol)</th>
+<th style="text-align:right">Addition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">NaCl</td>
+<td style="text-align:center">58.44</td>
+<td style="text-align:right">80.1 g</td>
+</tr>
+<tr>
+<td style="text-align:left">KCl</td>
+<td style="text-align:center">74.55</td>
+<td style="text-align:right">2.0 g</td>
+</tr>
+<tr>
+<td style="text-align:left">Na<sub>2</sub>HPO<sub>4</sub></td>
+<td style="text-align:center">141.96</td>
+<td style="text-align:right">14.4 g</td>
+</tr>
+<tr>
+<td style="text-align:left">KH<sub>2</sub>PO<sub>4</sub></td>
+<td style="text-align:center">136.09</td>
+<td style="text-align:right">2.7 g</td>
+</tr>
+<tr>
+<td style="text-align:left">ddH<sub>2</sub>O</td>
+<td style="text-align:center"></td>
+<td style="text-align:right">1 L</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:center"></td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<br>
+<h2 id="fixative-solution">Fixative solution</b></h2>
+<blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Chemical</th>
+<th style="text-align:right">Addition</th>
+<th style="text-align:center">Final concentration</th>
+<th style="text-align:center">Storage location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Formaldehyde (38%)</td>
+<td style="text-align:right">105 µL</td>
+<td style="text-align:center">4%</td>
+<td style="text-align:center">Toxic cabinet D</td>
+</tr>
+<tr>
+<td style="text-align:left">Triton X-100 (100%)</td>
+<td style="text-align:right">1 µL</td>
+<td style="text-align:center">0.1%</td>
+<td style="text-align:center">IV</td>
+</tr>
+<tr>
+<td style="text-align:left">1X PBS</td>
+<td style="text-align:right">894 µL</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:left">Total:</td>
+<td style="text-align:right">1000 µL</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<br>
+</body>
+</html>

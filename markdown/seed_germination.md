@@ -4,7 +4,7 @@
 
 ## 1. Homogenization
 1. Dehusked the seeds. Select only seeds that are well-developed, fully-filled, clean, and transparent. 
-2. Dry-incubate the seeds in dark under 50&deg;C for 24 ~ 48 hours.
+2. Dry-incubate the seeds in dark under 45&deg;C for 24 ~ 48 hours.
 
 ## 2. Sterilization
 1. Soak the seeds in 3% bleach solution ( add one drop of detergent ) and gently inverting / shaking for 15 minutes.

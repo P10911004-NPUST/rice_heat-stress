@@ -4,7 +4,7 @@ from PIL.ExifTags import TAGS
 from skimage import io
 import skimage.filters as skf_filters
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import pandas as pd
 import czifile
 
@@ -16,8 +16,12 @@ def Z_projection(img, methods = "max_intensity"):
     out_img = Image.fromarray(RGB_img, mode="RGB")
     return out_img
 
-img_dir = "./salt_stress/osrgf1-7_0-100mM_20250714"
+img_dir = "./WT-vs-mutants_Mock_20260128/CZI"
 img_list = [i for i in os.listdir(img_dir) if i.endswith((".czi"))]
+
+output_dir = os.path.join(os.path.dirname(img_dir), "OUT_" + os.path.basename(img_dir))
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
 
 #img0 = os.path.join(img_dir, "DAI07_M07_0nM_Cr_R13_20250725.czi")
 #img0 = czifile.imread(img0)
@@ -61,9 +65,9 @@ for i in img_list:
     ])
 
     out_img = Z_projection(img, methods = "max_intensity")
-    out_img.save(os.path.join(img_dir, f"{i.removesuffix('.czi')}.tiff"), "TIFF")
+    out_img.save(os.path.join(output_dir, f"{i.removesuffix('.czi')}.tiff"), "TIFF")
 
-df0.to_csv(os.path.join(img_dir, "total_intensity.csv"), index=False)
+df0.to_csv(os.path.join(output_dir, "total_intensity.csv"), index=False)
 
 
 ############################################################################

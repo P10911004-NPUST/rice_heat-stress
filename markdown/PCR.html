@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PCR.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em
+}
+code.hljs {
+  padding: 3px 5px
+}
+/*
+Monokai style - ported by Luigi Maselli - http://grigio.org
+*/
+.hljs {
+  background: #272822;
+  color: #ddd
+}
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-number,
+.hljs-name {
+  color: #f92672
+}
+.hljs-code {
+  color: #66d9ef
+}
+.hljs-attribute,
+.hljs-attr,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+  color: #bf79db
+}
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #a6e22e
+}
+.hljs-title.class_,
+.hljs-class .hljs-title {
+  color: white
+}
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e
+}
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-title,
+.hljs-section,
+.hljs-type,
+.hljs-selector-id {
+  font-weight: bold
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> or <div class="page"></div> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file://C:\\jklai\\github\\rice_heat-stress\\markdown\\markdown-style.css" type="text/css"><link rel="stylesheet" href="file://C:\\jklai\\project\\rice_heat-stress\\markdown\\markdown-style.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="polymerase-chain-reaction--pcr-"><strong>Polymerase Chain Reaction ( PCR )</strong></h1>
+<h1 id="preparation">Preparation</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Material <sup>※</sup></th>
+<th style="text-align:center">Concentration</th>
+<th style="text-align:center">Addition per sample</th>
+<th style="text-align:center">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">gDNA <sup>†</sup></td>
+<td style="text-align:center">10 ng / uL</td>
+<td style="text-align:center">4 µL</td>
+<td style="text-align:center">Usually -20°C</td>
+</tr>
+<tr>
+<td style="text-align:center">F-primer</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.4 µL</td>
+<td style="text-align:center">-20°C (2row-3col-4layer)</td>
+</tr>
+<tr>
+<td style="text-align:center">R-primer</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.4 µL</td>
+<td style="text-align:center">-20°C (2row-3col-4layer)</td>
+</tr>
+<tr>
+<td style="text-align:center">2X-Taq</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">5 µL</td>
+<td style="text-align:center">-20°C (4row-3col-4layer; orange lid)</td>
+</tr>
+<tr>
+<td style="text-align:center">Ambion water</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.2 µL</td>
+<td style="text-align:center">RNA bench (right-hand side, top drawer)</td>
+</tr>
+<tr>
+<td style="text-align:center">Total :</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">10 µL</td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><sup>※</sup> All materials should be placed on ice.</p>
+<p><sup>†</sup> gDNA : The gDNA stock solution of all samples should be standardized to<br>
+the same concentration, for example 10 ng/<i>µ</i>L.</p>
+<br>
+<div style='page-break-after: always'></div>
+<h1 id="procedure">Procedure</h1>
+<ol>
+<li>Prepare the total amount of the required working solution ( F-primer, R-primer, 2X-Taq );</li>
+</ol>
+<blockquote>
+<ul>
+<li>For example, if we had 10 samples, then me make the working solution by adding<br>
+4 µL <b style="color:orange">F-primer</b>,<br>
+4 µL <b style="color:orange">R-primer</b>,<br>
+and 50 µL <b style="color:orange">2X-Taq</b> into a new 200 µL PCR tube.</li>
+</ul>
+</blockquote>
+<ol start="2">
+<li>
+<p>Dispense the working solution into a new 200 <i>µ</i>L PCR tubes ( 5.8 µL for each sample );</p>
+</li>
+<li>
+<p>Lastly, add the sample gDNA stock solution;</p>
+</li>
+<li>
+<p>Close the lid tightly, and swipe the tube gently with finger several time to mix the solution well;</p>
+</li>
+<li>
+<p>Slightly centrifuge to bring down the solution;</p>
+</li>
+<li>
+<p>Put into the PCR machine ( the machine should be warmed-up around 2 mins before use ).</p>
+</li>
+</ol>
+<h2 id="reaction-curve">Reaction curve:</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Process</th>
+<th style="text-align:center">Temperature (°C)</th>
+<th style="text-align:center">Time</th>
+<th style="text-align:center">Cycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Initial denaturation</td>
+<td style="text-align:center">95</td>
+<td style="text-align:center">1 min</td>
+<td style="text-align:center">--</td>
+</tr>
+<tr>
+<td style="text-align:center">Denaturation</td>
+<td style="text-align:center">95</td>
+<td style="text-align:center">15 secs</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:center">Annealing<sup>†</sup></td>
+<td style="text-align:center"><b style='color: red;'>56<b></td>
+<td style="text-align:center">15 secs</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:center">Extension</td>
+<td style="text-align:center">72</td>
+<td style="text-align:center">1 min</td>
+<td style="text-align:center">30</td>
+</tr>
+<tr>
+<td style="text-align:center">Complete extension</td>
+<td style="text-align:center">72</td>
+<td style="text-align:center">5 min</td>
+<td style="text-align:center">--</td>
+</tr>
+<tr>
+<td style="text-align:center">PCR product storage</td>
+<td style="text-align:center">4</td>
+<td style="text-align:center">∞</td>
+<td style="text-align:center">--</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<p><sup>†</sup> Annealing temperature depends on primers.</p>
+
+</body>
+</html>
